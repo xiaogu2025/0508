@@ -1,0 +1,1 @@
+/home/xiaogu/myproject/rosNavigation_ws/devel/.private/traj_utils/lib/pkgconfig/traj_utils.pc

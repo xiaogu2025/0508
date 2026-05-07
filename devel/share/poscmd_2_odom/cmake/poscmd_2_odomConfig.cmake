@@ -1,0 +1,1 @@
+/home/xiaogu/myproject/rosNavigation_ws/devel/.private/poscmd_2_odom/share/poscmd_2_odom/cmake/poscmd_2_odomConfig.cmake

@@ -1,0 +1,1 @@
+/home/xiaogu/myproject/rosNavigation_ws/devel/.private/plan_env_msgs/share/gennodejs/ros/plan_env_msgs/msg/ChunkStamps.js

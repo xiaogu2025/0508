@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC   -shared -Wl,-soname,libSO3Control.so -o /home/xiaogu/myproject/rosNavigation_ws/devel/.private/so3_control/lib/libSO3Control.so CMakeFiles/SO3Control.dir/src/SO3Control.cpp.o   -L/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/uav_simulator/Utils/cmake_utils/lib/mosek8 

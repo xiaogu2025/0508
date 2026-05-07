@@ -1,0 +1,1 @@
+/home/xiaogu/myproject/rosNavigation_ws/devel/.private/so3_disturbance_generator/share/so3_disturbance_generator/cmake/so3_disturbance_generatorConfig.cmake

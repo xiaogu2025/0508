@@ -1,0 +1,7 @@
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/uav_simulator/local_sensing/src/pointcloud_render_node.cpp:[m[K In function ‘[01m[Kvoid pointCloudCallBack(const PointCloud2&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/uav_simulator/local_sensing/src/pointcloud_render_node.cpp:122:35:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%d[m[K’ expects argument of type ‘[01m[Kint[m[K’, but argument 2 has type ‘[01m[Kstd::vector<pcl::PointXYZ, Eigen::aligned_allocator<pcl::PointXYZ> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wformat=[m[K]
+  122 |   printf("global map has points: [01;35m[K%d[m[K.\n", [32m[KcloudIn.points.size()[m[K);
+      |                                  [01;35m[K~^[m[K      [32m[K~~~~~~~~~~~~~~~~~~~~~[m[K
+      |                                   [01;35m[K|[m[K                         [32m[K|[m[K
+      |                                   [01;35m[Kint[m[K                       [32m[Kstd::vector<pcl::PointXYZ, Eigen::aligned_allocator<pcl::PointXYZ> >::size_type {aka long unsigned int}[m[K
+      |                                  [32m[K%ld[m[K

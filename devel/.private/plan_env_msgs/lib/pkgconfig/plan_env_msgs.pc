@@ -1,0 +1,8 @@
+prefix=/home/xiaogu/myproject/rosNavigation_ws/devel/.private/plan_env_msgs
+
+Name: plan_env_msgs
+Description: Description of plan_env_msgs
+Version: 0.0.0
+Cflags: -I/home/xiaogu/myproject/rosNavigation_ws/devel/.private/plan_env_msgs/include
+Libs: -L${prefix}/lib 
+Requires: std_msgs message_runtime

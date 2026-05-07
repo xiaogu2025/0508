@@ -1,0 +1,339 @@
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/role_assigner.cpp:[m[K In member function ‘[01m[Kfast_planner::ROLE fast_planner::RoleAssigner::assignRoleCloseByFrontiers(const Vector3d&, const std::__cxx11::list<fast_planner::Frontier>&) const[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/role_assigner.cpp:57:23:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Ksize_t[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} and ‘[01m[Kint[m[K’ [[01;35m[K-Wsign-compare[m[K]
+   57 |     return [01;35m[Knum_trails >= params_->min_num_trails[m[K ? ROLE::GARBAGE_COLLECTOR : ROLE::EXPLORER;
+      |            [01;35m[K~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/role_assigner.cpp:[m[K In member function ‘[01m[Kfast_planner::ROLE fast_planner::RoleAssigner::assignRole(const Vector3d&, const Vector3d&, const std::__cxx11::list<fast_planner::Frontier>&) const[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/role_assigner.cpp:97:20:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Ksize_t[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} and ‘[01m[Kint[m[K’ [[01;35m[K-Wsign-compare[m[K]
+   97 |     if ([01;35m[Kmerged_ftr >= params_->min_num_neighbours[m[K) ++islands_count;
+      |         [01;35m[K~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/role_assigner.cpp:100:24:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Ksize_t[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} and ‘[01m[Kint[m[K’ [[01;35m[K-Wsign-compare[m[K]
+  100 |   return [01;35m[Kislands_count >= params_->min_num_islands[m[K ? ROLE::GARBAGE_COLLECTOR : ROLE::EXPLORER;
+      |          [01;35m[K~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fast_exploration_manager.cpp:[m[K In member function ‘[01m[Kint fast_planner::FastExplorationManager::planExploreMotion(const Vector3d&, const Vector3d&, const Vector3d&, const Vector3d&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fast_exploration_manager.cpp:153:23:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Eigen::Matrix<double, 3, 1> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  153 |     for (int i = 0; [01;35m[Ki < ed_->averages_.size()[m[K; ++i) {
+      |                     [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fast_exploration_manager.cpp:172:23:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Eigen::Matrix<double, 3, 1> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  172 |     for (int i = 0; [01;35m[Ki < ed_->points_.size()[m[K; ++i) {
+      |                     [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fast_exploration_manager.cpp:206:27:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Eigen::Matrix<double, 3, 1> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  206 |         for (int i = 0; [01;35m[Ki < ed_->n_points_[0].size()[m[K; ++i) {
+      |                         [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fast_exploration_manager.cpp:269:23:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Eigen::Matrix<double, 3, 1> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  269 |     for (int i = 0; [01;35m[Ki < ed_->refined_points_.size()[m[K; ++i) {
+      |                     [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fast_exploration_manager.cpp:276:23:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Eigen::Matrix<double, 3, 1> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  276 |     for (int i = 0; [01;35m[Ki < ed_->refined_points_.size()[m[K; ++i) {
+      |                     [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fast_exploration_manager.cpp:131:8:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[Kstart_time[m[K’ set but not used [[01;35m[K-Wunused-but-set-variable[m[K]
+  131 |   auto [01;35m[Kstart_time[m[K = chrono::high_resolution_clock::now();
+      |        [01;35m[K^~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fast_exploration_manager.cpp:[m[K In member function ‘[01m[Kint fast_planner::FastExplorationManager::planTrajToView(const Vector3d&, const Vector3d&, const Vector3d&, const Vector3d&, const Vector3d&, const double&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fast_exploration_manager.cpp:345:23:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Eigen::Matrix<double, 3, 1> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  345 |     for (int i = 1; [01;35m[Ki < ed_->path_next_goal_.size()[m[K && len2 < radius_far; ++i) {
+      |                     [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fast_exploration_manager.cpp:314:8:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kgoal_unknown[m[K’ [[01;35m[K-Wunused-variable[m[K]
+  314 |   bool [01;35m[Kgoal_unknown[m[K = (edt_environment_->sdf_map_->getOccupancy(next_pos) == SDFMap::UNKNOWN);
+      |        [01;35m[K^~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fast_exploration_manager.cpp:[m[K In member function ‘[01m[Kint fast_planner::FastExplorationManager::updateFrontierStruct(const Vector3d&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fast_exploration_manager.cpp:397:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Eigen::Matrix<double, 3, 1> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  397 |   for (int i = 0; [01;35m[Ki < ed_->points_.size()[m[K; ++i)
+      |                   [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fast_exploration_manager.cpp:412:10:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Ktotal_time[m[K’ [[01;35m[K-Wunused-variable[m[K]
+  412 |   double [01;35m[Ktotal_time[m[K = frontier_time + view_time + mat_time;
+      |          [01;35m[K^~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/noetic/include/ros/ros.h:40[m[K,
+                 from [01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/include/exploration_manager/fast_exploration_manager.h:4[m[K,
+                 from [01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fast_exploration_manager.cpp:2[m[K:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fast_exploration_manager.cpp:[m[K In member function ‘[01m[Kvoid fast_planner::FastExplorationManager::findGridAndFrontierPath(const Vector3d&, const Vector3d&, const Vector3d&, std::vector<int>&, std::vector<int>&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fast_exploration_manager.cpp:449:12:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%d[m[K’ expects argument of type ‘[01m[Kint[m[K’, but argument 8 has type ‘[01m[Kstd::vector<int>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wformat=[m[K]
+  449 |   ROS_INFO([01;35m[K"Find frontier tour, %d involved------------"[m[K, [32m[Kftr_ids.size()[m[K);
+      |            [01;35m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K  [32m[K~~~~~~~~~~~~~~[m[K
+      |                                                                       [32m[K|[m[K
+      |                                                                       [32m[Kstd::vector<int>::size_type {aka long unsigned int}[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fast_exploration_manager.cpp:449:34:[m[K [01;36m[Knote: [m[Kformat string is defined here
+  449 |   ROS_INFO("Find frontier tour, [01;36m[K%d[m[K involved------------", ftr_ids.size());
+      |                                 [01;36m[K~^[m[K
+      |                                  [01;36m[K|[m[K
+      |                                  [01;36m[Kint[m[K
+      |                                 [32m[K%ld[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fast_exploration_manager.cpp:[m[K In member function ‘[01m[Kvoid fast_planner::FastExplorationManager::shortenPath(std::vector<Eigen::Matrix<double, 3, 1> >&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fast_exploration_manager.cpp:477:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Eigen::Matrix<double, 3, 1> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  477 |   for (int i = 1; [01;35m[Ki < path.size() - 1[m[K; ++i) {
+      |                   [01;35m[K~~^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fast_exploration_manager.cpp:[m[K In member function ‘[01m[Kvoid fast_planner::FastExplorationManager::refineLocalTour(const Vector3d&, const Vector3d&, const Vector3d&, const std::vector<std::vector<Eigen::Matrix<double, 3, 1> > >&, const std::vector<std::vector<double> >&, std::vector<Eigen::Matrix<double, 3, 1> >&, std::vector<double>&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fast_exploration_manager.cpp:607:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<std::vector<Eigen::Matrix<double, 3, 1> > >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  607 |   for (int i = 0; [01;35m[Ki < n_points.size()[m[K; ++i) {
+      |                   [01;35m[K~~^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fast_exploration_manager.cpp:609:23:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Eigen::Matrix<double, 3, 1> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  609 |     for (int j = 0; [01;35m[Kj < n_points[i].size()[m[K; ++j) {
+      |                     [01;35m[K~~^~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fast_exploration_manager.cpp:617:13:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<std::vector<Eigen::Matrix<double, 3, 1> > >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  617 |       if ([01;35m[Ki == n_points.size() - 1[m[K) {
+      |           [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fast_exploration_manager.cpp:639:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<std::shared_ptr<fast_planner::ViewNode> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  639 |   for (int i = 1; [01;35m[Ki < path.size()[m[K; ++i) {
+      |                   [01;35m[K~~^~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fast_exploration_manager.cpp:591:10:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[Kcreate_time[m[K’ set but not used [[01;35m[K-Wunused-but-set-variable[m[K]
+  591 |   double [01;35m[Kcreate_time[m[K, search_time, parse_time;
+      |          [01;35m[K^~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fast_exploration_manager.cpp:591:23:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[Ksearch_time[m[K’ set but not used [[01;35m[K-Wunused-but-set-variable[m[K]
+  591 |   double create_time, [01;35m[Ksearch_time[m[K, parse_time;
+      |                       [01;35m[K^~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fast_exploration_manager.cpp:591:36:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[Kparse_time[m[K’ set but not used [[01;35m[K-Wunused-but-set-variable[m[K]
+  591 |   double create_time, search_time, [01;35m[Kparse_time[m[K;
+      |                                    [01;35m[K^~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fast_exploration_manager.cpp:[m[K In member function ‘[01m[Kvoid fast_planner::FastExplorationManager::allocateGrids(const std::vector<Eigen::Matrix<double, 3, 1> >&, const std::vector<Eigen::Matrix<double, 3, 1> >&, const std::vector<std::vector<int> >&, const std::vector<std::vector<int> >&, const std::vector<int>&, std::vector<int>&, std::vector<int>&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fast_exploration_manager.cpp:704:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<int>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  704 |   for (int i = 0; [01;35m[Ki < grid_ids.size()[m[K; ++i) {
+      |                   [01;35m[K~~^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fast_exploration_manager.cpp:755:23:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<int>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  755 |     for (int i = 0; [01;35m[Ki < grid_ids.size()[m[K; ++i) {
+      |                     [01;35m[K~~^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fast_exploration_manager.cpp:840:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<std::vector<int> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  840 |   for (int i = 1; [01;35m[Ki < tours.size()[m[K; ++i) {
+      |                   [01;35m[K~~^~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fast_exploration_manager.cpp:669:8:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[Kt2[m[K’ set but not used [[01;35m[K-Wunused-but-set-variable[m[K]
+  669 |   auto [01;35m[Kt2[m[K = t1;
+      |        [01;35m[K^~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fast_exploration_manager.cpp:693:7:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kunknown[m[K’ [[01;35m[K-Wunused-variable[m[K]
+  693 |   int [01;35m[Kunknown[m[K;
+      |       [01;35m[K^~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fast_exploration_manager.cpp:695:10:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kmat_time[m[K’ [[01;35m[K-Wunused-variable[m[K]
+  695 |   double [01;35m[Kmat_time[m[K = (ros::Time::now() - t1).toSec();
+      |          [01;35m[K^~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fast_exploration_manager.cpp:[m[K In member function ‘[01m[Kdouble fast_planner::FastExplorationManager::computeGridPathCost(const Vector3d&, const std::vector<int>&, const std::vector<int>&, const std::vector<std::vector<int> >&, const std::vector<std::vector<int> >&, const double&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fast_exploration_manager.cpp:875:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<int>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  875 |   for (int i = 0; [01;35m[Ki < grid_ids.size() - 1[m[K; ++i) {
+      |                   [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fast_exploration_manager.cpp:[m[K In member function ‘[01m[Kbool fast_planner::FastExplorationManager::findGlobalTourOfGrid(const std::vector<Eigen::Matrix<double, 3, 1> >&, const std::vector<Eigen::Matrix<double, 3, 1> >&, std::vector<int>&, std::vector<std::vector<int> >&, bool)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fast_exploration_manager.cpp:1003:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<std::vector<int> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+ 1003 |   for (int i = 1; [01;35m[Ki < tours.size()[m[K; ++i) {
+      |                   [01;35m[K~~^~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fast_exploration_manager.cpp:916:10:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kmat_time[m[K’ [[01;35m[K-Wunused-variable[m[K]
+  916 |   double [01;35m[Kmat_time[m[K = (ros::Time::now() - t1).toSec();
+      |          [01;35m[K^~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fast_exploration_manager.cpp:964:10:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kmtsp_time[m[K’ [[01;35m[K-Wunused-variable[m[K]
+  964 |   double [01;35m[Kmtsp_time[m[K = (ros::Time::now() - t1).toSec();
+      |          [01;35m[K^~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fast_exploration_manager.cpp:[m[K In member function ‘[01m[Kvoid fast_planner::FastExplorationManager::findTourOfFrontier(const Vector3d&, const Vector3d&, const Vector3d&, const std::vector<int>&, const std::vector<Eigen::Matrix<double, 3, 1> >&, std::vector<int>&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fast_exploration_manager.cpp:1135:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<std::vector<int> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+ 1135 |   for (int i = 1; [01;35m[Ki < tours.size()[m[K; ++i) {
+      |                   [01;35m[K~~^~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fast_exploration_manager.cpp:1156:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<int>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+ 1156 |   for (int i = 0; [01;35m[Ki < indices.size()[m[K; ++i) {
+      |                   [01;35m[K~~^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fast_exploration_manager.cpp:1052:10:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kmat_time[m[K’ [[01;35m[K-Wunused-variable[m[K]
+ 1052 |   double [01;35m[Kmat_time[m[K = (ros::Time::now() - t1).toSec();
+      |          [01;35m[K^~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fast_exploration_manager.cpp:1101:10:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kmtsp_time[m[K’ [[01;35m[K-Wunused-variable[m[K]
+ 1101 |   double [01;35m[Kmtsp_time[m[K = (ros::Time::now() - t1).toSec();
+      |          [01;35m[K^~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fast_exploration_manager.cpp:1172:10:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kparse_time[m[K’ [[01;35m[K-Wunused-variable[m[K]
+ 1172 |   double [01;35m[Kparse_time[m[K = (ros::Time::now() - t1).toSec();
+      |          [01;35m[K^~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fame_exploration_fsm.cpp:[m[K In member function ‘[01m[Kvoid fast_planner::FameExplorationFSM::visualize(int)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fame_exploration_fsm.cpp:383:23:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<std::vector<Eigen::Matrix<double, 3, 1> > >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  383 |     for (int i = 0; [01;35m[Ki < ed_ptr->frontiers_.size()[m[K; ++i) {
+      |                     [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fame_exploration_manager.cpp:[m[K In member function ‘[01m[Kint fast_planner::FameExplorationManager::planTrajToView(const Vector3d&, const Vector3d&, const Vector3d&, const Vector3d&, const Vector3d&, const double&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fame_exploration_manager.cpp:291:23:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Eigen::Matrix<double, 3, 1> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  291 |     for (int i = 1; [01;35m[Ki < ed_->path_next_goal_.size()[m[K && len2 < radius_far; ++i) {
+      |                     [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fame_exploration_manager.cpp:260:8:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kgoal_unknown[m[K’ [[01;35m[K-Wunused-variable[m[K]
+  260 |   bool [01;35m[Kgoal_unknown[m[K = (edt_environment_->sdf_map_->getOccupancy(next_pos) == SDFMap::UNKNOWN);
+      |        [01;35m[K^~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fame_exploration_manager.cpp:[m[K In member function ‘[01m[Kint fast_planner::FameExplorationManager::updateFrontierStruct(const Vector3d&, double, const Vector3d&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fame_exploration_manager.cpp:353:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Eigen::Matrix<double, 3, 1> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  353 |   for (int i = 0; [01;35m[Ki < ed_->points_.size()[m[K; ++i)
+      |                   [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fame_exploration_fsm.cpp:427:19:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[Klast_ftr_num_infront[m[K’ set but not used [[01;35m[K-Wunused-but-set-variable[m[K]
+  427 |     static size_t [01;35m[Klast_ftr_num_infront[m[K = 0;
+      |                   [01;35m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fame_exploration_fsm.cpp:475:25:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Eigen::Matrix<double, 3, 1> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  475 |       for (int i = 0; [01;35m[Ki < pts.size()[m[K; ++i) {
+      |                       [01;35m[K~~^~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fame_exploration_fsm.cpp:512:23:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Eigen::Matrix<double, 3, 1> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  512 |     for (int i = 0; [01;35m[Ki < grid_tour.size()[m[K; ++i) {
+      |                     [01;35m[K~~^~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fame_exploration_fsm.cpp:370:8:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kplan_data[m[K’ [[01;35m[K-Wunused-variable[m[K]
+  370 |   auto [01;35m[Kplan_data[m[K = &planner_manager_->plan_data_;
+      |        [01;35m[K^~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fame_exploration_fsm.cpp:373:8:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[KgetColorVal[m[K’ set but not used [[01;35m[K-Wunused-but-set-variable[m[K]
+  373 |   auto [01;35m[KgetColorVal[m[K = [&](const int& id, const int& num, const int& drone_id) {
+      |        [01;35m[K^~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fame_exploration_fsm.cpp:[m[K In member function ‘[01m[Kvoid fast_planner::FameExplorationFSM::frontierCallback(const ros::TimerEvent&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fame_exploration_fsm.cpp:582:23:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<std::vector<Eigen::Matrix<double, 3, 1> > >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  582 |     for (int i = 0; [01;35m[Ki < ed->frontiers_.size()[m[K; ++i) {
+      |                     [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fame_exploration_fsm.cpp:559:10:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[KgetColorVal[m[K’ set but not used [[01;35m[K-Wunused-but-set-variable[m[K]
+  559 |     auto [01;35m[KgetColorVal[m[K = [&](const int& id, const int& num, const int& drone_id) {
+      |          [01;35m[K^~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fame_exploration_manager.cpp:368:10:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Ktotal_time[m[K’ [[01;35m[K-Wunused-variable[m[K]
+  368 |   double [01;35m[Ktotal_time[m[K = frontier_time + view_time + mat_time;
+      |          [01;35m[K^~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fame_exploration_fsm.cpp:[m[K In member function ‘[01m[Kvoid fast_planner::FameExplorationFSM::optTimerCallback(const ros::TimerEvent&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fame_exploration_fsm.cpp:781:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<fast_planner::DroneState>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  781 |   for (int i = 0; [01;35m[Ki < states.size()[m[K; ++i) {
+      |                   [01;35m[K~~^~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fame_exploration_fsm.cpp:773:8:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kurgent[m[K’ [[01;35m[K-Wunused-variable[m[K]
+  773 |   bool [01;35m[Kurgent[m[K = state1.grid_ids_.empty();
+      |        [01;35m[K^~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fame_exploration_fsm.cpp:808:10:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kalloc_time[m[K’ [[01;35m[K-Wunused-variable[m[K]
+  808 |   double [01;35m[Kalloc_time[m[K = (ros::Time::now() - t1).toSec();
+      |          [01;35m[K^~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fame_exploration_fsm.cpp:[m[K In member function ‘[01m[Kvoid fast_planner::FameExplorationFSM::swarmTrajCallback(const BsplineConstPtr&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fame_exploration_fsm.cpp:961:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<double>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  961 |   for (int i = 0; [01;35m[Ki < msg->knots.size()[m[K; ++i) knots(i) = msg->knots[i];
+      |                   [01;35m[K~~^~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fame_exploration_fsm.cpp:963:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<geometry_msgs::Point_<std::allocator<void> >, std::allocator<geometry_msgs::Point_<std::allocator<void> > > >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  963 |   for (int i = 0; [01;35m[Ki < msg->pos_pts.size()[m[K; ++i) {
+      |                   [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fame_exploration_manager.cpp:[m[K In member function ‘[01m[Kdouble fast_planner::FameExplorationManager::formationCost(const Vector3d&) const[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fame_exploration_manager.cpp:642:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<fast_planner::DroneState>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  642 |   for (int i = 0; [01;35m[Ki < ed_->swarm_state_.size()[m[K; ++i) {
+      |                   [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fame_exploration_manager.cpp:[m[K In lambda function:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fame_exploration_manager.cpp:694:23:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<fast_planner::DroneState>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  694 |     for (int i = 0; [01;35m[Ki < ed_->swarm_state_.size()[m[K; ++i) {
+      |                     [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fame_exploration_manager.cpp:[m[K In member function ‘[01m[Kvoid fast_planner::FameExplorationManager::shortenPath(std::vector<Eigen::Matrix<double, 3, 1> >&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fame_exploration_manager.cpp:829:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Eigen::Matrix<double, 3, 1> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  829 |   for (int i = 1; [01;35m[Ki < path.size() - 1[m[K; ++i) {
+      |                   [01;35m[K~~^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fast_exploration_fsm.cpp:[m[K In member function ‘[01m[Kvoid fast_planner::FastExplorationFSM::visualize(int)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fast_exploration_fsm.cpp:400:23:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<std::vector<Eigen::Matrix<double, 3, 1> > >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  400 |     for (int i = 0; [01;35m[Ki < ed_ptr->frontiers_.size()[m[K; ++i) {
+      |                     [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fast_exploration_fsm.cpp:399:16:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Klast_dftr_num[m[K’ [[01;35m[K-Wunused-variable[m[K]
+  399 |     static int [01;35m[Klast_dftr_num[m[K = 0;
+      |                [01;35m[K^~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fast_exploration_fsm.cpp:461:25:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Eigen::Matrix<double, 3, 1> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  461 |       for (int i = 0; [01;35m[Ki < pts.size()[m[K; ++i) {
+      |                       [01;35m[K~~^~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fast_exploration_fsm.cpp:498:23:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Eigen::Matrix<double, 3, 1> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  498 |     for (int i = 0; [01;35m[Ki < grid_tour.size()[m[K; ++i) {
+      |                     [01;35m[K~~^~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fast_exploration_fsm.cpp:387:8:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kplan_data[m[K’ [[01;35m[K-Wunused-variable[m[K]
+  387 |   auto [01;35m[Kplan_data[m[K = &planner_manager_->plan_data_;
+      |        [01;35m[K^~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fast_exploration_fsm.cpp:390:8:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[KgetColorVal[m[K’ set but not used [[01;35m[K-Wunused-but-set-variable[m[K]
+  390 |   auto [01;35m[KgetColorVal[m[K = [&](const int& id, const int& num, const int& drone_id) {
+      |        [01;35m[K^~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fame_exploration_manager.cpp:[m[K In member function ‘[01m[Kvoid fast_planner::FameExplorationManager::refineLocalTour(const Vector3d&, const Vector3d&, const Vector3d&, const std::vector<std::vector<Eigen::Matrix<double, 3, 1> > >&, const std::vector<std::vector<double> >&, std::vector<Eigen::Matrix<double, 3, 1> >&, std::vector<double>&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fame_exploration_manager.cpp:959:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<std::vector<Eigen::Matrix<double, 3, 1> > >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  959 |   for (int i = 0; [01;35m[Ki < n_points.size()[m[K; ++i) {
+      |                   [01;35m[K~~^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fame_exploration_manager.cpp:961:23:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Eigen::Matrix<double, 3, 1> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  961 |     for (int j = 0; [01;35m[Kj < n_points[i].size()[m[K; ++j) {
+      |                     [01;35m[K~~^~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fame_exploration_manager.cpp:969:13:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<std::vector<Eigen::Matrix<double, 3, 1> > >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  969 |       if ([01;35m[Ki == n_points.size() - 1[m[K) {
+      |           [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fame_exploration_manager.cpp:991:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<std::shared_ptr<fast_planner::ViewNode> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  991 |   for (int i = 1; [01;35m[Ki < path.size()[m[K; ++i) {
+      |                   [01;35m[K~~^~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fame_exploration_manager.cpp:943:10:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[Kcreate_time[m[K’ set but not used [[01;35m[K-Wunused-but-set-variable[m[K]
+  943 |   double [01;35m[Kcreate_time[m[K, search_time, parse_time;
+      |          [01;35m[K^~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fame_exploration_manager.cpp:943:23:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[Ksearch_time[m[K’ set but not used [[01;35m[K-Wunused-but-set-variable[m[K]
+  943 |   double create_time, [01;35m[Ksearch_time[m[K, parse_time;
+      |                       [01;35m[K^~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fame_exploration_manager.cpp:943:36:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[Kparse_time[m[K’ set but not used [[01;35m[K-Wunused-but-set-variable[m[K]
+  943 |   double create_time, search_time, [01;35m[Kparse_time[m[K;
+      |                                    [01;35m[K^~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fame_exploration_manager.cpp:[m[K In member function ‘[01m[Kvoid fast_planner::FameExplorationManager::allocateGrids(const std::vector<Eigen::Matrix<double, 3, 1> >&, const std::vector<Eigen::Matrix<double, 3, 1> >&, const std::vector<std::vector<int> >&, const std::vector<std::vector<int> >&, const std::vector<int>&, std::vector<int>&, std::vector<int>&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fame_exploration_manager.cpp:1056:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<int>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+ 1056 |   for (int i = 0; [01;35m[Ki < grid_ids.size()[m[K; ++i) {
+      |                   [01;35m[K~~^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fast_exploration_fsm.cpp:[m[K In member function ‘[01m[Kvoid fast_planner::FastExplorationFSM::frontierCallback(const ros::TimerEvent&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fast_exploration_fsm.cpp:649:23:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<std::vector<Eigen::Matrix<double, 3, 1> > >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  649 |     for (int i = 0; [01;35m[Ki < ed->frontiers_.size()[m[K; ++i) {
+      |                     [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fast_exploration_fsm.cpp:627:10:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[KgetColorVal[m[K’ set but not used [[01;35m[K-Wunused-but-set-variable[m[K]
+  627 |     auto [01;35m[KgetColorVal[m[K = [&](const int& id, const int& num, const int& drone_id) {
+      |          [01;35m[K^~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fame_exploration_manager.cpp:1107:23:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<int>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+ 1107 |     for (int i = 0; [01;35m[Ki < grid_ids.size()[m[K; ++i) {
+      |                     [01;35m[K~~^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fame_exploration_manager.cpp:1192:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<std::vector<int> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+ 1192 |   for (int i = 1; [01;35m[Ki < tours.size()[m[K; ++i) {
+      |                   [01;35m[K~~^~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fame_exploration_manager.cpp:1021:8:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[Kt2[m[K’ set but not used [[01;35m[K-Wunused-but-set-variable[m[K]
+ 1021 |   auto [01;35m[Kt2[m[K = t1;
+      |        [01;35m[K^~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fame_exploration_manager.cpp:1045:7:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kunknown[m[K’ [[01;35m[K-Wunused-variable[m[K]
+ 1045 |   int [01;35m[Kunknown[m[K;
+      |       [01;35m[K^~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fame_exploration_manager.cpp:1047:10:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kmat_time[m[K’ [[01;35m[K-Wunused-variable[m[K]
+ 1047 |   double [01;35m[Kmat_time[m[K = (ros::Time::now() - t1).toSec();
+      |          [01;35m[K^~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fame_exploration_manager.cpp:[m[K In member function ‘[01m[Kdouble fast_planner::FameExplorationManager::computeGridPathCost(const Vector3d&, const std::vector<int>&, const std::vector<int>&, const std::vector<std::vector<int> >&, const std::vector<std::vector<int> >&, const double&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fame_exploration_manager.cpp:1227:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<int>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+ 1227 |   for (int i = 0; [01;35m[Ki < grid_ids.size() - 1[m[K; ++i) {
+      |                   [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fast_exploration_fsm.cpp:[m[K In member function ‘[01m[Kvoid fast_planner::FastExplorationFSM::optTimerCallback(const ros::TimerEvent&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fast_exploration_fsm.cpp:831:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<fast_planner::DroneState>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  831 |   for (int i = 0; [01;35m[Ki < states.size()[m[K; ++i) {
+      |                   [01;35m[K~~^~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fame_exploration_manager.cpp:[m[K In member function ‘[01m[Kbool fast_planner::FameExplorationManager::findTourOfTrails(const Vector3d&, const Vector3d&, const Vector3d&, Eigen::Vector3d&, double&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fame_exploration_manager.cpp:1310:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kconst long unsigned int[m[K’ [[01;35m[K-Wsign-compare[m[K]
+ 1310 |   for (int i = 0; [01;35m[Ki < dimension[m[K; ++i) {
+      |                   [01;35m[K~~^~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fame_exploration_manager.cpp:1311:23:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kconst long unsigned int[m[K’ [[01;35m[K-Wsign-compare[m[K]
+ 1311 |     for (int j = 0; [01;35m[Kj < dimension[m[K; ++j) {
+      |                     [01;35m[K~~^~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fame_exploration_manager.cpp:[m[K In member function ‘[01m[Kbool fast_planner::FameExplorationManager::findGlobalTourOfGrid(const std::vector<Eigen::Matrix<double, 3, 1> >&, const std::vector<Eigen::Matrix<double, 3, 1> >&, std::vector<int>&, std::vector<std::vector<int> >&, bool)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fame_exploration_manager.cpp:1498:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<std::vector<int> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+ 1498 |   for (int i = 1; [01;35m[Ki < tours.size()[m[K; ++i) {
+      |                   [01;35m[K~~^~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fame_exploration_manager.cpp:1411:10:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kmat_time[m[K’ [[01;35m[K-Wunused-variable[m[K]
+ 1411 |   double [01;35m[Kmat_time[m[K = (ros::Time::now() - t1).toSec();
+      |          [01;35m[K^~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fame_exploration_manager.cpp:1459:10:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kmtsp_time[m[K’ [[01;35m[K-Wunused-variable[m[K]
+ 1459 |   double [01;35m[Kmtsp_time[m[K = (ros::Time::now() - t1).toSec();
+      |          [01;35m[K^~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fast_exploration_fsm.cpp:823:8:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kurgent[m[K’ [[01;35m[K-Wunused-variable[m[K]
+  823 |   bool [01;35m[Kurgent[m[K = state1.grid_ids_.empty();
+      |        [01;35m[K^~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fast_exploration_fsm.cpp:890:10:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kalloc_time[m[K’ [[01;35m[K-Wunused-variable[m[K]
+  890 |   double [01;35m[Kalloc_time[m[K = (ros::Time::now() - t1).toSec();
+      |          [01;35m[K^~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fame_exploration_manager.cpp:[m[K In member function ‘[01m[Kvoid fast_planner::FameExplorationManager::findTourOfFrontier(const Vector3d&, const Vector3d&, const Vector3d&, const std::vector<int>&, const std::vector<Eigen::Matrix<double, 3, 1> >&, std::vector<int>&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fame_exploration_manager.cpp:1630:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<std::vector<int> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+ 1630 |   for (int i = 1; [01;35m[Ki < tours.size()[m[K; ++i) {
+      |                   [01;35m[K~~^~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fame_exploration_manager.cpp:1651:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<int>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+ 1651 |   for (int i = 0; [01;35m[Ki < indices.size()[m[K; ++i) {
+      |                   [01;35m[K~~^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fame_exploration_manager.cpp:1547:10:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kmat_time[m[K’ [[01;35m[K-Wunused-variable[m[K]
+ 1547 |   double [01;35m[Kmat_time[m[K = (ros::Time::now() - t1).toSec();
+      |          [01;35m[K^~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fame_exploration_manager.cpp:1596:10:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kmtsp_time[m[K’ [[01;35m[K-Wunused-variable[m[K]
+ 1596 |   double [01;35m[Kmtsp_time[m[K = (ros::Time::now() - t1).toSec();
+      |          [01;35m[K^~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fame_exploration_manager.cpp:1667:10:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kparse_time[m[K’ [[01;35m[K-Wunused-variable[m[K]
+ 1667 |   double [01;35m[Kparse_time[m[K = (ros::Time::now() - t1).toSec();
+      |          [01;35m[K^~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fast_exploration_fsm.cpp:[m[K In member function ‘[01m[Kvoid fast_planner::FastExplorationFSM::swarmTrajCallback(const BsplineConstPtr&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fast_exploration_fsm.cpp:1076:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<double>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+ 1076 |   for (int i = 0; [01;35m[Ki < msg->knots.size()[m[K; ++i) knots(i) = msg->knots[i];
+      |                   [01;35m[K~~^~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fast_exploration_fsm.cpp:1078:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<geometry_msgs::Point_<std::allocator<void> >, std::allocator<geometry_msgs::Point_<std::allocator<void> > > >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+ 1078 |   for (int i = 0; [01;35m[Ki < msg->pos_pts.size()[m[K; ++i) {
+      |                   [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fast_exploration_fsm.cpp:[m[K At global scope:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fast_exploration_fsm.cpp:399:16:[m[K [01;35m[Kwarning: [m[K‘[01m[Klast_dftr_num[m[K’ defined but not used [[01;35m[K-Wunused-variable[m[K]
+  399 |     static int [01;35m[Klast_dftr_num[m[K = 0;
+      |                [01;35m[K^~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fame_exploration_manager.cpp:[m[K In member function ‘[01m[Kint fast_planner::FameExplorationManager::planExploreMotion(const Vector3d&, const Vector3d&, const Vector3d&, const Vector3d&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fame_exploration_manager.cpp:187:3:[m[K [01;35m[Kwarning: [m[K‘[01m[Ksuccess[m[K’ may be used uninitialized in this function [[01;35m[K-Wmaybe-uninitialized[m[K]
+  187 |   [01;35m[Kif[m[K (!success) {
+      |   [01;35m[K^~[m[K
+/usr/bin/ld: CMakeFiles/fame_node.dir/src/collaboration_assigner.cpp.o: undefined reference to symbol 'nlopt_set_maxtime'
+/usr/bin/ld: /usr/local/lib/libnlopt.so.0: error adding symbols: DSO missing from command line
+collect2: error: ld returned 1 exit status
+make[2]: *** [CMakeFiles/fame_node.dir/build.make:222：/home/xiaogu/myproject/rosNavigation_ws/devel/.private/exploration_manager/lib/exploration_manager/fame_node] 错误 1
+make[1]: *** [CMakeFiles/Makefile2:1675：CMakeFiles/fame_node.dir/all] 错误 2
+make[1]: *** 正在等待未完成的任务....
+make: *** [Makefile:141：all] 错误 2

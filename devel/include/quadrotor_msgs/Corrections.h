@@ -1,0 +1,1 @@
+/home/xiaogu/myproject/rosNavigation_ws/devel/.private/quadrotor_msgs/include/quadrotor_msgs/Corrections.h

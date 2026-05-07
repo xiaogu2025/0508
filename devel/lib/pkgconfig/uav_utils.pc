@@ -1,0 +1,1 @@
+/home/xiaogu/myproject/rosNavigation_ws/devel/.private/uav_utils/lib/pkgconfig/uav_utils.pc

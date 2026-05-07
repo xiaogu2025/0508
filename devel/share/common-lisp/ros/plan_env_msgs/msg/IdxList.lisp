@@ -1,0 +1,1 @@
+/home/xiaogu/myproject/rosNavigation_ws/devel/.private/plan_env_msgs/share/common-lisp/ros/plan_env_msgs/msg/IdxList.lisp

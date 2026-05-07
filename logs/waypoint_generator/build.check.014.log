@@ -1,0 +1,1 @@
+/usr/bin/cmake -S/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/uav_simulator/Utils/waypoint_generator -B/home/xiaogu/myproject/rosNavigation_ws/build/waypoint_generator --check-build-system CMakeFiles/Makefile.cmake 0

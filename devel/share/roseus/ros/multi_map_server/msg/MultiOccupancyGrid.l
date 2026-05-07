@@ -1,0 +1,1 @@
+/home/xiaogu/myproject/rosNavigation_ws/devel/.private/multi_map_server/share/roseus/ros/multi_map_server/msg/MultiOccupancyGrid.l

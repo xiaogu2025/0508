@@ -1,0 +1,125 @@
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/path_searching/src/topo_prm.cpp:[m[K In member function ‘[01m[Kbool fast_planner::TopologyPRM::needConnection(fast_planner::GraphNode::Ptr, fast_planner::GraphNode::Ptr, Eigen::Vector3d)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/path_searching/src/topo_prm.cpp:220:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<std::shared_ptr<fast_planner::GraphNode> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  220 |   for (int i = 0; [01;35m[Ki < g1->neighbors_.size()[m[K; ++i) {
+      |                   [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/path_searching/src/topo_prm.cpp:221:23:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<std::shared_ptr<fast_planner::GraphNode> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  221 |     for (int j = 0; [01;35m[Kj < g2->neighbors_.size()[m[K; ++j) {
+      |                     [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/path_searching/src/topo_prm.cpp:219:8:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Khas_connect[m[K’ [[01;35m[K-Wunused-variable[m[K]
+  219 |   bool [01;35m[Khas_connect[m[K = false;
+      |        [01;35m[K^~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/path_searching/src/topo_prm.cpp:[m[K In member function ‘[01m[Kstd::vector<std::vector<Eigen::Matrix<double, 3, 1> > > fast_planner::TopologyPRM::pruneEquivalent(std::vector<std::vector<Eigen::Matrix<double, 3, 1> > >&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/path_searching/src/topo_prm.cpp:311:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<std::vector<Eigen::Matrix<double, 3, 1> > >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  311 |   for (int i = 1; [01;35m[Ki < paths.size()[m[K; ++i) {
+      |                   [01;35m[K~~^~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/path_searching/src/topo_prm.cpp:315:23:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<int>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  315 |     for (int j = 0; [01;35m[Kj < exist_paths_id.size()[m[K; ++j) {
+      |                     [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/path_searching/src/topo_prm.cpp:331:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<int>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  331 |   for (int i = 0; [01;35m[Ki < exist_paths_id.size()[m[K; ++i) {
+      |                   [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/path_searching/src/topo_prm.cpp:[m[K In member function ‘[01m[Kstd::vector<std::vector<Eigen::Matrix<double, 3, 1> > > fast_planner::TopologyPRM::selectShortPaths(std::vector<std::vector<Eigen::Matrix<double, 3, 1> > >&, int)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/path_searching/src/topo_prm.cpp:366:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<std::vector<Eigen::Matrix<double, 3, 1> > >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  366 |   for (int i = 0; [01;35m[Ki < short_paths.size()[m[K; ++i) {
+      |                   [01;35m[K~~^~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/path_searching/src/topo_prm.cpp:370:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<std::vector<Eigen::Matrix<double, 3, 1> > >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  370 |   for (int i = 0; [01;35m[Ki < short_paths.size()[m[K; ++i) {
+      |                   [01;35m[K~~^~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/path_searching/src/topo_prm.cpp:[m[K In member function ‘[01m[Kint fast_planner::TopologyPRM::shortestPath(std::vector<std::vector<Eigen::Matrix<double, 3, 1> > >&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/path_searching/src/topo_prm.cpp:408:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<std::vector<Eigen::Matrix<double, 3, 1> > >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  408 |   for (int i = 0; [01;35m[Ki < paths.size()[m[K; ++i) {
+      |                   [01;35m[K~~^~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/path_searching/src/topo_prm.cpp:[m[K In member function ‘[01m[Kdouble fast_planner::TopologyPRM::pathLength(const std::vector<Eigen::Matrix<double, 3, 1> >&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/path_searching/src/topo_prm.cpp:422:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Eigen::Matrix<double, 3, 1> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  422 |   for (int i = 0; [01;35m[Ki < path.size() - 1[m[K; ++i) {
+      |                   [01;35m[K~~^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/path_searching/src/topo_prm.cpp:[m[K In member function ‘[01m[Kstd::vector<Eigen::Matrix<double, 3, 1> > fast_planner::TopologyPRM::discretizePath(const std::vector<Eigen::Matrix<double, 3, 1> >&, int)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/path_searching/src/topo_prm.cpp:433:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Eigen::Matrix<double, 3, 1> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  433 |   for (int i = 0; [01;35m[Ki < path.size() - 1[m[K; ++i) {
+      |                   [01;35m[K~~^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/path_searching/src/topo_prm.cpp:449:23:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<double>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  449 |     for (int j = 0; [01;35m[Kj < len_list.size() - 1[m[K; ++j) {
+      |                     [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/path_searching/src/kinodynamic_astar.cpp:[m[K In member function ‘[01m[Kint fast_planner::KinodynamicAstar::search(Eigen::Vector3d, Eigen::Vector3d, Eigen::Vector3d, Eigen::Vector3d, Eigen::Vector3d, bool, bool, double)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/path_searching/src/kinodynamic_astar.cpp:125:23:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Eigen::Matrix<double, 3, 1> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  125 |     for (int i = 0; [01;35m[Ki < inputs.size()[m[K; ++i)
+      |                     [01;35m[K~~^~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/path_searching/src/kinodynamic_astar.cpp:126:25:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<double>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  126 |       for (int j = 0; [01;35m[Kj < durations.size()[m[K; ++j) {
+      |                       [01;35m[K~~^~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/path_searching/src/topo_prm.cpp:[m[K In member function ‘[01m[Kvoid fast_planner::TopologyPRM::shortcutPath(std::vector<Eigen::Matrix<double, 3, 1> >, int, int)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/path_searching/src/topo_prm.cpp:489:23:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Eigen::Matrix<double, 3, 1> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  489 |     for (int i = 1; [01;35m[Ki < dis_path.size()[m[K; ++i) {
+      |                     [01;35m[K~~^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/path_searching/src/kinodynamic_astar.cpp:193:27:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<fast_planner::PathNode*>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  193 |         for (int j = 0; [01;35m[Kj < tmp_expand_nodes.size()[m[K; ++j) {
+      |                         [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/path_searching/src/kinodynamic_astar.cpp:49:15:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kneighbor[m[K’ [[01;35m[K-Wunused-variable[m[K]
+   49 |   PathNodePtr [01;35m[Kneighbor[m[K = NULL;
+      |               [01;35m[K^~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/path_searching/src/topo_prm.cpp:[m[K In member function ‘[01m[Kvoid fast_planner::TopologyPRM::shortcutPaths()[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/path_searching/src/topo_prm.cpp:523:23:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<std::vector<Eigen::Matrix<double, 3, 1> > >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  523 |     for (int i = 0; [01;35m[Ki < raw_paths_.size()[m[K; ++i) {
+      |                     [01;35m[K~~^~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/path_searching/src/topo_prm.cpp:526:23:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<std::vector<Eigen::Matrix<double, 3, 1> > >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  526 |     for (int i = 0; [01;35m[Ki < raw_paths_.size()[m[K; ++i) {
+      |                     [01;35m[K~~^~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/path_searching/src/topo_prm.cpp:530:23:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<std::vector<Eigen::Matrix<double, 3, 1> > >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  530 |     for (int i = 0; [01;35m[Ki < raw_paths_.size()[m[K; ++i) shortcutPath(raw_paths_[i], i);
+      |                     [01;35m[K~~^~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/path_searching/src/astar2.cpp:[m[K In static member function ‘[01m[Kstatic double fast_planner::Astar::pathLength(const std::vector<Eigen::Matrix<double, 3, 1> >&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/path_searching/src/astar2.cpp:177:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Eigen::Matrix<double, 3, 1> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  177 |   for (int i = 0; [01;35m[Ki < path.size() - 1[m[K; ++i) length += (path[i + 1] - path[i]).norm();
+      |                   [01;35m[K~~^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/path_searching/src/topo_prm.cpp:[m[K In member function ‘[01m[Kstd::vector<Eigen::Matrix<double, 3, 1> > fast_planner::TopologyPRM::discretizePath(std::vector<Eigen::Matrix<double, 3, 1> >)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/path_searching/src/topo_prm.cpp:557:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Eigen::Matrix<double, 3, 1> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  557 |   for (int i = 0; [01;35m[Ki < path.size() - 1[m[K; ++i) {
+      |                   [01;35m[K~~^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/path_searching/src/topo_prm.cpp:563:11:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Eigen::Matrix<double, 3, 1> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  563 |     if ([01;35m[Ki != path.size() - 2[m[K) dis_path.pop_back();
+      |         [01;35m[K~~^~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/path_searching/src/topo_prm.cpp:[m[K In member function ‘[01m[Kstd::vector<std::vector<Eigen::Matrix<double, 3, 1> > > fast_planner::TopologyPRM::discretizePaths(std::vector<std::vector<Eigen::Matrix<double, 3, 1> > >&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/path_searching/src/topo_prm.cpp:573:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<std::vector<Eigen::Matrix<double, 3, 1> > >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  573 |   for (int i = 0; [01;35m[Ki < path.size()[m[K; ++i) {
+      |                   [01;35m[K~~^~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/path_searching/src/topo_prm.cpp:[m[K In member function ‘[01m[KEigen::Vector3d fast_planner::TopologyPRM::getOrthoPoint(const std::vector<Eigen::Matrix<double, 3, 1> >&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/path_searching/src/topo_prm.cpp:593:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Eigen::Matrix<double, 3, 1> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  593 |   for (int i = 1; [01;35m[Ki < path.size() - 1[m[K; ++i) {
+      |                   [01;35m[K~~^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/path_searching/src/topo_prm.cpp:[m[K In member function ‘[01m[Kstd::vector<std::vector<Eigen::Matrix<double, 3, 1> > > fast_planner::TopologyPRM::searchPaths()[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/path_searching/src/topo_prm.cpp:618:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<std::vector<Eigen::Matrix<double, 3, 1> > >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  618 |   for (int i = 0; [01;35m[Ki < raw_paths_.size()[m[K; ++i) {
+      |                   [01;35m[K~~^~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/path_searching/src/topo_prm.cpp:628:23:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<int>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  628 |     for (int j = 0; [01;35m[Kj < path_list[i].size()[m[K; ++j) {
+      |                     [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/path_searching/src/topo_prm.cpp:630:35:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kstd::vector<std::vector<Eigen::Matrix<double, 3, 1> > >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} and ‘[01m[Kint[m[K’ [[01;35m[K-Wsign-compare[m[K]
+  630 |       if ([01;35m[Kfilter_raw_paths.size() >= max_raw_path2_[m[K) {
+      |           [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/path_searching/src/topo_prm.cpp:[m[K In member function ‘[01m[Kvoid fast_planner::TopologyPRM::depthFirstSearch(std::vector<std::shared_ptr<fast_planner::GraphNode> >&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/path_searching/src/topo_prm.cpp:647:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<std::shared_ptr<fast_planner::GraphNode> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  647 |   for (int i = 0; [01;35m[Ki < cur->neighbors_.size()[m[K; ++i) {
+      |                   [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/path_searching/src/topo_prm.cpp:652:25:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<std::shared_ptr<fast_planner::GraphNode> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  652 |       for (int j = 0; [01;35m[Kj < vis.size()[m[K; ++j) {
+      |                       [01;35m[K~~^~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/path_searching/src/topo_prm.cpp:658:29:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kstd::vector<std::vector<Eigen::Matrix<double, 3, 1> > >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} and ‘[01m[Kint[m[K’ [[01;35m[K-Wsign-compare[m[K]
+  658 |       if ([01;35m[Kraw_paths_.size() >= max_raw_path_[m[K) return;
+      |           [01;35m[K~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/path_searching/src/topo_prm.cpp:664:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<std::shared_ptr<fast_planner::GraphNode> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  664 |   for (int i = 0; [01;35m[Ki < cur->neighbors_.size()[m[K; ++i) {
+      |                   [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/path_searching/src/topo_prm.cpp:670:23:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<std::shared_ptr<fast_planner::GraphNode> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  670 |     for (int j = 0; [01;35m[Kj < vis.size()[m[K; ++j) {
+      |                     [01;35m[K~~^~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/path_searching/src/topo_prm.cpp:681:27:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kstd::vector<std::vector<Eigen::Matrix<double, 3, 1> > >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} and ‘[01m[Kint[m[K’ [[01;35m[K-Wsign-compare[m[K]
+  681 |     if ([01;35m[Kraw_paths_.size() >= max_raw_path_[m[K) return;
+      |         [01;35m[K~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/path_searching/src/topo_prm.cpp:[m[K In member function ‘[01m[Kbool fast_planner::TopologyPRM::triangleVisib(Eigen::Vector3d, Eigen::Vector3d, Eigen::Vector3d)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/path_searching/src/topo_prm.cpp:706:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Eigen::Matrix<double, 3, 1> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  706 |   for (int i = 0; [01;35m[Ki < pts.size()[m[K; ++i) {
+      |                   [01;35m[K~~^~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/path_searching/src/astar2.cpp:[m[K In member function ‘[01m[Kdouble fast_planner::Astar::getDiagHeu(const Vector3d&, const Vector3d&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/path_searching/src/astar2.cpp:215:25:[m[K [01;35m[Kwarning: [m[K‘[01m[Kh[m[K’ may be used uninitialized in this function [[01;35m[K-Wmaybe-uninitialized[m[K]
+  215 |   return tie_breaker_ * [01;35m[Kh[m[K;
+      |                         [01;35m[K^[m[K

@@ -1,0 +1,1 @@
+/home/xiaogu/myproject/rosNavigation_ws/devel/.private/plan_env_msgs/share/roseus/ros/plan_env_msgs/msg/ChunkStamps.l

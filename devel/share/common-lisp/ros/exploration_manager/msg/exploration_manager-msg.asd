@@ -1,0 +1,1 @@
+/home/xiaogu/myproject/rosNavigation_ws/devel/.private/exploration_manager/share/common-lisp/ros/exploration_manager/msg/exploration_manager-msg.asd

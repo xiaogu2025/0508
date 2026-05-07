@@ -1,0 +1,1 @@
+/home/xiaogu/myproject/rosNavigation_ws/devel/.private/quadrotor_msgs/share/common-lisp/ros/quadrotor_msgs/msg/_package_Gains.lisp

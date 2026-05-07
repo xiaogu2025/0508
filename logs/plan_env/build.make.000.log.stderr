@@ -1,0 +1,80 @@
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_env/src/obj_predictor.cpp:[m[K In member function ‘[01m[Kvoid fast_planner::ObjHistory::poseCallback(const PoseStampedConstPtr&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_env/src/obj_predictor.cpp:28:23:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kstd::__cxx11::list<Eigen::Matrix<double, 4, 1> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} and ‘[01m[Kint[m[K’ [[01;35m[K-Wsign-compare[m[K]
+   28 |   if ([01;35m[Khistory_.size() > queue_size_[m[K) history_.pop_front();
+      |       [01;35m[K~~~~~~~~~~~~~~~~^~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_env/src/edt_environment.cpp:[m[K In member function ‘[01m[Kdouble fast_planner::EDTEnvironment::minDistToAllBox(const Vector3d&, const double&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_env/src/edt_environment.cpp:43:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<fast_planner::PolynomialPrediction>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+   43 |   for (int i = 0; [01;35m[Ki < obj_prediction_->size()[m[K; i++) {
+      |                   [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_env/src/sdf_map.cpp:[m[K In member function ‘[01m[Kvoid fast_planner::SDFMap::initMap(ros::NodeHandle&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_env/src/sdf_map.cpp:126:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Eigen::Matrix<double, 3, 1> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  126 |   for (int j = 1; [01;35m[Kj < mp_->vertices_.size()[m[K; ++j) {
+      |                   [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_env/src/sdf_map.cpp:[m[K In member function ‘[01m[Kvoid fast_planner::SDFMap::inputPointCloud(const pcl::PointCloud<pcl::PointXYZ>&, const int&, const Vector3d&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_env/src/sdf_map.cpp:378:13:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<short int>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  378 |     if ([01;35m[Kadr >= md_->count_hit_.size()[m[K) continue;
+      |         [01;35m[K~~~~^~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_env/src/multi_map_manager.cpp:[m[K In member function ‘[01m[Kvoid fast_planner::MultiMapManager::init()[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_env/src/multi_map_manager.cpp:55:13:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[Ktime[m[K’ set but not used [[01;35m[K-Wunused-but-set-variable[m[K]
+   55 |   for (auto [01;35m[Ktime[m[K : last_chunk_stamp_time_) time = 0.0;
+      |             [01;35m[K^~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_env/src/multi_map_manager.cpp:[m[K In member function ‘[01m[Kvoid fast_planner::MultiMapManager::updateMapChunk(const std::vector<unsigned int>&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_env/src/multi_map_manager.cpp:108:26:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kstd::vector<unsigned int>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} and ‘[01m[Kint[m[K’ [[01;35m[K-Wsign-compare[m[K]
+  108 |   if ([01;35m[Kadr_buffer_.size() >= chunk_size_[m[K) {
+      |       [01;35m[K~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_env/src/multi_map_manager.cpp:111:28:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<unsigned int>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  111 |     for (; [01;35m[Ki + chunk_size_ < adr_buffer_.size()[m[K; i += chunk_size_) {
+      |            [01;35m[K~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_env/src/multi_map_manager.cpp:[m[K In member function ‘[01m[Kvoid fast_planner::MultiMapManager::stampTimerCallback(const ros::TimerEvent&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_env/src/multi_map_manager.cpp:173:15:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<fast_planner::MapChunk>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  173 |   if ([01;35m[Kpub_num < data.chunks_.size()[m[K) {
+      |       [01;35m[K~~~~~~~~^~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_env/src/multi_map_manager.cpp:174:29:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<fast_planner::MapChunk>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  174 |     for (int i = pub_num; [01;35m[Ki < data.chunks_.size()[m[K; ++i) {
+      |                           [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_env/src/multi_map_manager.cpp:[m[K In member function ‘[01m[Kvoid fast_planner::MultiMapManager::stampMsgCallback(const ChunkStampsConstPtr&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_env/src/multi_map_manager.cpp:212:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<fast_planner::ChunksData>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  212 |   for (int i = 0; [01;35m[Ki < multi_map_chunks_.size()[m[K; ++i) {
+      |                   [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_env/src/multi_map_manager.cpp:[m[K In member function ‘[01m[Kvoid fast_planner::MultiMapManager::findMissedChunkIds(const std::vector<int>&, const std::vector<int>&, std::vector<int>&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_env/src/multi_map_manager.cpp:235:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<int>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  235 |   for (int i = 1; [01;35m[Ki < other_idx_list.size()[m[K; i += 2) {
+      |                   [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_env/src/multi_map_manager.cpp:237:11:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<int>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  237 |     if ([01;35m[Ki == other_idx_list.size() - 1[m[K) {
+      |         [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_env/src/multi_map_manager.cpp:246:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<int>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  246 |   for (int i = 0; [01;35m[Ki < self_idx_list.size()[m[K; i += 2) {
+      |                   [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_env/src/multi_map_manager.cpp:247:23:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<int>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  247 |     for (int j = 0; [01;35m[Kj < not_in_other.size()[m[K; j += 2) {
+      |                     [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_env/src/multi_map_manager.cpp:[m[K In member function ‘[01m[Kvoid fast_planner::MultiMapManager::sendChunks(const int&, const int&, const std::vector<int>&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_env/src/multi_map_manager.cpp:270:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<int>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  270 |   for (int i = 0; [01;35m[Ki < idx_list.size()[m[K; i += 2) {
+      |                   [01;35m[K~~^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_env/src/multi_map_manager.cpp:[m[K In member function ‘[01m[Kvoid fast_planner::MultiMapManager::chunkTimerCallback(const ros::TimerEvent&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_env/src/multi_map_manager.cpp:343:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<std::vector<plan_env_msgs::ChunkData_<std::allocator<void> > > >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  343 |   for (int i = 0; [01;35m[Ki < chunk_buffer_.size()[m[K; ++i) {
+      |                   [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_env/src/multi_map_manager.cpp:354:23:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<plan_env_msgs::ChunkData_<std::allocator<void> > >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  354 |     for (int j = 1; [01;35m[Kj < buffer.size()[m[K; ++j) {
+      |                     [01;35m[K~~^~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_env/src/multi_map_manager.cpp:[m[K In member function ‘[01m[Kvoid fast_planner::MultiMapManager::loggingTimerCallback(const ros::TimerEvent&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_env/src/multi_map_manager.cpp:414:22:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kuint[m[K’ {aka ‘[01m[Kunsigned int[m[K’} and ‘[01m[KEigen::DenseCoeffsBase<Eigen::Matrix<int, 3, 1>, 1>::Scalar[m[K’ {aka ‘[01m[Kint[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  414 |   for (uint x = 0; x < map_->mp_->map_voxel_num_[0]; ++x) {
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_env/src/multi_map_manager.cpp:415:24:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kuint[m[K’ {aka ‘[01m[Kunsigned int[m[K’} and ‘[01m[KEigen::DenseCoeffsBase<Eigen::Matrix<int, 3, 1>, 1>::Scalar[m[K’ {aka ‘[01m[Kint[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  415 |     for (uint y = 0; y < map_->mp_->map_voxel_num_[1]; ++y) {
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_env/src/multi_map_manager.cpp:416:26:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kuint[m[K’ {aka ‘[01m[Kunsigned int[m[K’} and ‘[01m[KEigen::DenseCoeffsBase<Eigen::Matrix<int, 3, 1>, 1>::Scalar[m[K’ {aka ‘[01m[Kint[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  416 |       for (uint z = 0; z < map_->mp_->map_voxel_num_[2]; ++z) {
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_env/src/multi_map_manager.cpp:[m[K In member function ‘[01m[Kvoid fast_planner::MultiMapManager::mergeChunkIds(const std::vector<int>&, const std::vector<int>&, std::vector<int>&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_env/src/multi_map_manager.cpp:446:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<int>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  446 |   for (int i = 0; [01;35m[Ki < list2.size()[m[K; i += 2) {
+      |                   [01;35m[K~~^~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_env/src/multi_map_manager.cpp:449:23:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<int>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  449 |     for (int j = 0; [01;35m[Kj < output.size()[m[K; j += 2) {
+      |                     [01;35m[K~~^~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_env/src/multi_map_manager.cpp:[m[K In member function ‘[01m[Kvoid fast_planner::MultiMapManager::insertChunkToMap(const fast_planner::MapChunk&, const int&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_env/src/multi_map_manager.cpp:509:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<unsigned int>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  509 |   for (int i = 0; [01;35m[Ki < chunk.voxel_adrs_.size()[m[K; ++i) {
+      |                   [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~~~~~~[m[K

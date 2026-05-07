@@ -1,0 +1,16 @@
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/uav_simulator/map_generator/src/random_forest_denser.cpp:[m[K In function ‘[01m[Kvoid clickCallback(const PoseStamped&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/uav_simulator/map_generator/src/random_forest_denser.cpp:214:10:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[Kh[m[K’ set but not used [[01;35m[K-Wunused-but-set-variable[m[K]
+  214 |   double [01;35m[Kh[m[K;
+      |          [01;35m[K^[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/uav_simulator/map_generator/src/random_forest_denser.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/uav_simulator/map_generator/src/random_forest_denser.cpp:309:7:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kloop_num[m[K’ [[01;35m[K-Wunused-variable[m[K]
+  309 |   int [01;35m[Kloop_num[m[K = 0;
+      |       [01;35m[K^~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/uav_simulator/map_generator/src/random_forest_sensing.cpp:[m[K In function ‘[01m[Kvoid clickCallback(const PoseStamped&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/uav_simulator/map_generator/src/random_forest_sensing.cpp:236:10:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[Kh[m[K’ set but not used [[01;35m[K-Wunused-but-set-variable[m[K]
+  236 |   double [01;35m[Kh[m[K;
+      |          [01;35m[K^[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/uav_simulator/map_generator/src/random_forest_sensing.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/uav_simulator/map_generator/src/random_forest_sensing.cpp:336:7:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kloop_num[m[K’ [[01;35m[K-Wunused-variable[m[K]
+  336 |   int [01;35m[Kloop_num[m[K = 0;
+      |       [01;35m[K^~~~~~~~[m[K

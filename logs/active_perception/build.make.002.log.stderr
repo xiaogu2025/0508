@@ -1,0 +1,65 @@
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/active_perception/src/frontier_finder.cpp:[m[K In member function ‘[01m[Kvoid fast_planner::FrontierFinder::searchFrontiers()[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/active_perception/src/frontier_finder.cpp:110:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Eigen::Matrix<double, 3, 1> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  110 |   for (int i = 0; [01;35m[Ki < mins.size()[m[K; ++i) {
+      |                   [01;35m[K~~^~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/active_perception/src/frontier_finder.cpp:119:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Eigen::Matrix<double, 3, 1> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  119 |   for (int i = 0; [01;35m[Ki < mins.size()[m[K; ++i) {
+      |                   [01;35m[K~~^~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/active_perception/src/frontier_finder.cpp:124:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Eigen::Matrix<int, 3, 1> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  124 |   for (int i = 0; [01;35m[Ki < min_ids.size()[m[K; ++i) {
+      |                   [01;35m[K~~^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/active_perception/src/frontier_finder.cpp:56:13:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[Kt1[m[K’ set but not used [[01;35m[K-Wunused-but-set-variable[m[K]
+   56 |   ros::Time [01;35m[Kt1[m[K = ros::Time::now();
+      |             [01;35m[K^~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/active_perception/src/frontier_finder.cpp:[m[K In member function ‘[01m[Kvoid fast_planner::FrontierFinder::expandFrontier(const Vector3i&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/active_perception/src/frontier_finder.cpp:165:15:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<char>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  165 |       if ([01;35m[Kadr >= frontier_flag_.size()[m[K) continue;
+      |           [01;35m[K~~~~^~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/active_perception/src/frontier_finder.cpp:178:23:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kstd::vector<std::pair<fast_planner::LABEL, Eigen::Matrix<double, 3, 1> > >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} and ‘[01m[Kint[m[K’ [[01;35m[K-Wsign-compare[m[K]
+  178 |   if ([01;35m[Kexpanded.size() > cluster_min_[m[K) {
+      |       [01;35m[K~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/active_perception/src/frontier_finder.cpp:[m[K In member function ‘[01m[Kvoid fast_planner::FrontierFinder::updateFrontierCostMatrix()[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/active_perception/src/frontier_finder.cpp:295:25:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<int>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  295 |       for (int i = 0; [01;35m[Ki < removed_ids_.size()[m[K; ++i) {
+      |                       [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/active_perception/src/frontier_finder.cpp:[m[K In member function ‘[01m[Kbool fast_planner::FrontierFinder::haveAnyOverlap(const Vector3d&, const Vector3d&, const std::vector<Eigen::Matrix<double, 3, 1> >&, const std::vector<Eigen::Matrix<double, 3, 1> >&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/active_perception/src/frontier_finder.cpp:392:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Eigen::Matrix<double, 3, 1> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  392 |   for (int i = 0; [01;35m[Ki < mins.size()[m[K; ++i) {
+      |                   [01;35m[K~~^~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/active_perception/src/frontier_finder.cpp:[m[K In member function ‘[01m[Kvoid fast_planner::FrontierFinder::getViewpointsInfo(const Vector3d&, const std::vector<int>&, const int&, const double&, std::vector<std::vector<Eigen::Matrix<double, 3, 1> > >&, std::vector<std::vector<double> >&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/active_perception/src/frontier_finder.cpp:527:26:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kstd::vector<Eigen::Matrix<double, 3, 1> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} and ‘[01m[Kconst int[m[K’ [[01;35m[K-Wsign-compare[m[K]
+  527 |           if ([01;35m[Kpts.size() >= view_num[m[K || view.visib_num_ <= visib_thresh) break;
+      |               [01;35m[K~~~~~~~~~~~^~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/active_perception/src/frontier_finder.cpp:535:28:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kstd::vector<Eigen::Matrix<double, 3, 1> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} and ‘[01m[Kconst int[m[K’ [[01;35m[K-Wsign-compare[m[K]
+  535 |             if ([01;35m[Kpts.size() >= view_num[m[K || view.visib_num_ <= visib_thresh) break;
+      |                 [01;35m[K~~~~~~~~~~~^~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/active_perception/src/frontier_finder.cpp:[m[K In member function ‘[01m[Kvoid fast_planner::FrontierFinder::getPathForTour(const Vector3d&, const std::vector<int>&, std::vector<Eigen::Matrix<double, 3, 1> >&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/active_perception/src/frontier_finder.cpp:664:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<int>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  664 |   for (int i = 0; [01;35m[Ki < frontier_ids.size() - 1[m[K; ++i) {
+      |                   [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/active_perception/src/frontier_finder.cpp:[m[K In member function ‘[01m[Kint fast_planner::FrontierFinder::addFrontiers(const std::vector<std::pair<Eigen::Matrix<double, 3, 1>, double> >&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/active_perception/src/frontier_finder.cpp:918:1:[m[K [01;35m[Kwarning: [m[Kno return statement in function returning non-void [[01;35m[K-Wreturn-type[m[K]
+  918 | [01;35m[K}[m[K
+      | [01;35m[K^[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/active_perception/src/frontier_finder.cpp:[m[K In member function ‘[01m[Kvoid fast_planner::FrontierFinder::findViewpoints(const Vector3d&, const Vector3d&, std::vector<fast_planner::Viewpoint>&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/active_perception/src/frontier_finder.cpp:926:10:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kleft_angle_[m[K’ [[01;35m[K-Wunused-variable[m[K]
+  926 |   double [01;35m[Kleft_angle_[m[K, right_angle_, vertical_angle_, ray_length_;
+      |          [01;35m[K^~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/active_perception/src/frontier_finder.cpp:[m[K In member function ‘[01m[Kvoid fast_planner::FrontierFinder::sampleViewpoints(fast_planner::Frontier&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/active_perception/src/frontier_finder.cpp:1002:25:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Eigen::Matrix<double, 3, 1> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+ 1002 |       for (int i = 1; [01;35m[Ki < cells.size()[m[K; ++i) {
+      |                       [01;35m[K~~^~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/active_perception/src/frontier_finder.cpp:[m[K In member function ‘[01m[KEigen::Vector3i fast_planner::FrontierFinder::searchClearVoxel(const Vector3i&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/active_perception/src/frontier_finder.cpp:1134:11:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kadr[m[K’ [[01;35m[K-Wunused-variable[m[K]
+ 1134 |       int [01;35m[Kadr[m[K = toadr(nbr);
+      |           [01;35m[K^~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/active_perception/src/frontier_finder.cpp:[m[K In member function ‘[01m[Kvoid fast_planner::FrontierFinder::findViewpoints(const Vector3d&, const Vector3d&, std::vector<fast_planner::Viewpoint>&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/active_perception/src/frontier_finder.cpp:937:17:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvertical_angle_[m[K’ may be used uninitialized in this function [[01;35m[K-Wmaybe-uninitialized[m[K]
+  937 |     for (double [01;35m[Kphi_v[m[K = -vertical_angle_; phi_v <= vertical_angle_; phi_v += vertical_angle_ / 3) {
+      |                 [01;35m[K^~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/active_perception/src/frontier_finder.cpp:940:40:[m[K [01;35m[Kwarning: [m[K‘[01m[Kray_length_[m[K’ may be used uninitialized in this function [[01;35m[K-Wmaybe-uninitialized[m[K]
+  940 |       end[0] = sample[0] + [01;35m[Kray_length_ * cos(phi_v)[m[K * cos(hc + phi_h);
+      |                            [01;35m[K~~~~~~~~~~~~^~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/active_perception/src/frontier_finder.cpp:962:47:[m[K [01;35m[Kwarning: [m[K‘[01m[Kright_angle_[m[K’ may be used uninitialized in this function [[01;35m[K-Wmaybe-uninitialized[m[K]
+  962 |     double yaw = [01;35m[Khc - M_PI_2 + M_PI / 9.0 * i + right_angle_[m[K;
+      |                  [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~[m[K

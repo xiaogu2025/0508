@@ -1,0 +1,1 @@
+/home/xiaogu/myproject/rosNavigation_ws/devel/.private/lkh_mtsp_solver/share/gennodejs/ros/lkh_mtsp_solver/_index.js

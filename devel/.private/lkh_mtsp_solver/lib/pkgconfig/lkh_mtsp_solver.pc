@@ -1,0 +1,8 @@
+prefix=/home/xiaogu/myproject/rosNavigation_ws/devel/.private/lkh_mtsp_solver
+
+Name: lkh_mtsp_solver
+Description: Description of lkh_mtsp_solver
+Version: 0.0.0
+Cflags: -I/home/xiaogu/myproject/rosNavigation_ws/devel/.private/lkh_mtsp_solver/include -I/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/utils/lkh_mtsp_solver/include
+Libs: -L${prefix}/lib -llkh_mtsp_solver
+Requires: roscpp

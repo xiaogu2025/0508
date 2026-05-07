@@ -1,0 +1,19 @@
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/utils/lkh_mtsp_solver/src2/lkh3_interface.cpp:[m[K In function ‘[01m[Kint solveMTSPWithLKH3(const char*)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/utils/lkh_mtsp_solver/src2/lkh3_interface.cpp:127:36:[m[K [01;35m[Kwarning: [m[KISO C++ forbids converting a string constant to ‘[01m[Kchar*[m[K’ [[01;35m[K-Wwrite-strings[m[K]
+  127 |       StatusReport(Cost, LastTime, [01;35m[K""[m[K);
+      |                                    [01;35m[K^~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/utils/lkh_mtsp_solver/include/LKH.h:[m[K In function ‘[01m[KReadEdges[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/utils/lkh_mtsp_solver/src/ReadEdges.c:28:5:[m[K [01;35m[Kwarning: [m[Kignoring return value of ‘[01m[Kfscanf[m[K’, declared with attribute warn_unused_result [[01;35m[K-Wunused-result[m[K]
+   28 |     [01;35m[Kfscanf(EdgeFile, "%d %d\n", &i, &Edges)[m[K;
+      |     [01;35m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/utils/lkh_mtsp_solver/src/ReadEdges.c:31:7:[m[K [01;35m[Kwarning: [m[Kignoring return value of ‘[01m[Kfgets[m[K’, declared with attribute warn_unused_result [[01;35m[K-Wunused-result[m[K]
+   31 |       [01;35m[Kfgets(line, 80, EdgeFile)[m[K;
+      |       [01;35m[K^~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/utils/lkh_mtsp_solver/src/ReadProblem.c:[m[K In function ‘[01m[KRead_EDGE_DATA_SECTION[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/utils/lkh_mtsp_solver/src/ReadProblem.c:1041:11:[m[K [01;35m[Kwarning: [m[Kignoring return value of ‘[01m[Kfscanf[m[K’, declared with attribute warn_unused_result [[01;35m[K-Wunused-result[m[K]
+ 1041 |           [01;35m[Kfscanf(ProblemFile, "%lf", &w)[m[K;
+      |           [01;35m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/utils/lkh_mtsp_solver/src2/mtsp_node.cpp:[m[K In function ‘[01m[Kbool mtspCallback(lkh_mtsp_solver::SolveMTSP::Request&, lkh_mtsp_solver::SolveMTSP::Response&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/utils/lkh_mtsp_solver/src2/mtsp_node.cpp:25:11:[m[K [01;35m[Kwarning: [m[Kignoring return value of ‘[01m[Kint system(const char*)[m[K’, declared with attribute warn_unused_result [[01;35m[K-Wunused-result[m[K]
+   25 |     [01;35m[Ksystem(cmd.c_str())[m[K;
+      |     [01;35m[K~~~~~~^~~~~~~~~~~~~[m[K

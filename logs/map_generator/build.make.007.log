@@ -1,0 +1,7 @@
+[ 14%] Built target map_pub
+[ 57%] Built target random_forest
+[ 57%] Built target random_forest_denser
+[ 57%] Built target multi_density
+[ 71%] Built target click_map
+[ 85%] Built target map_recorder
+[100%] Built target pilar_map

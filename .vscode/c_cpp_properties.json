@@ -1,0 +1,41 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/xiaogu/myproject/rosNavigation_ws/devel/include/**",
+        "/opt/ros/noetic/include/**",
+        "/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/active_perception/include/**",
+        "/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/bspline/include/**",
+        "/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/bspline_opt/include/**",
+        "/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/include/**",
+        "/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/utils/lkh_mtsp_solver/include/**",
+        "/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/utils/lkh_tsp_solver/include/**",
+        "/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/uav_simulator/local_sensing/include/**",
+        "/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/uav_simulator/Utils/logging_utils/include/**",
+        "/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/uav_simulator/Utils/multi_map_server/include/**",
+        "/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/path_searching/include/**",
+        "/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_env/include/**",
+        "/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/include/**",
+        "/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/poly_traj/include/**",
+        "/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/uav_simulator/Utils/pose_utils/include/**",
+        "/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/uav_simulator/Utils/quadrotor_msgs/include/**",
+        "/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/uav_simulator/so3_control/include/**",
+        "/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/uav_simulator/so3_disturbance_generator/include/**",
+        "/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/uav_simulator/so3_quadrotor_simulator/include/**",
+        "/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/traj_utils/include/**",
+        "/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/uav_simulator/Utils/uav_utils/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

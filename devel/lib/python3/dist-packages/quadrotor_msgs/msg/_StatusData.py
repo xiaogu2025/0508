@@ -1,0 +1,1 @@
+/home/xiaogu/myproject/rosNavigation_ws/devel/.private/quadrotor_msgs/lib/python3/dist-packages/quadrotor_msgs/msg/_StatusData.py

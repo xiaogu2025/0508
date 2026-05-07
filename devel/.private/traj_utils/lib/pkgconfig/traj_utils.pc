@@ -1,0 +1,8 @@
+prefix=/home/xiaogu/myproject/rosNavigation_ws/devel/.private/traj_utils
+
+Name: traj_utils
+Description: Description of traj_utils
+Version: 0.0.0
+Cflags: -I/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/traj_utils/include
+Libs: -L${prefix}/lib -ltraj_utils
+Requires: path_searching bspline bspline_opt poly_traj

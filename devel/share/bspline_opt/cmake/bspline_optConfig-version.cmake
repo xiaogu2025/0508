@@ -1,0 +1,1 @@
+/home/xiaogu/myproject/rosNavigation_ws/devel/.private/bspline_opt/share/bspline_opt/cmake/bspline_optConfig-version.cmake

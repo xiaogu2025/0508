@@ -1,0 +1,2 @@
+set(plan_env_msgs_MESSAGE_FILES "/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_env_msgs/msg/IdxList.msg;/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_env_msgs/msg/ChunkStamps.msg;/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_env_msgs/msg/ChunkData.msg")
+set(plan_env_msgs_SERVICE_FILES "")

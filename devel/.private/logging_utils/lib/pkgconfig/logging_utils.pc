@@ -1,0 +1,8 @@
+prefix=/home/xiaogu/myproject/rosNavigation_ws/devel/.private/logging_utils
+
+Name: logging_utils
+Description: Description of logging_utils
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

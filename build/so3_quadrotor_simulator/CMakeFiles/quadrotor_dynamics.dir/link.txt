@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC   -shared -Wl,-soname,libquadrotor_dynamics.so -o /home/xiaogu/myproject/rosNavigation_ws/devel/.private/so3_quadrotor_simulator/lib/libquadrotor_dynamics.so CMakeFiles/quadrotor_dynamics.dir/src/dynamics/Quadrotor.cpp.o   -L/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/uav_simulator/Utils/cmake_utils/lib/mosek8 

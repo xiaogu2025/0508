@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/xiaogu/myproject/rosNavigation_ws/devel/.private/bspline_opt/setup.sh

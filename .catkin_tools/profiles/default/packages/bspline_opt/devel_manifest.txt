@@ -1,0 +1,5 @@
+fast_multi_robot_exploration-master/swarm_exploration/bspline_opt
+/home/xiaogu/myproject/rosNavigation_ws/devel/.private/bspline_opt/share/bspline_opt/cmake/bspline_optConfig.cmake /home/xiaogu/myproject/rosNavigation_ws/devel/share/bspline_opt/cmake/bspline_optConfig.cmake
+/home/xiaogu/myproject/rosNavigation_ws/devel/.private/bspline_opt/share/bspline_opt/cmake/bspline_optConfig-version.cmake /home/xiaogu/myproject/rosNavigation_ws/devel/share/bspline_opt/cmake/bspline_optConfig-version.cmake
+/home/xiaogu/myproject/rosNavigation_ws/devel/.private/bspline_opt/lib/libbspline_opt.so /home/xiaogu/myproject/rosNavigation_ws/devel/lib/libbspline_opt.so
+/home/xiaogu/myproject/rosNavigation_ws/devel/.private/bspline_opt/lib/pkgconfig/bspline_opt.pc /home/xiaogu/myproject/rosNavigation_ws/devel/lib/pkgconfig/bspline_opt.pc

@@ -1,0 +1,9 @@
+fast_multi_robot_exploration-master/swarm_exploration/plan_manage
+/home/xiaogu/myproject/rosNavigation_ws/devel/.private/plan_manage/share/plan_manage/cmake/plan_manageConfig-version.cmake /home/xiaogu/myproject/rosNavigation_ws/devel/share/plan_manage/cmake/plan_manageConfig-version.cmake
+/home/xiaogu/myproject/rosNavigation_ws/devel/.private/plan_manage/share/plan_manage/cmake/plan_manageConfig.cmake /home/xiaogu/myproject/rosNavigation_ws/devel/share/plan_manage/cmake/plan_manageConfig.cmake
+/home/xiaogu/myproject/rosNavigation_ws/devel/.private/plan_manage/lib/libplan_manage.so /home/xiaogu/myproject/rosNavigation_ws/devel/lib/libplan_manage.so
+/home/xiaogu/myproject/rosNavigation_ws/devel/.private/plan_manage/lib/plan_manage/proc_msg2 /home/xiaogu/myproject/rosNavigation_ws/devel/lib/plan_manage/proc_msg2
+/home/xiaogu/myproject/rosNavigation_ws/devel/.private/plan_manage/lib/plan_manage/traj_server /home/xiaogu/myproject/rosNavigation_ws/devel/lib/plan_manage/traj_server
+/home/xiaogu/myproject/rosNavigation_ws/devel/.private/plan_manage/lib/plan_manage/fast_planner_node /home/xiaogu/myproject/rosNavigation_ws/devel/lib/plan_manage/fast_planner_node
+/home/xiaogu/myproject/rosNavigation_ws/devel/.private/plan_manage/lib/plan_manage/proc_msg /home/xiaogu/myproject/rosNavigation_ws/devel/lib/plan_manage/proc_msg
+/home/xiaogu/myproject/rosNavigation_ws/devel/.private/plan_manage/lib/pkgconfig/plan_manage.pc /home/xiaogu/myproject/rosNavigation_ws/devel/lib/pkgconfig/plan_manage.pc

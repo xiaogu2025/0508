@@ -1,0 +1,1 @@
+/home/xiaogu/myproject/rosNavigation_ws/devel/.private/bspline_opt/lib/pkgconfig/bspline_opt.pc

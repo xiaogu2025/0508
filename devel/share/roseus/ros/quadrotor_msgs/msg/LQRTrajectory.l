@@ -1,0 +1,1 @@
+/home/xiaogu/myproject/rosNavigation_ws/devel/.private/quadrotor_msgs/share/roseus/ros/quadrotor_msgs/msg/LQRTrajectory.l

@@ -1,0 +1,304 @@
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/traj_server.cpp:[m[K In function ‘[01m[Kdouble calcPathLength(const std::vector<Eigen::Matrix<double, 3, 1> >&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/traj_server.cpp:66:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Eigen::Matrix<double, 3, 1> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+   66 |   for (int i = 0; [01;35m[Ki < path.size() - 1[m[K; ++i) {
+      |                   [01;35m[K~~^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/traj_server.cpp:[m[K In function ‘[01m[Kvoid bsplineCallback(const BsplineConstPtr&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/traj_server.cpp:267:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<double>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  267 |   for (int i = 0; [01;35m[Ki < msg->knots.size()[m[K; ++i) {
+      |                   [01;35m[K~~^~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/traj_server.cpp:270:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<geometry_msgs::Point_<std::allocator<void> >, std::allocator<geometry_msgs::Point_<std::allocator<void> > > >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  270 |   for (int i = 0; [01;35m[Ki < msg->pos_pts.size()[m[K; ++i) {
+      |                   [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/traj_server.cpp:279:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<double>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  279 |   for (int i = 0; [01;35m[Ki < msg->yaw_pts.size()[m[K; ++i) yaw_pts(i, 0) = msg->yaw_pts[i];
+      |                   [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/traj_server.cpp:[m[K In function ‘[01m[Kvoid cmdCallback(const ros::TimerEvent&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/traj_server.cpp:365:10:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Klen[m[K’ [[01;35m[K-Wunused-variable[m[K]
+  365 |   double [01;35m[Klen[m[K = calcPathLength(traj_cmd_);
+      |          [01;35m[K^~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/traj_server.cpp:366:10:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kflight_t[m[K’ [[01;35m[K-Wunused-variable[m[K]
+  366 |   double [01;35m[Kflight_t[m[K = (end_time - start_time).toSec();
+      |          [01;35m[K^~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/traj_server.cpp:[m[K In function ‘[01m[Kvoid test()[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/traj_server.cpp:462:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Eigen::Matrix<double, 3, 1> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  462 |   for (int i = 0; [01;35m[Ki < samples.size()[m[K; ++i) points.row(i) = samples[i].transpose();
+      |                   [01;35m[K~~^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager.cpp:[m[K In member function ‘[01m[Kbool fast_planner::FastPlannerManager::kinodynamicReplan(const Vector3d&, const Vector3d&, const Vector3d&, const Vector3d&, const Vector3d&, const double&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager.cpp:140:19:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[Kinit_pos[m[K’ set but not used [[01;35m[K-Wunused-but-set-variable[m[K]
+  140 |   Eigen::Vector3d [01;35m[Kinit_pos[m[K = start_pt;
+      |                   [01;35m[K^~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager.cpp:141:19:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[Kinit_vel[m[K’ set but not used [[01;35m[K-Wunused-but-set-variable[m[K]
+  141 |   Eigen::Vector3d [01;35m[Kinit_vel[m[K = start_vel;
+      |                   [01;35m[K^~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager.cpp:142:19:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[Kinit_acc[m[K’ set but not used [[01;35m[K-Wunused-but-set-variable[m[K]
+  142 |   Eigen::Vector3d [01;35m[Kinit_acc[m[K = start_acc;
+      |                   [01;35m[K^~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager.cpp:162:10:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kt_search[m[K’ [[01;35m[K-Wunused-variable[m[K]
+  162 |   double [01;35m[Kt_search[m[K = (ros::Time::now() - t1).toSec();
+      |          [01;35m[K^~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager.cpp:203:10:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kt_opt[m[K’ [[01;35m[K-Wunused-variable[m[K]
+  203 |   double [01;35m[Kt_opt[m[K = (ros::Time::now() - t1).toSec();
+      |          [01;35m[K^~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager.cpp:[m[K In member function ‘[01m[Kbool fast_planner::FastPlannerManager::planGlobalTraj(const Vector3d&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager.cpp:293:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Eigen::Matrix<double, 3, 1> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  293 |   for (int i = 0; [01;35m[Ki < points.size() - 1[m[K; ++i) {
+      |                   [01;35m[K~~^~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager.cpp:[m[K In member function ‘[01m[Kbool fast_planner::FastPlannerManager::topoReplan(bool)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager.cpp:405:25:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<std::vector<Eigen::Matrix<double, 3, 1> > >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  405 |       for (int i = 0; [01;35m[Ki < select_paths.size()[m[K; ++i) {
+      |                       [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager.cpp:411:25:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<std::vector<Eigen::Matrix<double, 3, 1> > >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  411 |       for (int i = 0; [01;35m[Ki < select_paths.size()[m[K; ++i) optimize_threads[i].join();
+      |                       [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager.cpp:[m[K In member function ‘[01m[Kvoid fast_planner::FastPlannerManager::refineTraj(fast_planner::NonUniformBspline&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager.cpp:443:13:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[Kt1[m[K’ set but not used [[01;35m[K-Wunused-but-set-variable[m[K]
+  443 |   ros::Time [01;35m[Kt1[m[K = ros::Time::now();
+      |             [01;35m[K^~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager.cpp:[m[K In member function ‘[01m[Kvoid fast_planner::FastPlannerManager::reparamBspline(fast_planner::NonUniformBspline&, double, Eigen::MatrixXd&, double&, double&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager.cpp:488:7:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kprev_num[m[K’ [[01;35m[K-Wunused-variable[m[K]
+  488 |   int [01;35m[Kprev_num[m[K = bspline.getControlPoint().rows();
+      |       [01;35m[K^~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager.cpp:[m[K In member function ‘[01m[Kvoid fast_planner::FastPlannerManager::optimizeTopoBspline(double, double, std::vector<Eigen::Matrix<double, 3, 1> >, int)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager.cpp:528:26:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kstd::vector<Eigen::Matrix<double, 3, 1> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} and ‘[01m[Kint[m[K’ [[01;35m[K-Wsign-compare[m[K]
+  528 |     if ([01;35m[Kguide_pts.size() != int(ctrl_pts.rows()) - 6[m[K) ROS_WARN("Incorrect guide for 3 degree");
+      |         [01;35m[K~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager.cpp:531:23:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Eigen::Matrix<double, 3, 1> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  531 |     for (int i = 0; [01;35m[Ki < tmp_pts.size()[m[K; ++i) {
+      |                     [01;35m[K~~^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager.cpp:532:37:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Eigen::Matrix<double, 3, 1> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  532 |       if (i % 2 == 1 && i >= 5 && [01;35m[Ki <= tmp_pts.size() - 6[m[K) guide_pts.push_back(tmp_pts[i]);
+      |                                   [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager.cpp:534:26:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kstd::vector<Eigen::Matrix<double, 3, 1> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} and ‘[01m[Kint[m[K’ [[01;35m[K-Wsign-compare[m[K]
+  534 |     if ([01;35m[Kguide_pts.size() != int(ctrl_pts.rows()) - 8[m[K) ROS_WARN("Incorrect guide for 4 degree");
+      |         [01;35m[K~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager.cpp:539:10:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Ktm1[m[K’ [[01;35m[K-Wunused-variable[m[K]
+  539 |   double [01;35m[Ktm1[m[K = (ros::Time::now() - t1).toSec();
+      |          [01;35m[K^~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager.cpp:548:10:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Ktm2[m[K’ [[01;35m[K-Wunused-variable[m[K]
+  548 |   double [01;35m[Ktm2[m[K = (ros::Time::now() - t1).toSec();
+      |          [01;35m[K^~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager.cpp:559:10:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Ktm3[m[K’ [[01;35m[K-Wunused-variable[m[K]
+  559 |   double [01;35m[Ktm3[m[K = (ros::Time::now() - t1).toSec();
+      |          [01;35m[K^~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager.cpp:[m[K In member function ‘[01m[Kvoid fast_planner::FastPlannerManager::planYaw(const Vector3d&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager.cpp:724:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Eigen::Matrix<double, 3, 1> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  724 |   for (int i = 0; [01;35m[Ki < waypts.size()[m[K; ++i) path_yaw.push_back(waypts[i][0]);
+      |                   [01;35m[K~~^~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager.cpp:[m[K In member function ‘[01m[Kvoid fast_planner::FastPlannerManager::planYawExplore(const Vector3d&, const double&, bool, const double&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager.cpp:767:15:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Krelax_num1[m[K’ [[01;35m[K-Wunused-variable[m[K]
+  767 |     const int [01;35m[Krelax_num1[m[K = pp_.relax_time1_ / dt_yaw;
+      |               [01;35m[K^~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager.cpp:827:8:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[Kt1[m[K’ set but not used [[01;35m[K-Wunused-but-set-variable[m[K]
+  827 |   auto [01;35m[Kt1[m[K = ros::Time::now();
+      |        [01;35m[K^~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/test/process_msg.cpp:[m[K In function ‘[01m[Kvoid cmdCallback(const PositionCommandConstPtr&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/test/process_msg.cpp:139:23:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Eigen::Matrix<double, 3, 1> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  139 |     for (int i = 0; [01;35m[Ki < cam1.size()[m[K; ++i) {
+      |                     [01;35m[K~~^~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/test/process_msg2.cpp:[m[K In function ‘[01m[Kvoid fovCallback(const MarkerConstPtr&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/test/process_msg2.cpp:143:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Eigen::Matrix<double, 3, 1> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  143 |   for (int i = 0; [01;35m[Ki < cam1.size()[m[K; ++i) {
+      |                   [01;35m[K~~^~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/test/process_msg.cpp:116:8:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[Kcur_time[m[K’ set but not used [[01;35m[K-Wunused-but-set-variable[m[K]
+  116 |   auto [01;35m[Kcur_time[m[K = ros::Time::now();
+      |        [01;35m[K^~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/test/process_msg.cpp:[m[K In function ‘[01m[Kvoid cloudCallback(const PointCloud2ConstPtr&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/test/process_msg.cpp:192:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<pcl::PointXYZ, Eigen::aligned_allocator<pcl::PointXYZ> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  192 |   for (int i = 0; [01;35m[Ki < pts2.points.size()[m[K; ++i) {
+      |                   [01;35m[K~~^~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/test/process_msg2.cpp:[m[K In function ‘[01m[Kvoid planTrajCallback(const MarkerConstPtr&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/test/process_msg2.cpp:280:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Eigen::Matrix<double, 3, 1> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  280 |   for (int i = 0; [01;35m[Ki < cam1.size()[m[K; ++i) {
+      |                   [01;35m[K~~^~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/test/process_msg2.cpp:[m[K In function ‘[01m[Kvoid nbvpCallback(const MarkerConstPtr&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/test/process_msg2.cpp:311:7:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Ksize[m[K’ [[01;35m[K-Wunused-variable[m[K]
+  311 |   int [01;35m[Ksize[m[K = mk.points.size();
+      |       [01;35m[K^~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/test/process_msg2.cpp:323:9:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kpts[m[K’ [[01;35m[K-Wunused-variable[m[K]
+  323 |   auto& [01;35m[Kpts[m[K = mk.points;
+      |         [01;35m[K^~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager.cpp:[m[K In member function ‘[01m[Kbool fast_planner::FastPlannerManager::kinodynamicReplan(const Vector3d&, const Vector3d&, const Vector3d&, const Vector3d&, const Vector3d&, const double&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager.cpp:140:19:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[Kinit_pos[m[K’ set but not used [[01;35m[K-Wunused-but-set-variable[m[K]
+  140 |   Eigen::Vector3d [01;35m[Kinit_pos[m[K = start_pt;
+      |                   [01;35m[K^~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager.cpp:141:19:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[Kinit_vel[m[K’ set but not used [[01;35m[K-Wunused-but-set-variable[m[K]
+  141 |   Eigen::Vector3d [01;35m[Kinit_vel[m[K = start_vel;
+      |                   [01;35m[K^~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager.cpp:142:19:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[Kinit_acc[m[K’ set but not used [[01;35m[K-Wunused-but-set-variable[m[K]
+  142 |   Eigen::Vector3d [01;35m[Kinit_acc[m[K = start_acc;
+      |                   [01;35m[K^~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager.cpp:162:10:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kt_search[m[K’ [[01;35m[K-Wunused-variable[m[K]
+  162 |   double [01;35m[Kt_search[m[K = (ros::Time::now() - t1).toSec();
+      |          [01;35m[K^~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager.cpp:203:10:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kt_opt[m[K’ [[01;35m[K-Wunused-variable[m[K]
+  203 |   double [01;35m[Kt_opt[m[K = (ros::Time::now() - t1).toSec();
+      |          [01;35m[K^~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/topo_replan_fsm.cpp:[m[K In member function ‘[01m[Kvoid fast_planner::TopoReplanFSM::checkCollisionCallback(const ros::TimerEvent&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/topo_replan_fsm.cpp:260:12:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Knew_goal[m[K’ [[01;35m[K-Wunused-variable[m[K]
+  260 |       bool [01;35m[Knew_goal[m[K = false;
+      |            [01;35m[K^~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/topo_replan_fsm.cpp:[m[K In member function ‘[01m[Kbool fast_planner::TopoReplanFSM::callSearchAndOptimization()[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/topo_replan_fsm.cpp:340:1:[m[K [01;35m[Kwarning: [m[Kno return statement in function returning non-void [[01;35m[K-Wreturn-type[m[K]
+  340 | [01;35m[K}[m[K
+      | [01;35m[K^[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager.cpp:[m[K In member function ‘[01m[Kbool fast_planner::FastPlannerManager::planGlobalTraj(const Vector3d&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager.cpp:293:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Eigen::Matrix<double, 3, 1> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  293 |   for (int i = 0; [01;35m[Ki < points.size() - 1[m[K; ++i) {
+      |                   [01;35m[K~~^~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/kino_replan_fsm.cpp:[m[K In member function ‘[01m[Kvoid fast_planner::KinoReplanFSM::execFSMCallback(const ros::TimerEvent&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/kino_replan_fsm.cpp:111:10:[m[K [01;35m[Kwarning: [m[Kenumeration value ‘[01m[KREPLAN_NEW[m[K’ not handled in switch [[01;35m[K-Wswitch[m[K]
+  111 |   switch [01;35m[K([m[Kexec_state_) {
+      |          [01;35m[K^[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/kino_replan_fsm.cpp:[m[K In member function ‘[01m[Kvoid fast_planner::KinoReplanFSM::checkCollisionCallback(const ros::TimerEvent&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/kino_replan_fsm.cpp:218:12:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Knew_goal[m[K’ [[01;35m[K-Wunused-variable[m[K]
+  218 |       bool [01;35m[Knew_goal[m[K = false;
+      |            [01;35m[K^~~~~~~~[m[K
+In file included from [01m[K/opt/ros/noetic/include/ros/ros.h:40[m[K,
+                 from [01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/include/plan_manage/kino_replan_fsm.h:8[m[K,
+                 from [01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/kino_replan_fsm.cpp:2[m[K:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/kino_replan_fsm.cpp:[m[K In member function ‘[01m[Kbool fast_planner::KinoReplanFSM::callKinodynamicReplan()[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/kino_replan_fsm.cpp:296:14:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%d[m[K’ expects argument of type ‘[01m[Kint[m[K’, but argument 8 has type ‘[01m[Kstd::vector<double>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wformat=[m[K]
+  296 |     ROS_WARN([01;35m[K"Replan number: %d, mean traj: %lf"[m[K, [32m[Kreplan_time_.size()[m[K, mean1);
+      |              [01;35m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K  [32m[K~~~~~~~~~~~~~~~~~~~[m[K
+      |                                                                    [32m[K|[m[K
+      |                                                                    [32m[Kstd::vector<double>::size_type {aka long unsigned int}[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/kino_replan_fsm.cpp:296:31:[m[K [01;36m[Knote: [m[Kformat string is defined here
+  296 |     ROS_WARN("Replan number: [01;36m[K%d[m[K, mean traj: %lf", replan_time_.size(), mean1);
+      |                              [01;36m[K~^[m[K
+      |                               [01;36m[K|[m[K
+      |                               [01;36m[Kint[m[K
+      |                              [32m[K%ld[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/test/local_explore_fsm.cpp:[m[K In member function ‘[01m[Kvoid fast_planner::LocalExploreFSM::execFSMCallback(const ros::TimerEvent&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/test/local_explore_fsm.cpp:112:10:[m[K [01;35m[Kwarning: [m[Kenumeration value ‘[01m[KREPLAN_NEW[m[K’ not handled in switch [[01;35m[K-Wswitch[m[K]
+  112 |   switch [01;35m[K([m[Kexec_state_) {
+      |          [01;35m[K^[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/test/local_explore_fsm.cpp:[m[K In member function ‘[01m[Kvoid fast_planner::LocalExploreFSM::checkCollisionCallback(const ros::TimerEvent&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/test/local_explore_fsm.cpp:215:12:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Knew_goal[m[K’ [[01;35m[K-Wunused-variable[m[K]
+  215 |       bool [01;35m[Knew_goal[m[K = false;
+      |            [01;35m[K^~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager.cpp:[m[K In member function ‘[01m[Kbool fast_planner::FastPlannerManager::topoReplan(bool)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager.cpp:405:25:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<std::vector<Eigen::Matrix<double, 3, 1> > >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  405 |       for (int i = 0; [01;35m[Ki < select_paths.size()[m[K; ++i) {
+      |                       [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager.cpp:411:25:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<std::vector<Eigen::Matrix<double, 3, 1> > >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  411 |       for (int i = 0; [01;35m[Ki < select_paths.size()[m[K; ++i) optimize_threads[i].join();
+      |                       [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager.cpp:[m[K In member function ‘[01m[Kvoid fast_planner::FastPlannerManager::refineTraj(fast_planner::NonUniformBspline&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager.cpp:443:13:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[Kt1[m[K’ set but not used [[01;35m[K-Wunused-but-set-variable[m[K]
+  443 |   ros::Time [01;35m[Kt1[m[K = ros::Time::now();
+      |             [01;35m[K^~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager.cpp:[m[K In member function ‘[01m[Kvoid fast_planner::FastPlannerManager::reparamBspline(fast_planner::NonUniformBspline&, double, Eigen::MatrixXd&, double&, double&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager.cpp:488:7:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kprev_num[m[K’ [[01;35m[K-Wunused-variable[m[K]
+  488 |   int [01;35m[Kprev_num[m[K = bspline.getControlPoint().rows();
+      |       [01;35m[K^~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager.cpp:[m[K In member function ‘[01m[Kvoid fast_planner::FastPlannerManager::optimizeTopoBspline(double, double, std::vector<Eigen::Matrix<double, 3, 1> >, int)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager.cpp:528:26:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kstd::vector<Eigen::Matrix<double, 3, 1> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} and ‘[01m[Kint[m[K’ [[01;35m[K-Wsign-compare[m[K]
+  528 |     if ([01;35m[Kguide_pts.size() != int(ctrl_pts.rows()) - 6[m[K) ROS_WARN("Incorrect guide for 3 degree");
+      |         [01;35m[K~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager.cpp:531:23:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Eigen::Matrix<double, 3, 1> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  531 |     for (int i = 0; [01;35m[Ki < tmp_pts.size()[m[K; ++i) {
+      |                     [01;35m[K~~^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager.cpp:532:37:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Eigen::Matrix<double, 3, 1> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  532 |       if (i % 2 == 1 && i >= 5 && [01;35m[Ki <= tmp_pts.size() - 6[m[K) guide_pts.push_back(tmp_pts[i]);
+      |                                   [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager.cpp:534:26:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kstd::vector<Eigen::Matrix<double, 3, 1> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} and ‘[01m[Kint[m[K’ [[01;35m[K-Wsign-compare[m[K]
+  534 |     if ([01;35m[Kguide_pts.size() != int(ctrl_pts.rows()) - 8[m[K) ROS_WARN("Incorrect guide for 4 degree");
+      |         [01;35m[K~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager.cpp:539:10:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Ktm1[m[K’ [[01;35m[K-Wunused-variable[m[K]
+  539 |   double [01;35m[Ktm1[m[K = (ros::Time::now() - t1).toSec();
+      |          [01;35m[K^~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager.cpp:548:10:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Ktm2[m[K’ [[01;35m[K-Wunused-variable[m[K]
+  548 |   double [01;35m[Ktm2[m[K = (ros::Time::now() - t1).toSec();
+      |          [01;35m[K^~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager.cpp:559:10:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Ktm3[m[K’ [[01;35m[K-Wunused-variable[m[K]
+  559 |   double [01;35m[Ktm3[m[K = (ros::Time::now() - t1).toSec();
+      |          [01;35m[K^~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager_dev.cpp:[m[K In member function ‘[01m[Kvoid fast_planner::FastPlannerManager::planYawActMap(const Vector3d&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager_dev.cpp:63:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<double>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+   63 |   for (int i = 0; [01;35m[Ki < path.size()[m[K; ++i) {
+      |                   [01;35m[K~~^~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager_dev.cpp:12:10:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kt_traj[m[K’ [[01;35m[K-Wunused-variable[m[K]
+   12 |   double [01;35m[Kt_traj[m[K = local_data_.duration_;
+      |          [01;35m[K^~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager_dev.cpp:29:8:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kunmapped[m[K’ [[01;35m[K-Wunused-variable[m[K]
+   29 |   bool [01;35m[Kunmapped[m[K = false;
+      |        [01;35m[K^~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager.cpp:[m[K In member function ‘[01m[Kvoid fast_planner::FastPlannerManager::planYaw(const Vector3d&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager.cpp:724:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Eigen::Matrix<double, 3, 1> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  724 |   for (int i = 0; [01;35m[Ki < waypts.size()[m[K; ++i) path_yaw.push_back(waypts[i][0]);
+      |                   [01;35m[K~~^~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager_dev.cpp:[m[K In member function ‘[01m[Kvoid fast_planner::FastPlannerManager::test()[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager_dev.cpp:118:8:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[Kt1[m[K’ set but not used [[01;35m[K-Wunused-but-set-variable[m[K]
+  118 |   auto [01;35m[Kt1[m[K = ros::Time::now();
+      |        [01;35m[K^~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager_dev.cpp:122:7:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kvid[m[K’ [[01;35m[K-Wunused-variable[m[K]
+  122 |   int [01;35m[Kvid[m[K = 0;
+      |       [01;35m[K^~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager.cpp:[m[K In member function ‘[01m[Kvoid fast_planner::FastPlannerManager::planYawExplore(const Vector3d&, const double&, bool, const double&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager.cpp:767:15:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Krelax_num1[m[K’ [[01;35m[K-Wunused-variable[m[K]
+  767 |     const int [01;35m[Krelax_num1[m[K = pp_.relax_time1_ / dt_yaw;
+      |               [01;35m[K^~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager.cpp:827:8:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[Kt1[m[K’ set but not used [[01;35m[K-Wunused-but-set-variable[m[K]
+  827 |   auto [01;35m[Kt1[m[K = ros::Time::now();
+      |        [01;35m[K^~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager_dev.cpp:[m[K In member function ‘[01m[Kbool fast_planner::FastPlannerManager::localExplore(Eigen::Vector3d, Eigen::Vector3d, Eigen::Vector3d, Eigen::Vector3d)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager_dev.cpp:167:23:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Eigen::Matrix<double, 3, 1> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  167 |     for (int i = 0; [01;35m[Ki < points.size()[m[K; ++i) {
+      |                     [01;35m[K~~^~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager_dev.cpp:204:23:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Eigen::Matrix<double, 3, 1> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  204 |     for (int i = 0; [01;35m[Ki < points.size()[m[K; ++i) {
+      |                     [01;35m[K~~^~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager_dev.cpp:224:23:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Eigen::Matrix<double, 3, 1> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  224 |     for (int i = 0; [01;35m[Ki < points.size()[m[K; ++i) {
+      |                     [01;35m[K~~^~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager_dev.cpp:295:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Eigen::Matrix<double, 3, 1> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  295 |   for (int i = 0; [01;35m[Ki < pts.size()[m[K; ++i) {
+      |                   [01;35m[K~~^~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager_dev.cpp:257:7:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kctrl_pt_num[m[K’ [[01;35m[K-Wunused-variable[m[K]
+  257 |   int [01;35m[Kctrl_pt_num[m[K = seg_num + 3;
+      |       [01;35m[K^~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager_dev.cpp:[m[K In member function ‘[01m[Kvoid fast_planner::FastPlannerManager::planYawActMap(const Vector3d&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager_dev.cpp:63:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<double>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+   63 |   for (int i = 0; [01;35m[Ki < path.size()[m[K; ++i) {
+      |                   [01;35m[K~~^~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager_dev.cpp:12:10:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kt_traj[m[K’ [[01;35m[K-Wunused-variable[m[K]
+   12 |   double [01;35m[Kt_traj[m[K = local_data_.duration_;
+      |          [01;35m[K^~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager_dev.cpp:29:8:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kunmapped[m[K’ [[01;35m[K-Wunused-variable[m[K]
+   29 |   bool [01;35m[Kunmapped[m[K = false;
+      |        [01;35m[K^~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager_dev.cpp:[m[K In member function ‘[01m[Kvoid fast_planner::FastPlannerManager::test()[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager_dev.cpp:118:8:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[Kt1[m[K’ set but not used [[01;35m[K-Wunused-but-set-variable[m[K]
+  118 |   auto [01;35m[Kt1[m[K = ros::Time::now();
+      |        [01;35m[K^~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager_dev.cpp:122:7:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kvid[m[K’ [[01;35m[K-Wunused-variable[m[K]
+  122 |   int [01;35m[Kvid[m[K = 0;
+      |       [01;35m[K^~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager_dev.cpp:[m[K In member function ‘[01m[Kbool fast_planner::FastPlannerManager::localExplore(Eigen::Vector3d, Eigen::Vector3d, Eigen::Vector3d, Eigen::Vector3d)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager_dev.cpp:167:23:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Eigen::Matrix<double, 3, 1> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  167 |     for (int i = 0; [01;35m[Ki < points.size()[m[K; ++i) {
+      |                     [01;35m[K~~^~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager_dev.cpp:204:23:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Eigen::Matrix<double, 3, 1> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  204 |     for (int i = 0; [01;35m[Ki < points.size()[m[K; ++i) {
+      |                     [01;35m[K~~^~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager_dev.cpp:224:23:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Eigen::Matrix<double, 3, 1> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  224 |     for (int i = 0; [01;35m[Ki < points.size()[m[K; ++i) {
+      |                     [01;35m[K~~^~~~~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager_dev.cpp:295:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Eigen::Matrix<double, 3, 1> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  295 |   for (int i = 0; [01;35m[Ki < pts.size()[m[K; ++i) {
+      |                   [01;35m[K~~^~~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager_dev.cpp:257:7:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kctrl_pt_num[m[K’ [[01;35m[K-Wunused-variable[m[K]
+  257 |   int [01;35m[Kctrl_pt_num[m[K = seg_num + 3;
+      |       [01;35m[K^~~~~~~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager.cpp:[m[K In member function ‘[01m[Kvoid fast_planner::FastPlannerManager::findCollisionRange(std::vector<Eigen::Matrix<double, 3, 1> >&, std::vector<Eigen::Matrix<double, 3, 1> >&, std::vector<Eigen::Matrix<double, 3, 1> >&, std::vector<Eigen::Matrix<double, 3, 1> >&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager.cpp:633:19:[m[K [01;35m[Kwarning: [m[K‘[01m[Kt_e[m[K’ may be used uninitialized in this function [[01;35m[K-Wmaybe-uninitialized[m[K]
+  633 |   sn = ceil([01;35m[K(t_mp - t_e)[m[K / dt);
+      |             [01;35m[K~~~~~~^~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager.cpp:[m[K In member function ‘[01m[Kvoid fast_planner::FastPlannerManager::findCollisionRange(std::vector<Eigen::Matrix<double, 3, 1> >&, std::vector<Eigen::Matrix<double, 3, 1> >&, std::vector<Eigen::Matrix<double, 3, 1> >&, std::vector<Eigen::Matrix<double, 3, 1> >&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/planner_manager.cpp:633:19:[m[K [01;35m[Kwarning: [m[K‘[01m[Kt_e[m[K’ may be used uninitialized in this function [[01;35m[K-Wmaybe-uninitialized[m[K]
+  633 |   sn = ceil([01;35m[K(t_mp - t_e)[m[K / dt);
+      |             [01;35m[K~~~~~~^~~~~~[m[K
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/traj_server.cpp:[m[K In function ‘[01m[Kvoid cmdCallback(const ros::TimerEvent&)[m[K’:
+[01m[K/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/plan_manage/src/traj_server.cpp:392:15:[m[K [01;35m[Kwarning: [m[K‘[01m[Kyawdot[m[K’ may be used uninitialized in this function [[01;35m[K-Wmaybe-uninitialized[m[K]
+  392 |   [01;35m[Kcmd.yaw_dot = yawdot[m[K;
+      |   [01;35m[K~~~~~~~~~~~~^~~~~~~~[m[K

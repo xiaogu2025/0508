@@ -1,0 +1,1 @@
+/home/xiaogu/myproject/rosNavigation_ws/devel/.private/poly_traj/share/poly_traj/cmake/poly_trajConfig-version.cmake

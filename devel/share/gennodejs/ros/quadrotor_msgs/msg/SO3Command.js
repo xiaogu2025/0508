@@ -1,0 +1,1 @@
+/home/xiaogu/myproject/rosNavigation_ws/devel/.private/quadrotor_msgs/share/gennodejs/ros/quadrotor_msgs/msg/SO3Command.js

@@ -1,0 +1,1 @@
+/home/xiaogu/myproject/rosNavigation_ws/devel/.private/exploration_manager/share/gennodejs/ros/exploration_manager/msg/HGrid.js

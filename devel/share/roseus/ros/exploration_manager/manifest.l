@@ -1,0 +1,1 @@
+/home/xiaogu/myproject/rosNavigation_ws/devel/.private/exploration_manager/share/roseus/ros/exploration_manager/manifest.l
