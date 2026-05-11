@@ -75,7 +75,13 @@ void FameExplorationManager::initialize(ros::NodeHandle& nh) {
 
   path_regularizer_.reset(new PathRegularizer);
   path_regularizer_->init(nh);
-
+  
+  // 目的：让 HypergraphCoordinator 能把创新点1和路径正则统一进超边。
+  // 注意：这一步不是训练，而是把已有模块作为超图特征来源。
+  if (hypergraph_coordinator_) {
+    hypergraph_coordinator_->setFrontierEvaluator(ft_evaluator_);
+    hypergraph_coordinator_->setPathRegularizer(path_regularizer_);
+  }
 
   nh.param("exploration/refine_local", ep_->refine_local_, true);
   nh.param("exploration/refined_num", ep_->refined_num_, -1);
@@ -581,22 +587,27 @@ bool FameExplorationManager::explorerPlan(const Vector3d& pos, const Vector3d& v
 
     double high_order_cost = 0.0;
     if (use_hypergraph_coord_) {
+      // 新版：使用动态超图代价。
+      // 和旧版相比，多传入 pos/vel/yaw，这样超图内部可以构建 trajectory coupling hyperedge：
+      // 1) 路径交叉
+      // 2) 大转角
       high_order_cost = w_high_order_ *
-          hypergraph_coordinator_->highOrderTargetCost(
-              ep_->drone_id_, centroid, ftr.first);
+          hypergraph_coordinator_->hypergraphTargetCost(
+              ep_->drone_id_, pos, vel, yaw, centroid, ftr.first);
+
       total_cost += high_order_cost;
     }
 
-    double path_reg_cost = 0.0;
-    double path_cross_cost = 0.0;
-    double large_turn_cost = 0.0;
+    // double path_reg_cost = 0.0;
+    // double path_cross_cost = 0.0;
+    // double large_turn_cost = 0.0;
 
-    if (use_path_regularizer_ && path_regularizer_) {
-      path_cross_cost = path_regularizer_->computePathCrossPenalty(pos, centroid);
-      large_turn_cost = path_regularizer_->computeLargeTurnPenalty(pos, centroid, vel, yaw);
-      path_reg_cost = w_path_regularizer_ * (path_cross_cost + large_turn_cost);
-      total_cost += path_reg_cost;
-    }
+    // if (use_path_regularizer_ && path_regularizer_) {
+    //   path_cross_cost = path_regularizer_->computePathCrossPenalty(pos, centroid);
+    //   large_turn_cost = path_regularizer_->computeLargeTurnPenalty(pos, centroid, vel, yaw);
+    //   path_reg_cost = w_path_regularizer_ * (path_cross_cost + large_turn_cost);
+    //   total_cost += path_reg_cost;
+    // }
 
     if (log_cost_terms_) {
       ROS_INFO("[ExplorerCost] drone=%d base+old=%.3f ft=%.3f ho=%.3f final=%.3f",
@@ -634,13 +645,17 @@ bool FameExplorationManager::explorerPlan(const Vector3d& pos, const Vector3d& v
       eval_plan_source_ = "explorer";
       eval_selected_label_ = ftr.first;
 
-      eval_base_cost_ = total_cost - ft_cost - high_order_cost - path_reg_cost;
+      eval_base_cost_ = total_cost - ft_cost - high_order_cost; //- path_reg_cost;
       eval_ft_cost_ = ft_cost;
       eval_high_order_cost_ = high_order_cost;
 
-      eval_path_cross_cost_ = path_cross_cost;
-      eval_large_turn_cost_ = large_turn_cost;
-      eval_path_reg_cost_ = path_reg_cost;
+      // eval_path_cross_cost_ = path_cross_cost;
+      // eval_large_turn_cost_ = large_turn_cost;
+      // eval_path_reg_cost_ = path_reg_cost;
+      if (use_hypergraph_coord_ && hypergraph_coordinator_) {
+        eval_num_hyperedges_ = hypergraph_coordinator_->lastNumHyperEdges();
+        eval_trajectory_edge_cost_ = hypergraph_coordinator_->lastTrajectoryCost();
+      }
     }
   }
 
@@ -947,20 +962,22 @@ bool FameExplorationManager::greedyPlan(const Vector3d& pos, const Vector3d& vel
 
     double high_order_cost = 0.0;
     if (use_hypergraph_coord_) {
+      // greedyPlan 是 fallback，也必须使用动态超图。
+      // 否则 Explorer 顺了，但 fallback 仍可能出现大转角/路径交叉。
       high_order_cost = w_high_order_ *
-          hypergraph_coordinator_->highOrderTargetCost(
-              ep_->drone_id_, vp_position, vp_label);
+          hypergraph_coordinator_->hypergraphTargetCost(
+              ep_->drone_id_, pos, vel, yaw, vp_position, vp_label);
     }
 
-    double path_reg_cost = 0.0;
-    double path_cross_cost = 0.0;
-    double large_turn_cost = 0.0;
+    // double path_reg_cost = 0.0;
+    // double path_cross_cost = 0.0;
+    // double large_turn_cost = 0.0;
 
-    if (use_path_regularizer_ && path_regularizer_) {
-      path_cross_cost = path_regularizer_->computePathCrossPenalty(pos, vp_position);
-      large_turn_cost = path_regularizer_->computeLargeTurnPenalty(pos, vp_position, vel, yaw);
-      path_reg_cost = w_path_regularizer_ * (path_cross_cost + large_turn_cost);
-    }
+    // if (use_path_regularizer_ && path_regularizer_) {
+    //   path_cross_cost = path_regularizer_->computePathCrossPenalty(pos, vp_position);
+    //   large_turn_cost = path_regularizer_->computeLargeTurnPenalty(pos, vp_position, vel, yaw);
+    //   path_reg_cost = w_path_regularizer_ * (path_cross_cost + large_turn_cost);
+    // }
 
     double total_cost =
         time_to_dest
@@ -969,8 +986,8 @@ bool FameExplorationManager::greedyPlan(const Vector3d& pos, const Vector3d& vel
       + label_penalty
       + previous_goal_cost
       + ft_cost
-      + high_order_cost
-      + path_reg_cost;
+      + high_order_cost;
+      // + path_reg_cost;
 
     if (log_cost_terms_) {
       ROS_INFO("[GreedyCost] drone=%d base=%.3f ft=%.3f ho=%.3f final=%.3f label=%d",
@@ -998,9 +1015,13 @@ bool FameExplorationManager::greedyPlan(const Vector3d& pos, const Vector3d& vel
       eval_ft_cost_ = ft_cost;
       eval_high_order_cost_ = high_order_cost;
 
-      eval_path_cross_cost_ = path_cross_cost;
-      eval_large_turn_cost_ = large_turn_cost;
-      eval_path_reg_cost_ = path_reg_cost;
+      // eval_path_cross_cost_ = path_cross_cost;
+      // eval_large_turn_cost_ = large_turn_cost;
+      // eval_path_reg_cost_ = path_reg_cost;
+    if (use_hypergraph_coord_ && hypergraph_coordinator_) {
+      eval_num_hyperedges_ = hypergraph_coordinator_->lastNumHyperEdges();
+      eval_trajectory_edge_cost_ = hypergraph_coordinator_->lastTrajectoryCost();
+    }
     }
   }
 
@@ -1478,26 +1499,35 @@ bool FameExplorationManager::findTourOfTrails(const Vector3d& cur_pos,
           collector_params_->w_distance * ViewNode::searchPath(vui.pos_, vuj.pos_, path_ij) +
           collector_params_->w_others * (formationCost(vui.pos_) - formationCost(vuj.pos_));
 
+      // double high_order_cost = 0.0;
+      // if (use_hypergraph_coord_) {
+      //   high_order_cost = w_high_order_ *
+      //       hypergraph_coordinator_->highOrderTransitionCost(
+      //           ep_->drone_id_, vui.pos_, vuj.pos_, LABEL::TRAIL);
+      // }
+
       double high_order_cost = 0.0;
       if (use_hypergraph_coord_) {
+        // trail_i -> trail_j
+        // 用 cur_pos -> vui.pos_ -> vuj.pos_ 估计转角和路径交叉。
         high_order_cost = w_high_order_ *
-            hypergraph_coordinator_->highOrderTransitionCost(
-                ep_->drone_id_, vui.pos_, vuj.pos_, LABEL::TRAIL);
-      }
+            hypergraph_coordinator_->hypergraphTransitionCost(
+                ep_->drone_id_, cur_pos, vui.pos_, vuj.pos_, LABEL::TRAIL);
+      }                              
 
-      double path_reg_cost = 0.0;
-      if (use_path_regularizer_ && path_regularizer_) {
-        // 这里无法知道 tour 中真实前一个节点，先用 cur_pos -> vui -> vuj 估计转角。
-        double turn_cost =
-            path_regularizer_->computeTransitionTurnPenalty(cur_pos, vui.pos_, vuj.pos_);
+      // double path_reg_cost = 0.0;
+      // if (use_path_regularizer_ && path_regularizer_) {
+      //   // 这里无法知道 tour 中真实前一个节点，先用 cur_pos -> vui -> vuj 估计转角。
+      //   double turn_cost =
+      //       path_regularizer_->computeTransitionTurnPenalty(cur_pos, vui.pos_, vuj.pos_);
 
-        double cross_cost =
-            path_regularizer_->computePathCrossPenalty(vui.pos_, vuj.pos_);
+      //   double cross_cost =
+      //       path_regularizer_->computePathCrossPenalty(vui.pos_, vuj.pos_);
 
-        path_reg_cost = w_path_regularizer_ * (cross_cost + turn_cost);
-      }
+      //   path_reg_cost = w_path_regularizer_ * (cross_cost + turn_cost);
+      // }
 
-      return base_cost + high_order_cost + path_reg_cost;
+      return base_cost + high_order_cost ;   //+ path_reg_cost;
   };
 
   auto updateCostFromState = [&](const list<Frontier>::iterator& it) {
@@ -1508,21 +1538,30 @@ bool FameExplorationManager::findTourOfTrails(const Vector3d& cur_pos,
           collector_params_->w_distance * ViewNode::searchPath(cur_pos, v.pos_, path) +
           collector_params_->w_others * formationCost(v.pos_);
 
+      // double high_order_cost = 0.0;
+      // if (use_hypergraph_coord_) {
+      //   high_order_cost = w_high_order_ *
+      //       hypergraph_coordinator_->highOrderTargetCost(
+      //           ep_->drone_id_, v.pos_, LABEL::TRAIL);
+      // }
+
       double high_order_cost = 0.0;
       if (use_hypergraph_coord_) {
+        // 当前状态 -> trail viewpoint
+        // 使用 cur_pos/cur_vel/cur_yaw 构造 trajectory coupling hyperedge。
         high_order_cost = w_high_order_ *
-            hypergraph_coordinator_->highOrderTargetCost(
-                ep_->drone_id_, v.pos_, LABEL::TRAIL);
+            hypergraph_coordinator_->hypergraphTargetCost(
+                ep_->drone_id_, cur_pos, cur_vel, cur_yaw, v.pos_, LABEL::TRAIL);
       }
 
-      double path_reg_cost = 0.0;
-      if (use_path_regularizer_ && path_regularizer_) {
-        double cross_cost = path_regularizer_->computePathCrossPenalty(cur_pos, v.pos_);
-        double turn_cost = path_regularizer_->computeLargeTurnPenalty(cur_pos, v.pos_, cur_vel, cur_yaw);
-        path_reg_cost = w_path_regularizer_ * (cross_cost + turn_cost);
-      }
+      // double path_reg_cost = 0.0;
+      // if (use_path_regularizer_ && path_regularizer_) {
+      //   double cross_cost = path_regularizer_->computePathCrossPenalty(cur_pos, v.pos_);
+      //   double turn_cost = path_regularizer_->computeLargeTurnPenalty(cur_pos, v.pos_, cur_vel, cur_yaw);
+      //   path_reg_cost = w_path_regularizer_ * (cross_cost + turn_cost);
+      // }
 
-      return base_cost + high_order_cost + path_reg_cost;
+      return base_cost + high_order_cost; // + path_reg_cost;
   };
 
   auto start_time = ros::Time::now();
@@ -1931,14 +1970,20 @@ void FameExplorationManager::initEvalLogger(ros::NodeHandle& nh) {
   nh.param("eval/target_duplicate_radius", eval_target_duplicate_radius_, 3.0);
   nh.param("eval/comm_range", eval_comm_range_, 25.0);
 
-  if (!eval_enable_) return;
+  if (!eval_enable_) {
+    ROS_WARN("[Eval] Evaluation logger is disabled.");
+    return;
+  }
 
+  // 每个实验、每次运行、每个 drone 单独一个 CSV。
+  // 这样多无人机不会同时写一个文件导致混乱。
   std::string full_dir = eval_dir_ + "/" + eval_exp_name_ + "/" + eval_run_name_;
   std::string cmd = "mkdir -p " + full_dir;
   system(cmd.c_str());
 
   std::string file_path =
-    full_dir + "/planning_eval_drone_" + std::to_string(ep_->drone_id_) + ".csv";    //修改过
+      full_dir + "/planning_eval_drone_" + std::to_string(ep_->drone_id_) + ".csv";
+
   eval_file_.open(file_path.c_str(), std::ios::out);
 
   if (!eval_file_.is_open()) {
@@ -1947,6 +1992,42 @@ void FameExplorationManager::initEvalLogger(ros::NodeHandle& nh) {
     return;
   }
 
+  // ================= CSV Header =================
+  //
+  // 字段说明：
+  // time/step/drone_id:
+  //   当前规划时间、规划步数、无人机编号。
+  //
+  // role_before/role_after:
+  //   创新点2是否改变了角色。
+  //
+  // plan_source:
+  //   当前目标来自 explorer / greedy / trail_tour / single_trail。
+  //
+  // selected_label:
+  //   当前选中的目标类型 FRONTIER / TRAIL / UNLABELED。
+  //
+  // base_cost:
+  //   原始 FAME 目标代价。
+  //
+  // ft_cost:
+  //   创新点1 Frontier–Trail 评分代价。
+  //
+  // high_order_cost:
+  //   创新点3 动态超图总代价。
+  //
+  // num_hyperedges:
+  //   当前最终选中目标构建出的超边数量。
+  //
+  // trajectory_edge_cost:
+  //   轨迹耦合超边代价，即路径交叉 + 大转角进入超图后的代价。
+  //
+  // J_competition/J_comm/J_redundant_cleanup:
+  //   兼容旧版超图日志，便于分析不同高阶项。
+  //
+  // duplicate_target_count/comm_risk_count:
+  //   用最终目标粗略统计是否与其它机器人目标重复、是否有通信风险。
+  //
   eval_file_
       << "time,step,drone_id,"
       << "role_before,role_after,"
@@ -1954,7 +2035,8 @@ void FameExplorationManager::initEvalLogger(ros::NodeHandle& nh) {
       << "cur_x,cur_y,cur_z,"
       << "target_x,target_y,target_z,target_yaw,"
       << "num_frontier,num_trail,num_unlabeled,"
-      << "base_cost,ft_cost,high_order_cost,path_cross_cost,large_turn_cost,path_reg_cost,total_extra_cost,"
+      << "base_cost,ft_cost,high_order_cost,total_extra_cost,"
+      << "num_hyperedges,trajectory_edge_cost,"
       << "S_explorer,S_collector,"
       << "J_competition,J_comm,J_redundant_cleanup,"
       << "duplicate_target_count,comm_risk_count,"
@@ -2001,6 +2083,9 @@ void FameExplorationManager::resetEvalStepDebug() {
   eval_path_cross_cost_ = 0.0;
   eval_large_turn_cost_ = 0.0;
   eval_path_reg_cost_ = 0.0;
+
+  eval_num_hyperedges_ = 0;
+  eval_trajectory_edge_cost_ = 0.0;
 }
 
 void FameExplorationManager::countFrontierLabels(
@@ -2095,10 +2180,9 @@ void FameExplorationManager::logEvalStep(
       << eval_base_cost_ << ","
       << eval_ft_cost_ << ","
       << eval_high_order_cost_ << ","
-      << eval_path_cross_cost_ << ","
-      << eval_large_turn_cost_ << ","
-      << eval_path_reg_cost_ << ","
-      << eval_ft_cost_ + eval_high_order_cost_ + eval_path_reg_cost_ << ","
+      << eval_ft_cost_ + eval_high_order_cost_ << ","
+      << eval_num_hyperedges_ << ","
+      << eval_trajectory_edge_cost_ << ","
       << eval_s_explorer_ << ","
       << eval_s_collector_ << ","
       << j_comp << ","

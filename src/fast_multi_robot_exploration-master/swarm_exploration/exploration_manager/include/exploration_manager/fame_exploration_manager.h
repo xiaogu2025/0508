@@ -181,6 +181,13 @@ public:
   double eval_target_duplicate_radius_ = 3.0;
   double eval_comm_range_ = 25.0;
 
+  int eval_num_hyperedges_ = 0;
+  double eval_trajectory_edge_cost_ = 0.0;
+
+  double eval_competition_edge_cost_ = 0.0;
+  double eval_comm_edge_cost_ = 0.0;
+  double eval_cleanup_edge_cost_ = 0.0;
+
   void initEvalLogger(ros::NodeHandle& nh);
   void closeEvalLogger();
 

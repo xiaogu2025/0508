@@ -206,14 +206,19 @@
     <param name="hypergraph/w_competition" value="1.0" type="double"/>
     <param name="hypergraph/w_comm" value="1.0" type="double"/>
     <param name="hypergraph/w_redundant_cleanup" value="1.0" type="double"/>
+    
+    <!-- Dynamic hypergraph rule-attention parameters -->
+    <param name="hypergraph/w_path_cross" value="1.0" type="double"/>
+    <param name="hypergraph/w_large_turn" value="1.0" type="double"/>
+    <param name="hypergraph/attention_temperature" value="1.0" type="double"/>
 
     <!-- Stability regularizer: avoid path crossing and large-turn target switching -->
     <param name="path_regularizer/enable_path_cross_penalty" value="$(arg enable_path_cross_penalty)" type="bool"/>
     <param name="path_regularizer/enable_large_turn_penalty" value="$(arg enable_large_turn_penalty)" type="bool"/>
 
     <!-- 第一轮建议保守，不要太大 -->
-    <param name="path_regularizer/w_path_cross" value="2.0" type="double"/>
-    <param name="path_regularizer/w_large_turn" value="1.0" type="double"/>
+    <!-- <param name="path_regularizer/w_path_cross" value="2.0" type="double"/> -->
+    <!-- <param name="path_regularizer/w_large_turn" value="1.0" type="double"/> -->
 
     <!-- 大于 120 度才惩罚 -->
     <param name="path_regularizer/turn_angle_threshold_deg" value="120.0" type="double"/>
