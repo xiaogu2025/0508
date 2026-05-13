@@ -148,6 +148,45 @@ CMakeFiles/exploration_node.dir/src/path_regularizer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/exploration_node.dir/src/path_regularizer.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/path_regularizer.cpp -o CMakeFiles/exploration_node.dir/src/path_regularizer.cpp.s
 
+CMakeFiles/exploration_node.dir/src/auv_physics_model.cpp.o: CMakeFiles/exploration_node.dir/flags.make
+CMakeFiles/exploration_node.dir/src/auv_physics_model.cpp.o: /home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/auv_physics_model.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xiaogu/myproject/rosNavigation_ws/build/exploration_manager/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/exploration_node.dir/src/auv_physics_model.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/exploration_node.dir/src/auv_physics_model.cpp.o -c /home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/auv_physics_model.cpp
+
+CMakeFiles/exploration_node.dir/src/auv_physics_model.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/exploration_node.dir/src/auv_physics_model.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/auv_physics_model.cpp > CMakeFiles/exploration_node.dir/src/auv_physics_model.cpp.i
+
+CMakeFiles/exploration_node.dir/src/auv_physics_model.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/exploration_node.dir/src/auv_physics_model.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/auv_physics_model.cpp -o CMakeFiles/exploration_node.dir/src/auv_physics_model.cpp.s
+
+CMakeFiles/exploration_node.dir/src/ocean_current_field.cpp.o: CMakeFiles/exploration_node.dir/flags.make
+CMakeFiles/exploration_node.dir/src/ocean_current_field.cpp.o: /home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/ocean_current_field.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xiaogu/myproject/rosNavigation_ws/build/exploration_manager/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/exploration_node.dir/src/ocean_current_field.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/exploration_node.dir/src/ocean_current_field.cpp.o -c /home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/ocean_current_field.cpp
+
+CMakeFiles/exploration_node.dir/src/ocean_current_field.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/exploration_node.dir/src/ocean_current_field.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/ocean_current_field.cpp > CMakeFiles/exploration_node.dir/src/ocean_current_field.cpp.i
+
+CMakeFiles/exploration_node.dir/src/ocean_current_field.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/exploration_node.dir/src/ocean_current_field.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/ocean_current_field.cpp -o CMakeFiles/exploration_node.dir/src/ocean_current_field.cpp.s
+
+CMakeFiles/exploration_node.dir/src/underwater_comm_model.cpp.o: CMakeFiles/exploration_node.dir/flags.make
+CMakeFiles/exploration_node.dir/src/underwater_comm_model.cpp.o: /home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/underwater_comm_model.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xiaogu/myproject/rosNavigation_ws/build/exploration_manager/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/exploration_node.dir/src/underwater_comm_model.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/exploration_node.dir/src/underwater_comm_model.cpp.o -c /home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/underwater_comm_model.cpp
+
+CMakeFiles/exploration_node.dir/src/underwater_comm_model.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/exploration_node.dir/src/underwater_comm_model.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/underwater_comm_model.cpp > CMakeFiles/exploration_node.dir/src/underwater_comm_model.cpp.i
+
+CMakeFiles/exploration_node.dir/src/underwater_comm_model.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/exploration_node.dir/src/underwater_comm_model.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/underwater_comm_model.cpp -o CMakeFiles/exploration_node.dir/src/underwater_comm_model.cpp.s
+
 # Object files for target exploration_node
 exploration_node_OBJECTS = \
 "CMakeFiles/exploration_node.dir/src/exploration_node.cpp.o" \
@@ -156,7 +195,10 @@ exploration_node_OBJECTS = \
 "CMakeFiles/exploration_node.dir/src/underwater_frontier_evaluator.cpp.o" \
 "CMakeFiles/exploration_node.dir/src/underwater_role_selector.cpp.o" \
 "CMakeFiles/exploration_node.dir/src/hypergraph_coordinator.cpp.o" \
-"CMakeFiles/exploration_node.dir/src/path_regularizer.cpp.o"
+"CMakeFiles/exploration_node.dir/src/path_regularizer.cpp.o" \
+"CMakeFiles/exploration_node.dir/src/auv_physics_model.cpp.o" \
+"CMakeFiles/exploration_node.dir/src/ocean_current_field.cpp.o" \
+"CMakeFiles/exploration_node.dir/src/underwater_comm_model.cpp.o"
 
 # External object files for target exploration_node
 exploration_node_EXTERNAL_OBJECTS =
@@ -168,6 +210,9 @@ exploration_node_EXTERNAL_OBJECTS =
 /home/xiaogu/myproject/rosNavigation_ws/devel/.private/exploration_manager/lib/exploration_manager/exploration_node: CMakeFiles/exploration_node.dir/src/underwater_role_selector.cpp.o
 /home/xiaogu/myproject/rosNavigation_ws/devel/.private/exploration_manager/lib/exploration_manager/exploration_node: CMakeFiles/exploration_node.dir/src/hypergraph_coordinator.cpp.o
 /home/xiaogu/myproject/rosNavigation_ws/devel/.private/exploration_manager/lib/exploration_manager/exploration_node: CMakeFiles/exploration_node.dir/src/path_regularizer.cpp.o
+/home/xiaogu/myproject/rosNavigation_ws/devel/.private/exploration_manager/lib/exploration_manager/exploration_node: CMakeFiles/exploration_node.dir/src/auv_physics_model.cpp.o
+/home/xiaogu/myproject/rosNavigation_ws/devel/.private/exploration_manager/lib/exploration_manager/exploration_node: CMakeFiles/exploration_node.dir/src/ocean_current_field.cpp.o
+/home/xiaogu/myproject/rosNavigation_ws/devel/.private/exploration_manager/lib/exploration_manager/exploration_node: CMakeFiles/exploration_node.dir/src/underwater_comm_model.cpp.o
 /home/xiaogu/myproject/rosNavigation_ws/devel/.private/exploration_manager/lib/exploration_manager/exploration_node: CMakeFiles/exploration_node.dir/build.make
 /home/xiaogu/myproject/rosNavigation_ws/devel/.private/exploration_manager/lib/exploration_manager/exploration_node: /home/xiaogu/myproject/rosNavigation_ws/devel/.private/quadrotor_msgs/lib/libencode_msgs.so
 /home/xiaogu/myproject/rosNavigation_ws/devel/.private/exploration_manager/lib/exploration_manager/exploration_node: /home/xiaogu/myproject/rosNavigation_ws/devel/.private/quadrotor_msgs/lib/libdecode_msgs.so
@@ -248,7 +293,7 @@ exploration_node_EXTERNAL_OBJECTS =
 /home/xiaogu/myproject/rosNavigation_ws/devel/.private/exploration_manager/lib/exploration_manager/exploration_node: /usr/lib/x86_64-linux-gnu/libboost_thread.so.1.71.0
 /home/xiaogu/myproject/rosNavigation_ws/devel/.private/exploration_manager/lib/exploration_manager/exploration_node: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4
 /home/xiaogu/myproject/rosNavigation_ws/devel/.private/exploration_manager/lib/exploration_manager/exploration_node: CMakeFiles/exploration_node.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/xiaogu/myproject/rosNavigation_ws/build/exploration_manager/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable /home/xiaogu/myproject/rosNavigation_ws/devel/.private/exploration_manager/lib/exploration_manager/exploration_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/xiaogu/myproject/rosNavigation_ws/build/exploration_manager/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable /home/xiaogu/myproject/rosNavigation_ws/devel/.private/exploration_manager/lib/exploration_manager/exploration_node"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/exploration_node.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -7,8 +7,8 @@
 [ 48%] Built target std_msgs_generate_messages_eus
 [ 48%] Built target lkh_mtsp_solver_generate_messages_lisp
 [ 48%] Built target lkh_mtsp_solver_generate_messages_nodejs
+[ 97%] Built target mtsp_node
 [ 98%] Built target lkh_mtsp_solver_generate_messages_py
-[ 98%] Built target mtsp_node
-[ 98%] Built target lkh_mtsp_solver_generate_messages_cpp
+[100%] Built target lkh_mtsp_solver_generate_messages_cpp
 [100%] Built target lkh_mtsp_solver_generate_messages_eus
 [100%] Built target lkh_mtsp_solver_generate_messages

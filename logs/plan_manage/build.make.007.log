@@ -1,5 +1,0 @@
-[ 12%] Built target traj_server
-[ 50%] Built target proc_msg
-[ 50%] Built target proc_msg2
-[ 56%] Built target plan_manage
-[100%] Built target fast_planner_node

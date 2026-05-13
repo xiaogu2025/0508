@@ -378,6 +378,16 @@ bspline/non_uniform_bspline.h
 ros/ros.h
 -
 
+/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/include/exploration_manager/auv_physics_model.h
+ros/ros.h
+-
+Eigen/Eigen
+-
+cmath
+-
+algorithm
+-
+
 /home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/include/exploration_manager/collaboration_assigner.h
 ros/ros.h
 -
@@ -451,6 +461,12 @@ exploration_manager/hypergraph_coordinator.h
 -
 exploration_manager/path_regularizer.h
 -
+exploration_manager/auv_physics_model.h
+-
+exploration_manager/ocean_current_field.h
+-
+exploration_manager/underwater_comm_model.h
+-
 fstream
 -
 iomanip
@@ -473,6 +489,32 @@ active_perception/frontier_finder.h
 -
 exploration_manager/role_assigner.h
 -
+memory
+-
+string
+-
+algorithm
+-
+cmath
+-
+exploration_manager/path_regularizer.h
+-
+exploration_manager/underwater_frontier_evaluator.h
+-
+exploration_manager/auv_physics_model.h
+-
+exploration_manager/ocean_current_field.h
+-
+exploration_manager/underwater_comm_model.h
+-
+
+/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/include/exploration_manager/ocean_current_field.h
+ros/ros.h
+-
+Eigen/Eigen
+-
+cmath
+-
 
 /home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/include/exploration_manager/path_regularizer.h
 ros/ros.h
@@ -492,6 +534,16 @@ nav_msgs/Odometry.h
 active_perception/frontier_finder.h
 -
 exploration_manager/expl_data.h
+-
+
+/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/include/exploration_manager/underwater_comm_model.h
+ros/ros.h
+-
+Eigen/Eigen
+-
+cmath
+-
+algorithm
 -
 
 /home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/include/exploration_manager/underwater_frontier_evaluator.h
@@ -518,6 +570,10 @@ vector
 active_perception/frontier_finder.h
 -
 exploration_manager/role_assigner.h
+-
+
+/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/auv_physics_model.cpp
+exploration_manager/auv_physics_model.h
 -
 
 /home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/fame_exploration_fsm.cpp
@@ -592,12 +648,20 @@ pcl/point_types.h
 visualization_msgs/Marker.h
 -
 
-/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/path_regularizer.cpp
-exploration_manager/path_regularizer.h
+/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/hypergraph_coordinator.cpp
+exploration_manager/hypergraph_coordinator.h
 -
 cmath
 -
+
+/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/ocean_current_field.cpp
+exploration_manager/ocean_current_field.h
+-
 algorithm
+-
+
+/home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/exploration_manager/src/underwater_comm_model.cpp
+exploration_manager/underwater_comm_model.h
 -
 
 /home/xiaogu/myproject/rosNavigation_ws/src/fast_multi_robot_exploration-master/swarm_exploration/path_searching/include/path_searching/astar2.h

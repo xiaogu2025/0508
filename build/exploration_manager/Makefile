@@ -1272,6 +1272,36 @@ gtest/fast:
 	$(MAKE) -f gtest/googletest/CMakeFiles/gtest.dir/build.make gtest/googletest/CMakeFiles/gtest.dir/build
 .PHONY : gtest/fast
 
+src/auv_physics_model.o: src/auv_physics_model.cpp.o
+
+.PHONY : src/auv_physics_model.o
+
+# target to build an object file
+src/auv_physics_model.cpp.o:
+	$(MAKE) -f CMakeFiles/fame_node.dir/build.make CMakeFiles/fame_node.dir/src/auv_physics_model.cpp.o
+	$(MAKE) -f CMakeFiles/exploration_node.dir/build.make CMakeFiles/exploration_node.dir/src/auv_physics_model.cpp.o
+.PHONY : src/auv_physics_model.cpp.o
+
+src/auv_physics_model.i: src/auv_physics_model.cpp.i
+
+.PHONY : src/auv_physics_model.i
+
+# target to preprocess a source file
+src/auv_physics_model.cpp.i:
+	$(MAKE) -f CMakeFiles/fame_node.dir/build.make CMakeFiles/fame_node.dir/src/auv_physics_model.cpp.i
+	$(MAKE) -f CMakeFiles/exploration_node.dir/build.make CMakeFiles/exploration_node.dir/src/auv_physics_model.cpp.i
+.PHONY : src/auv_physics_model.cpp.i
+
+src/auv_physics_model.s: src/auv_physics_model.cpp.s
+
+.PHONY : src/auv_physics_model.s
+
+# target to generate assembly for a file
+src/auv_physics_model.cpp.s:
+	$(MAKE) -f CMakeFiles/fame_node.dir/build.make CMakeFiles/fame_node.dir/src/auv_physics_model.cpp.s
+	$(MAKE) -f CMakeFiles/exploration_node.dir/build.make CMakeFiles/exploration_node.dir/src/auv_physics_model.cpp.s
+.PHONY : src/auv_physics_model.cpp.s
+
 src/collaboration_assigner.o: src/collaboration_assigner.cpp.o
 
 .PHONY : src/collaboration_assigner.o
@@ -1494,6 +1524,36 @@ src/hypergraph_coordinator.cpp.s:
 	$(MAKE) -f CMakeFiles/exploration_node.dir/build.make CMakeFiles/exploration_node.dir/src/hypergraph_coordinator.cpp.s
 .PHONY : src/hypergraph_coordinator.cpp.s
 
+src/ocean_current_field.o: src/ocean_current_field.cpp.o
+
+.PHONY : src/ocean_current_field.o
+
+# target to build an object file
+src/ocean_current_field.cpp.o:
+	$(MAKE) -f CMakeFiles/fame_node.dir/build.make CMakeFiles/fame_node.dir/src/ocean_current_field.cpp.o
+	$(MAKE) -f CMakeFiles/exploration_node.dir/build.make CMakeFiles/exploration_node.dir/src/ocean_current_field.cpp.o
+.PHONY : src/ocean_current_field.cpp.o
+
+src/ocean_current_field.i: src/ocean_current_field.cpp.i
+
+.PHONY : src/ocean_current_field.i
+
+# target to preprocess a source file
+src/ocean_current_field.cpp.i:
+	$(MAKE) -f CMakeFiles/fame_node.dir/build.make CMakeFiles/fame_node.dir/src/ocean_current_field.cpp.i
+	$(MAKE) -f CMakeFiles/exploration_node.dir/build.make CMakeFiles/exploration_node.dir/src/ocean_current_field.cpp.i
+.PHONY : src/ocean_current_field.cpp.i
+
+src/ocean_current_field.s: src/ocean_current_field.cpp.s
+
+.PHONY : src/ocean_current_field.s
+
+# target to generate assembly for a file
+src/ocean_current_field.cpp.s:
+	$(MAKE) -f CMakeFiles/fame_node.dir/build.make CMakeFiles/fame_node.dir/src/ocean_current_field.cpp.s
+	$(MAKE) -f CMakeFiles/exploration_node.dir/build.make CMakeFiles/exploration_node.dir/src/ocean_current_field.cpp.s
+.PHONY : src/ocean_current_field.cpp.s
+
 src/path_regularizer.o: src/path_regularizer.cpp.o
 
 .PHONY : src/path_regularizer.o
@@ -1550,6 +1610,36 @@ src/role_assigner.s: src/role_assigner.cpp.s
 src/role_assigner.cpp.s:
 	$(MAKE) -f CMakeFiles/fame_node.dir/build.make CMakeFiles/fame_node.dir/src/role_assigner.cpp.s
 .PHONY : src/role_assigner.cpp.s
+
+src/underwater_comm_model.o: src/underwater_comm_model.cpp.o
+
+.PHONY : src/underwater_comm_model.o
+
+# target to build an object file
+src/underwater_comm_model.cpp.o:
+	$(MAKE) -f CMakeFiles/fame_node.dir/build.make CMakeFiles/fame_node.dir/src/underwater_comm_model.cpp.o
+	$(MAKE) -f CMakeFiles/exploration_node.dir/build.make CMakeFiles/exploration_node.dir/src/underwater_comm_model.cpp.o
+.PHONY : src/underwater_comm_model.cpp.o
+
+src/underwater_comm_model.i: src/underwater_comm_model.cpp.i
+
+.PHONY : src/underwater_comm_model.i
+
+# target to preprocess a source file
+src/underwater_comm_model.cpp.i:
+	$(MAKE) -f CMakeFiles/fame_node.dir/build.make CMakeFiles/fame_node.dir/src/underwater_comm_model.cpp.i
+	$(MAKE) -f CMakeFiles/exploration_node.dir/build.make CMakeFiles/exploration_node.dir/src/underwater_comm_model.cpp.i
+.PHONY : src/underwater_comm_model.cpp.i
+
+src/underwater_comm_model.s: src/underwater_comm_model.cpp.s
+
+.PHONY : src/underwater_comm_model.s
+
+# target to generate assembly for a file
+src/underwater_comm_model.cpp.s:
+	$(MAKE) -f CMakeFiles/fame_node.dir/build.make CMakeFiles/fame_node.dir/src/underwater_comm_model.cpp.s
+	$(MAKE) -f CMakeFiles/exploration_node.dir/build.make CMakeFiles/exploration_node.dir/src/underwater_comm_model.cpp.s
+.PHONY : src/underwater_comm_model.cpp.s
 
 src/underwater_frontier_evaluator.o: src/underwater_frontier_evaluator.cpp.o
 
@@ -1736,6 +1826,9 @@ help:
 	@echo "... gmock"
 	@echo "... gtest_main"
 	@echo "... gtest"
+	@echo "... src/auv_physics_model.o"
+	@echo "... src/auv_physics_model.i"
+	@echo "... src/auv_physics_model.s"
 	@echo "... src/collaboration_assigner.o"
 	@echo "... src/collaboration_assigner.i"
 	@echo "... src/collaboration_assigner.s"
@@ -1760,12 +1853,18 @@ help:
 	@echo "... src/hypergraph_coordinator.o"
 	@echo "... src/hypergraph_coordinator.i"
 	@echo "... src/hypergraph_coordinator.s"
+	@echo "... src/ocean_current_field.o"
+	@echo "... src/ocean_current_field.i"
+	@echo "... src/ocean_current_field.s"
 	@echo "... src/path_regularizer.o"
 	@echo "... src/path_regularizer.i"
 	@echo "... src/path_regularizer.s"
 	@echo "... src/role_assigner.o"
 	@echo "... src/role_assigner.i"
 	@echo "... src/role_assigner.s"
+	@echo "... src/underwater_comm_model.o"
+	@echo "... src/underwater_comm_model.i"
+	@echo "... src/underwater_comm_model.s"
 	@echo "... src/underwater_frontier_evaluator.o"
 	@echo "... src/underwater_frontier_evaluator.i"
 	@echo "... src/underwater_frontier_evaluator.s"

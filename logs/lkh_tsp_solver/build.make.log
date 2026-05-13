@@ -5,10 +5,10 @@
 [ 48%] Built target std_msgs_generate_messages_lisp
 [ 48%] Built target std_msgs_generate_messages_eus
 [ 48%] Built target _lkh_tsp_solver_generate_messages_check_deps_SolveTSP
-[ 49%] Built target lkh_tsp_solver_generate_messages_nodejs
-[ 49%] Built target lkh_tsp_solver_generate_messages_cpp
-[ 97%] Built target tsp_node
-[ 98%] Built target lkh_tsp_solver_generate_messages_py
-[ 98%] Built target lkh_tsp_solver_generate_messages_lisp
+[ 50%] Built target lkh_tsp_solver_generate_messages_nodejs
+[ 50%] Built target lkh_tsp_solver_generate_messages_cpp
+[ 50%] Built target lkh_tsp_solver_generate_messages_py
+[ 98%] Built target tsp_node
 [100%] Built target lkh_tsp_solver_generate_messages_eus
+[100%] Built target lkh_tsp_solver_generate_messages_lisp
 [100%] Built target lkh_tsp_solver_generate_messages

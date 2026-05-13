@@ -212,6 +212,27 @@
     <param name="hypergraph/w_large_turn" value="1.0" type="double"/>
     <param name="hypergraph/attention_temperature" value="1.0" type="double"/>
 
+    <!-- Physics-aware hypergraph terms -->
+    <param name="hypergraph/w_curvature" value="1.0" type="double"/>
+    <param name="hypergraph/w_current_energy" value="1.0" type="double"/>
+    <param name="hypergraph/w_comm_quality" value="1.0" type="double"/>
+
+    <!-- Lightweight underwater AUV physics -->
+    <param name="auv_physics/min_turn_radius" value="3.0" type="double"/>
+
+    <!-- Lightweight ocean current field -->
+    <param name="ocean_current/enable" value="false" type="bool"/>
+    <param name="ocean_current/current_x" value="0.2" type="double"/>
+    <param name="ocean_current/current_y" value="0.0" type="double"/>
+    <param name="ocean_current/current_z" value="0.0" type="double"/>
+    <param name="ocean_current/enable_depth_variation" value="false" type="bool"/>
+    <param name="ocean_current/depth_variation_amp" value="0.0" type="double"/>
+    <param name="ocean_current/depth_variation_freq" value="0.1" type="double"/>
+
+    <!-- Underwater acoustic communication model -->
+    <param name="underwater_comm/alpha" value="0.05" type="double"/>
+    <param name="underwater_comm/min_quality" value="0.3" type="double"/>
+
     <!-- Stability regularizer: avoid path crossing and large-turn target switching -->
     <param name="path_regularizer/enable_path_cross_penalty" value="$(arg enable_path_cross_penalty)" type="bool"/>
     <param name="path_regularizer/enable_large_turn_penalty" value="$(arg enable_large_turn_penalty)" type="bool"/>

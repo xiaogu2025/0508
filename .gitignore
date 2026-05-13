@@ -1,0 +1,8 @@
+build/
+devel/
+logs/
+*.csv
+*.bag
+*.pyc
+__pycache__/
+eval_logs/

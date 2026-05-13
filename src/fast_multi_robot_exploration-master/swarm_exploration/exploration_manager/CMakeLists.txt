@@ -71,6 +71,9 @@ add_executable(exploration_node
   src/underwater_role_selector.cpp
   src/hypergraph_coordinator.cpp
   src/path_regularizer.cpp
+  src/auv_physics_model.cpp
+  src/ocean_current_field.cpp
+  src/underwater_comm_model.cpp
   )
 target_link_libraries(exploration_node 
   ${catkin_LIBRARIES}
@@ -88,6 +91,9 @@ add_executable(fame_node
   src/underwater_role_selector.cpp
   src/hypergraph_coordinator.cpp
   src/path_regularizer.cpp
+  src/auv_physics_model.cpp
+  src/ocean_current_field.cpp
+  src/underwater_comm_model.cpp
 )
 
 target_link_libraries(fame_node 

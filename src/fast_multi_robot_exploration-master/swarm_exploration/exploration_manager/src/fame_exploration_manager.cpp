@@ -75,12 +75,28 @@ void FameExplorationManager::initialize(ros::NodeHandle& nh) {
 
   path_regularizer_.reset(new PathRegularizer);
   path_regularizer_->init(nh);
+
+  // 真实海洋环境轻量模型
+  auv_physics_model_.reset(new AUVPhysicsModel);
+  auv_physics_model_->init(nh);
+
+  ocean_current_field_.reset(new OceanCurrentField);
+  ocean_current_field_->init(nh);
+
+  underwater_comm_model_.reset(new UnderwaterCommModel);
+  underwater_comm_model_->init(nh);
+
+  // 注入给动态超图模块。
+  // 目的：让曲率、洋流、水声通信进入超边特征。
   
   // 目的：让 HypergraphCoordinator 能把创新点1和路径正则统一进超边。
   // 注意：这一步不是训练，而是把已有模块作为超图特征来源。
   if (hypergraph_coordinator_) {
     hypergraph_coordinator_->setFrontierEvaluator(ft_evaluator_);
     hypergraph_coordinator_->setPathRegularizer(path_regularizer_);
+    hypergraph_coordinator_->setAUVPhysicsModel(auv_physics_model_);
+    hypergraph_coordinator_->setOceanCurrentField(ocean_current_field_);
+    hypergraph_coordinator_->setUnderwaterCommModel(underwater_comm_model_);
   }
 
   nh.param("exploration/refine_local", ep_->refine_local_, true);
@@ -655,6 +671,9 @@ bool FameExplorationManager::explorerPlan(const Vector3d& pos, const Vector3d& v
       if (use_hypergraph_coord_ && hypergraph_coordinator_) {
         eval_num_hyperedges_ = hypergraph_coordinator_->lastNumHyperEdges();
         eval_trajectory_edge_cost_ = hypergraph_coordinator_->lastTrajectoryCost();
+
+        eval_curvature_cost_ = hypergraph_coordinator_->lastCurvatureCost();
+        eval_current_energy_cost_ = hypergraph_coordinator_->lastCurrentEnergyCost();
       }
     }
   }
@@ -2036,7 +2055,7 @@ void FameExplorationManager::initEvalLogger(ros::NodeHandle& nh) {
       << "target_x,target_y,target_z,target_yaw,"
       << "num_frontier,num_trail,num_unlabeled,"
       << "base_cost,ft_cost,high_order_cost,total_extra_cost,"
-      << "num_hyperedges,trajectory_edge_cost,"
+      << "num_hyperedges,trajectory_edge_cost,curvature_cost,current_energy_cost,"
       << "S_explorer,S_collector,"
       << "J_competition,J_comm,J_redundant_cleanup,"
       << "duplicate_target_count,comm_risk_count,"
@@ -2083,6 +2102,9 @@ void FameExplorationManager::resetEvalStepDebug() {
   eval_path_cross_cost_ = 0.0;
   eval_large_turn_cost_ = 0.0;
   eval_path_reg_cost_ = 0.0;
+
+  eval_curvature_cost_ = 0.0;
+  eval_current_energy_cost_ = 0.0;
 
   eval_num_hyperedges_ = 0;
   eval_trajectory_edge_cost_ = 0.0;
@@ -2183,6 +2205,8 @@ void FameExplorationManager::logEvalStep(
       << eval_ft_cost_ + eval_high_order_cost_ << ","
       << eval_num_hyperedges_ << ","
       << eval_trajectory_edge_cost_ << ","
+      << eval_curvature_cost_ << ","
+      << eval_current_energy_cost_ << ","
       << eval_s_explorer_ << ","
       << eval_s_collector_ << ","
       << j_comp << ","
