@@ -109,10 +109,6 @@
     <!-- Ablation study (all) -->
     <arg name="communication_range" default="$(arg communication_range)"/>
 
-    <!-- 新增的    Evaluation / Ablation for underwater hypergraph modification -->
-    <arg name="exp_name" value="$(arg exp_name)"/>
-    <arg name="run_name" value="$(arg run_name)"/>
-
     <arg name="use_ft_score" value="$(arg use_ft_score)"/>
     <arg name="use_underwater_role" value="$(arg use_underwater_role)"/>
     <arg name="use_hypergraph_coord" value="$(arg use_hypergraph_coord)"/>
@@ -124,6 +120,10 @@
 
     <arg name="eval_enable" value="$(arg eval_enable)"/>
     <arg name="eval_dir" value="$(arg eval_dir)"/>
+
+    <!-- 新增的    Evaluation / Ablation for underwater hypergraph modification -->
+    <arg name="exp_name" value="$(arg exp_name)"/>
+    <arg name="run_name" value="$(arg run_name)"/>
 
   </include>
 

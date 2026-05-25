@@ -17,9 +17,9 @@ void HypergraphCoordinator::init(ros::NodeHandle& nh) {
   nh.param("hypergraph/w_path_cross", w_path_cross_, 1.0);
   nh.param("hypergraph/w_large_turn", w_large_turn_, 1.0);
 
-  nh.param("hypergraph/w_curvature", w_curvature_, 1.0);
-  nh.param("hypergraph/w_current_energy", w_current_energy_, 1.0);
-  nh.param("hypergraph/w_comm_quality", w_comm_quality_, 1.0);
+  // nh.param("hypergraph/w_curvature", w_curvature_, 1.0);
+  // nh.param("hypergraph/w_current_energy", w_current_energy_, 1.0);
+  // nh.param("hypergraph/w_comm_quality", w_comm_quality_, 1.0);
 
   // attention_temperature 越小，越偏向最大风险超边；
   // 越大，各超边越平均。
@@ -56,7 +56,7 @@ double HypergraphCoordinator::computeCompetitionCost(
   int competitors = 0;
 
   for (int i = 0; i < static_cast<int>(swarm_states_.size()); ++i) {
-    if (i == ego_id || i == ego_id - 1) continue;
+    if (i == ego_id - 1) continue;
 
     double d_goal = (swarm_states_[i].goal_pos_ - target_pos).norm();
     if (d_goal < target_radius_) {
@@ -75,7 +75,7 @@ double HypergraphCoordinator::computeGroupCommCost(
   int disconnected_count = 0;
 
   for (int i = 0; i < static_cast<int>(swarm_states_.size()); ++i) {
-    if (i == ego_id || i == ego_id - 1) continue;
+    if (i == ego_id - 1) continue;
 
     double d = (target_pos - swarm_states_[i].pos_).norm();
     if (d > comm_range_) {
@@ -95,7 +95,7 @@ double HypergraphCoordinator::computeRedundantTrailCleanupCost(
   int nearby_collectors = 0;
 
   for (int i = 0; i < static_cast<int>(swarm_states_.size()); ++i) {
-    if (i == ego_id || i == ego_id - 1) continue;
+    if (i == ego_id - 1) continue;
 
     if (swarm_states_[i].role_ != ROLE::GARBAGE_COLLECTOR) continue;
 
@@ -132,7 +132,7 @@ void HypergraphCoordinator::buildTargetHypergraph(
   e_comp.target_label = target_label;
 
   for (int i = 0; i < static_cast<int>(swarm_states_.size()); ++i) {
-    if (i == ego_id || i == ego_id - 1) continue;
+    if (i == ego_id - 1) continue;
 
     double d_goal = (swarm_states_[i].goal_pos_ - target_pos).norm();
     if (d_goal < target_radius_) {
@@ -157,9 +157,9 @@ void HypergraphCoordinator::buildTargetHypergraph(
   e_comm.target_label = target_label;
 
   // 旧版
-  /*
+  
   for (int i = 0; i < static_cast<int>(swarm_states_.size()); ++i) {
-    if (i == ego_id || i == ego_id - 1) continue;
+    if (i == ego_id - 1) continue;
 
     double d = (target_pos - swarm_states_[i].pos_).norm();
     if (d > comm_range_) {
@@ -169,31 +169,6 @@ void HypergraphCoordinator::buildTargetHypergraph(
 
   e_comm.comm_risk = static_cast<double>(e_comm.tail_robot_ids.size());
   e_comm.raw_cost = w_comm_ * e_comm.comm_risk;
-  */
-
-  double comm_risk_sum = 0.0;
-
-  for (int i = 0; i < static_cast<int>(swarm_states_.size()); ++i) {
-    if (i == ego_id || i == ego_id - 1) continue;
-
-    double d = (target_pos - swarm_states_[i].pos_).norm();
-
-    // 旧版硬阈值：保留 tail 结构
-    if (d > comm_range_) {
-      e_comm.tail_robot_ids.push_back(i);
-    }
-
-    // 新版水声通信：连续质量衰减
-    if (underwater_comm_model_) {
-      comm_risk_sum += underwater_comm_model_->risk(d);
-    }
-  }
-
-  e_comm.comm_risk = static_cast<double>(e_comm.tail_robot_ids.size());
-  e_comm.comm_quality_risk = comm_risk_sum;
-
-  // 兼容旧版硬阈值 + 新版连续水声通信
-  e_comm.raw_cost = w_comm_ * e_comm.comm_risk + w_comm_quality_ * e_comm.comm_quality_risk;
 
   last_edges_.push_back(e_comm);
 
@@ -212,7 +187,7 @@ void HypergraphCoordinator::buildTargetHypergraph(
     e_trail.target_label = target_label;
 
     for (int i = 0; i < static_cast<int>(swarm_states_.size()); ++i) {
-      if (i == ego_id || i == ego_id - 1) continue;
+      if (i == ego_id - 1) continue;
       if (swarm_states_[i].role_ != ROLE::GARBAGE_COLLECTOR) continue;
 
       double d_goal = (swarm_states_[i].goal_pos_ - target_pos).norm();
@@ -239,55 +214,27 @@ void HypergraphCoordinator::buildTargetHypergraph(
     e_path.target_pos = target_pos;
     e_path.target_label = target_label;
 
-    // 旧版
-    /*
-    e_path.path_cross =
-        path_regularizer_->computePathCrossPenalty(cur_pos, target_pos);
 
-    e_path.large_turn =
-        path_regularizer_->computeLargeTurnPenalty(
-            cur_pos, target_pos, cur_vel, cur_yaw);
+    e_path.path_cross =path_regularizer_->computePathCrossPenalty(cur_pos, target_pos);
+    e_path.large_turn =path_regularizer_->computeLargeTurnPenalty(cur_pos, target_pos, cur_vel, cur_yaw);
+    // e_path.curvature =
+    //     path_regularizer_->computeTransitionTurnPenalty(cur_pos - cur_vel, cur_pos, target_pos);
 
+    // AUV 最小转弯半径 / 曲率约束
+    // 保留路径交叉和大转角作为“轨迹耦合超边”的协同偏好。
+    // 注意：这不是 AUV 最小转弯半径硬约束。
+    // AUV 最小转弯半径在 FameExplorationManager::satisfyTurnRadiusConstraint() 里过滤。
     e_path.raw_cost =
         w_path_cross_ * e_path.path_cross +
         w_large_turn_ * e_path.large_turn;
-    */
-
-    e_path.path_cross =
-    path_regularizer_->computePathCrossPenalty(cur_pos, target_pos);
-
-    e_path.large_turn =
-        path_regularizer_->computeLargeTurnPenalty(cur_pos, target_pos, cur_vel, cur_yaw);
-
-    // AUV 最小转弯半径 / 曲率约束
-    if (auv_physics_model_) {
-      Eigen::Vector3d prev_pos = cur_pos - cur_vel;
-      if (cur_vel.norm() < 1e-3) {
-        // 如果速度很小，用当前 yaw 构造一个近似上一位置
-        Eigen::Vector3d dir(std::cos(cur_yaw[0]), std::sin(cur_yaw[0]), 0.0);
-        prev_pos = cur_pos - dir;
-      }
-      e_path.curvature =
-          auv_physics_model_->curvaturePenalty(prev_pos, cur_pos, target_pos);
-    }
-
-    // 洋流能耗
-    if (ocean_current_field_) {
-      e_path.current_energy =
-          ocean_current_field_->currentEnergyPenalty(cur_pos, target_pos);
-    }
-
-    e_path.raw_cost =
-        w_path_cross_ * e_path.path_cross +
-        w_large_turn_ * e_path.large_turn +
-        w_curvature_ * e_path.curvature +
-        w_current_energy_ * e_path.current_energy;
 
     last_trajectory_cost_ = e_path.raw_cost;
-    
-    // 新增
-    last_curvature_cost_ = e_path.curvature;
-    last_current_energy_cost_ = e_path.current_energy;
+
+    // Deprecated in hard-constraint version:
+    // e_path.curvature = ...
+    // e_path.current_energy = ...
+    // last_curvature_cost_ = ...
+    // last_current_energy_cost_ = ...
 
     last_edges_.push_back(e_path);
   }

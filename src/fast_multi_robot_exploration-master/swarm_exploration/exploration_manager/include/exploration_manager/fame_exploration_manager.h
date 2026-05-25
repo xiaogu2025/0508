@@ -17,6 +17,7 @@
 #include <exploration_manager/auv_physics_model.h>
 #include <exploration_manager/ocean_current_field.h>
 #include <exploration_manager/underwater_comm_model.h>
+#include <exploration_manager/sonar_observation_model.h>
 // evaluation
 #include <fstream>
 #include <iomanip>
@@ -136,13 +137,18 @@ public:
   shared_ptr<PathRegularizer> path_regularizer_;
 
   std::shared_ptr<AUVPhysicsModel> auv_physics_model_;
-  std::shared_ptr<OceanCurrentField> ocean_current_field_;
+//   std::shared_ptr<OceanCurrentField> ocean_current_field_;
   std::shared_ptr<UnderwaterCommModel> underwater_comm_model_;
+  std::shared_ptr<SonarObservationModel> sonar_model_;
 
   bool use_ft_score_ = false;
   bool use_underwater_role_ = false;
   bool use_hypergraph_coord_ = false;
   bool use_path_regularizer_ = false;
+
+  bool use_auv_turn_radius_constraint_ = false;
+  bool use_underwater_comm_constraint_ = false;
+  bool use_sonar_constraint_ = false;
 
   double w_ft_score_ = 1.0;
   double w_high_order_ = 1.0;
@@ -151,8 +157,8 @@ public:
     // 调试日志
   bool log_cost_terms_ = true;
 
-  double eval_curvature_cost_ = 0.0;
-  double eval_current_energy_cost_ = 0.0;
+  // double eval_curvature_cost_ = 0.0;
+  // double eval_current_energy_cost_ = 0.0;
 
   // ================= Evaluation Logger =================
   bool eval_enable_ = false;
@@ -199,6 +205,10 @@ public:
   double eval_comm_edge_cost_ = 0.0;
   double eval_cleanup_edge_cost_ = 0.0;
 
+  int eval_reject_turn_radius_count_ = 0;
+  int eval_reject_comm_count_ = 0;
+  int eval_reject_sonar_count_ = 0;
+
   void initEvalLogger(ros::NodeHandle& nh);
   void closeEvalLogger();
 
@@ -236,10 +246,13 @@ private:
       Vector3d& next_pos, double& next_yaw);
 
   bool findPathClosestFrontier(const Vector3d& pos, const Vector3d& vel, const Vector3d& yaw,
-      Vector3d& next_pos, double& next_yaw) const;
+      Vector3d& next_pos, double& next_yaw) ;
+  
+  // bool findPathClosestFrontier(const Vector3d& pos, const Vector3d& vel, const Vector3d& yaw,
+  //   Vector3d& next_pos, double& next_yaw) const;
 
-  bool closestGreedyFrontier(const Vector3d& pos, const Vector3d& yaw, Vector3d& next_pos,
-      double& next_yaw, bool force_different = false) const;
+  bool closestGreedyFrontier(const Vector3d& pos, const Vector3d& vel,
+      const Vector3d& yaw, Vector3d& next_pos, double& next_yaw, bool force_different = false) ;
 
   double attractivePotentialField(double distance) const;
 
@@ -248,6 +261,20 @@ private:
   double previousGoalCost(const Eigen::Vector3d& target_pos) const;
 
   double formationCost(const Eigen::Vector3d& target_pos) const;
+
+  bool satisfyTurnRadiusConstraint(
+    const Eigen::Vector3d& cur_pos,
+    const Eigen::Vector3d& cur_vel,
+    const Eigen::Vector3d& cur_yaw,
+    const Eigen::Vector3d& target_pos) const;
+
+  bool satisfyUnderwaterCommConstraint(
+    const Eigen::Vector3d& target_pos) const;
+
+  bool satisfySonarConstraint(
+    const Eigen::Vector3d& cur_pos,
+    const Eigen::Vector3d& cur_yaw,
+    const Eigen::Vector3d& target_pos) const;
 
   // Garbage Collector
   bool collectorPlan(const Vector3d& pos, const Vector3d& vel, const Vector3d& yaw,
@@ -259,8 +286,8 @@ private:
   bool greedyPlan(const Vector3d& pos, const Vector3d& vel, const Vector3d& yaw, Vector3d& next_pos,
       double& next_yaw);
 
-  bool findTourOfTrails(const Vector3d& cur_pos, const Eigen::Vector3d& cur_yaw,
-      const Vector3d& cur_vel, Eigen::Vector3d& next_pos, double& next_yaw);
+  bool findTourOfTrails(const Vector3d& cur_pos, const Vector3d& cur_vel,
+      const Vector3d& cur_yaw, Eigen::Vector3d& next_pos, double& next_yaw);
 
   void shortenPath(vector<Vector3d>& path);
 

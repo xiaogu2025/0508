@@ -94,6 +94,7 @@ add_executable(fame_node
   src/auv_physics_model.cpp
   src/ocean_current_field.cpp
   src/underwater_comm_model.cpp
+  src/sonar_observation_model.cpp
 )
 
 target_link_libraries(fame_node 

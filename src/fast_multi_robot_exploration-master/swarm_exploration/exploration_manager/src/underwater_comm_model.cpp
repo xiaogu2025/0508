@@ -11,9 +11,8 @@ double UnderwaterCommModel::quality(double distance) const {
   return std::exp(-alpha_ * std::max(0.0, distance));
 }
 
-double UnderwaterCommModel::risk(double distance) const {
-  double q = quality(distance);
-  return std::max(0.0, min_quality_ - q);
+bool UnderwaterCommModel::isLinkFeasible(double distance) const {
+  return quality(distance) >= min_quality_;
 }
 
 }  // namespace fast_planner

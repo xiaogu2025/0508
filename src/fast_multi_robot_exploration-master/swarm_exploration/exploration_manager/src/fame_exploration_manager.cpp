@@ -64,6 +64,13 @@ void FameExplorationManager::initialize(ros::NodeHandle& nh) {
   nh.param("method/use_path_regularizer", use_path_regularizer_, false);
   nh.param("method/w_path_regularizer", w_path_regularizer_, 1.0);
 
+  nh.param("physics_constraint/use_auv_turn_radius",
+         use_auv_turn_radius_constraint_, false);
+  nh.param("physics_constraint/use_underwater_comm",
+          use_underwater_comm_constraint_, false);
+  nh.param("physics_constraint/use_sonar",
+          use_sonar_constraint_, false);
+
   ft_evaluator_.reset(new UnderwaterFrontierEvaluator);
   ft_evaluator_->init(nh);
 
@@ -80,11 +87,14 @@ void FameExplorationManager::initialize(ros::NodeHandle& nh) {
   auv_physics_model_.reset(new AUVPhysicsModel);
   auv_physics_model_->init(nh);
 
-  ocean_current_field_.reset(new OceanCurrentField);
-  ocean_current_field_->init(nh);
+  // ocean_current_field_.reset(new OceanCurrentField);
+  // ocean_current_field_->init(nh);
 
   underwater_comm_model_.reset(new UnderwaterCommModel);
   underwater_comm_model_->init(nh);
+
+  sonar_model_.reset(new SonarObservationModel);
+  sonar_model_->init(nh);
 
   // 注入给动态超图模块。
   // 目的：让曲率、洋流、水声通信进入超边特征。
@@ -94,9 +104,9 @@ void FameExplorationManager::initialize(ros::NodeHandle& nh) {
   if (hypergraph_coordinator_) {
     hypergraph_coordinator_->setFrontierEvaluator(ft_evaluator_);
     hypergraph_coordinator_->setPathRegularizer(path_regularizer_);
-    hypergraph_coordinator_->setAUVPhysicsModel(auv_physics_model_);
-    hypergraph_coordinator_->setOceanCurrentField(ocean_current_field_);
-    hypergraph_coordinator_->setUnderwaterCommModel(underwater_comm_model_);
+    // hypergraph_coordinator_->setAUVPhysicsModel(auv_physics_model_);
+    // hypergraph_coordinator_->setOceanCurrentField(ocean_current_field_);
+    // hypergraph_coordinator_->setUnderwaterCommModel(underwater_comm_model_);
   }
 
   nh.param("exploration/refine_local", ep_->refine_local_, true);
@@ -267,7 +277,7 @@ int FameExplorationManager::planExploreMotion(
   ROS_INFO_STREAM("Time to assign role: " << elapsed_time << " ms");
   ROS_INFO("Current role: %s", roleToString(role_).c_str());
 
-  bool success;
+  bool success = false;
   if (role_ == ROLE::EXPLORER) {
     success = explorerPlan(pos, vel, yaw, next_pos, next_yaw);
   } else if (role_ == ROLE::GARBAGE_COLLECTOR) {
@@ -278,7 +288,7 @@ int FameExplorationManager::planExploreMotion(
   // when the goal is farther away)
   if (!success) {
     // ROS_ERROR("Falling back to closest greedy frontier");
-    success = closestGreedyFrontier(pos, yaw, next_pos, next_yaw);
+    success = closestGreedyFrontier(pos, vel, yaw, next_pos, next_yaw);
   }
 
   // Update goal
@@ -296,7 +306,7 @@ int FameExplorationManager::planExploreMotion(
     const size_t kMaxAttempts = 10;
     if (ed_->num_attempts_ > kMaxAttempts) {
       bool force_different = true;
-      closestGreedyFrontier(pos, yaw, next_pos, next_yaw, force_different);
+      closestGreedyFrontier(pos, vel, yaw, next_pos, next_yaw, force_different);
     }
 
     ed_->next_pos_ = next_pos;
@@ -526,6 +536,59 @@ void FameExplorationManager::updateRoleAndVelocities(const ROLE updated_role) {
   role_ = updated_role;
 }
 
+bool FameExplorationManager::satisfyTurnRadiusConstraint(
+    const Eigen::Vector3d& cur_pos,
+    const Eigen::Vector3d& cur_vel,
+    const Eigen::Vector3d& cur_yaw,
+    const Eigen::Vector3d& target_pos) const {
+  if (!use_auv_turn_radius_constraint_ || !auv_physics_model_) {
+    return true;
+  }
+
+  Eigen::Vector3d prev_pos = cur_pos - cur_vel;
+
+  if (cur_vel.norm() < 1e-3) {
+    Eigen::Vector3d dir(std::cos(cur_yaw[0]), std::sin(cur_yaw[0]), 0.0);
+    prev_pos = cur_pos - dir;
+  }
+
+  return auv_physics_model_->isTurnFeasible(prev_pos, cur_pos, target_pos);
+}
+
+bool FameExplorationManager::satisfyUnderwaterCommConstraint(
+    const Eigen::Vector3d& target_pos) const {
+  if (!use_underwater_comm_constraint_ || !underwater_comm_model_) {
+    return true;
+  }
+
+  if (ed_->swarm_state_.size() <= 1) {
+    return true;
+  }
+
+  // 硬约束：目标点至少要和一个队友保持可通信。
+  for (int i = 0; i < static_cast<int>(ed_->swarm_state_.size()); ++i) {
+    if (i == ep_->drone_id_ - 1) continue;
+
+    double d = (target_pos - ed_->swarm_state_[i].pos_).norm();
+    if (underwater_comm_model_->isLinkFeasible(d)) {
+      return true;
+    }
+  }
+
+  return false;
+}
+
+bool FameExplorationManager::satisfySonarConstraint(
+    const Eigen::Vector3d& cur_pos,
+    const Eigen::Vector3d& cur_yaw,
+    const Eigen::Vector3d& target_pos) const {
+  if (!use_sonar_constraint_ || !sonar_model_) {
+    return true;
+  }
+
+  return sonar_model_->isTargetObservable(cur_pos, cur_yaw, target_pos);
+}
+
 bool FameExplorationManager::explorerPlan(const Vector3d& pos, const Vector3d& vel,
     const Vector3d& yaw, Vector3d& next_pos, double& next_yaw) {
 
@@ -590,10 +653,28 @@ bool FameExplorationManager::explorerPlan(const Vector3d& pos, const Vector3d& v
       continue;
     }
     
-    // Total cost
-    double total_cost = totalCost(centroid, ftr.first);
-    
-    // 新增的
+    // 这里 centroid 已经算出来了，代表当前候选 frontier/trail 目标点。
+    // 在计算 total_cost 之前，先做真实物理/声纳硬约束过滤。
+
+    if (!satisfySonarConstraint(pos, yaw, centroid)) {
+      ++eval_reject_sonar_count_;
+      continue;
+    }
+
+    if (!satisfyTurnRadiusConstraint(pos, vel, yaw, centroid)) {
+      ++eval_reject_turn_radius_count_;
+      continue;
+    }
+
+    if (!satisfyUnderwaterCommConstraint(centroid)) {
+      ++eval_reject_comm_count_;
+      continue;
+    }
+
+    // 只有通过硬约束的目标，才进入原始 FAME + FT + Hypergraph cost 排序。
+    double base_cost = totalCost(centroid, ftr.first);
+    double total_cost = base_cost;
+
     double ft_cost = 0.0;
     if (use_ft_score_) {
       ft_cost = w_ft_score_ *
@@ -603,14 +684,9 @@ bool FameExplorationManager::explorerPlan(const Vector3d& pos, const Vector3d& v
 
     double high_order_cost = 0.0;
     if (use_hypergraph_coord_) {
-      // 新版：使用动态超图代价。
-      // 和旧版相比，多传入 pos/vel/yaw，这样超图内部可以构建 trajectory coupling hyperedge：
-      // 1) 路径交叉
-      // 2) 大转角
       high_order_cost = w_high_order_ *
           hypergraph_coordinator_->hypergraphTargetCost(
               ep_->drone_id_, pos, vel, yaw, centroid, ftr.first);
-
       total_cost += high_order_cost;
     }
 
@@ -672,8 +748,8 @@ bool FameExplorationManager::explorerPlan(const Vector3d& pos, const Vector3d& v
         eval_num_hyperedges_ = hypergraph_coordinator_->lastNumHyperEdges();
         eval_trajectory_edge_cost_ = hypergraph_coordinator_->lastTrajectoryCost();
 
-        eval_curvature_cost_ = hypergraph_coordinator_->lastCurvatureCost();
-        eval_current_energy_cost_ = hypergraph_coordinator_->lastCurrentEnergyCost();
+        // eval_curvature_cost_ = hypergraph_coordinator_->lastCurvatureCost();
+        // eval_current_energy_cost_ = hypergraph_coordinator_->lastCurrentEnergyCost();
       }
     }
   }
@@ -689,76 +765,197 @@ bool FameExplorationManager::explorerPlan(const Vector3d& pos, const Vector3d& v
   // }
 }
 
-bool FameExplorationManager::findPathClosestFrontier(const Vector3d& pos, const Vector3d& vel,
-    const Vector3d& yaw, Vector3d& next_pos, double& next_yaw) const {
+// bool FameExplorationManager::findPathClosestFrontier(const Vector3d& pos, const Vector3d& vel,
+//     const Vector3d& yaw, Vector3d& next_pos, double& next_yaw)  {
 
-  // Iterate over the frontiers, and compute the path to the top viewpoint of
-  // each of them. Then grab the best one
+//   // Iterate over the frontiers, and compute the path to the top viewpoint of
+//   // each of them. Then grab the best one
+//   double min_cost = std::numeric_limits<double>::max();
+//   bool found_ftr = false;
+//   for (const auto& ftr : frontier_finder_->getFrontiers()) {
+//     // Get the best viewpoint for the current frontier
+//     const auto& vp = ftr.viewpoints_.front();
+
+//     // Check that the position is valid
+//     if (!isPositionReachable(pos, vp.pos_)) {
+//       continue;
+//     }
+
+//     double dist = (pos - vp.pos_).norm();
+//     bool valid_dist = dist <= explorer_params_->ftr_max_distance && dist >= 0.5;
+//     if (!valid_dist) {
+//       continue;
+//     }
+
+//     vector<Vector3d> path;
+//     double distance = std::max(1., explorer_params_->w_distance) *
+//                       ViewNode::computeCost(pos, vp.pos_, yaw[0], vp.yaw_, vel, yaw[1], path);
+//     double formation_cost = explorer_params_->w_others * formationCost(vp.pos_);
+//     double previous_goal_cost = explorer_params_->w_previous_goal * previousGoalCost(vp.pos_);
+//     double cost = distance + formation_cost + previous_goal_cost;
+
+//     if (cost < min_cost) {
+//       // Update flag
+//       found_ftr = true;
+//       // Target
+//       min_cost = cost;
+//       next_pos = vp.pos_;
+//       next_yaw = vp.yaw_;
+//     }
+//   }
+
+//   return found_ftr;
+// }
+
+bool FameExplorationManager::findPathClosestFrontier(const Vector3d& pos, const Vector3d& vel,
+    const Vector3d& yaw, Vector3d& next_pos, double& next_yaw) {
+
+  // This function is the fallback of explorerPlan().
+  // If no in-front frontier exists, explorerPlan() calls this function.
+  // Therefore, sonar / turn-radius / acoustic-communication constraints
+  // must also be checked here. Otherwise the fallback branch bypasses
+  // all hard physical constraints.
+
   double min_cost = std::numeric_limits<double>::max();
   bool found_ftr = false;
-  for (const auto& ftr : frontier_finder_->getFrontiers()) {
-    // Get the best viewpoint for the current frontier
-    const auto& vp = ftr.viewpoints_.front();
 
-    // Check that the position is valid
-    if (!isPositionReachable(pos, vp.pos_)) {
+  for (const auto& ftr : frontier_finder_->getFrontiers()) {
+    // Defensive check: avoid accessing empty viewpoints.
+    if (ftr.viewpoints_.empty()) {
       continue;
     }
 
-    double dist = (pos - vp.pos_).norm();
+    // The robot does not go to the frontier centroid directly.
+    // It goes to the selected viewpoint of this frontier.
+    const auto& vp = ftr.viewpoints_.front();
+    const Vector3d& candidate_pos = vp.pos_;
+
+    // Check that the position is reachable in the original FAME sense.
+    if (!isPositionReachable(pos, candidate_pos)) {
+      continue;
+    }
+
+    double dist = (pos - candidate_pos).norm();
     bool valid_dist = dist <= explorer_params_->ftr_max_distance && dist >= 0.5;
     if (!valid_dist) {
       continue;
     }
 
+    // ---------- Hard physical / sonar feasibility constraints ----------
+    // 1) Sonar observability:
+    //    The candidate viewpoint must be inside the sonar range and FOV.
+    if (!satisfySonarConstraint(pos, yaw, candidate_pos)) {
+      ++eval_reject_sonar_count_;
+      continue;
+    }
+
+    // 2) AUV minimum turning radius:
+    //    The candidate should not require an infeasible sharp turn.
+    if (!satisfyTurnRadiusConstraint(pos, vel, yaw, candidate_pos)) {
+      ++eval_reject_turn_radius_count_;
+      continue;
+    }
+
+    // 3) Underwater acoustic communication:
+    //    The candidate should keep at least one feasible acoustic link.
+    if (!satisfyUnderwaterCommConstraint(candidate_pos)) {
+      ++eval_reject_comm_count_;
+      continue;
+    }
+    // -------------------------------------------------------------------
+
     vector<Vector3d> path;
     double distance = std::max(1., explorer_params_->w_distance) *
-                      ViewNode::computeCost(pos, vp.pos_, yaw[0], vp.yaw_, vel, yaw[1], path);
-    double formation_cost = explorer_params_->w_others * formationCost(vp.pos_);
-    double previous_goal_cost = explorer_params_->w_previous_goal * previousGoalCost(vp.pos_);
-    double cost = distance + formation_cost + previous_goal_cost;
+                      ViewNode::computeCost(pos, candidate_pos, yaw[0], vp.yaw_, vel, yaw[1], path);
+
+    double formation_cost = explorer_params_->w_others * formationCost(candidate_pos);
+    double previous_goal_cost = explorer_params_->w_previous_goal * previousGoalCost(candidate_pos);
+
+    double high_order_cost = 0.0;
+    if (use_hypergraph_coord_ && hypergraph_coordinator_) {
+      high_order_cost = w_high_order_ *
+          hypergraph_coordinator_->hypergraphTargetCost(
+              ep_->drone_id_, pos, vel, yaw, candidate_pos, ftr.label_);
+    }
+
+    double cost = distance + formation_cost + previous_goal_cost + high_order_cost;
 
     if (cost < min_cost) {
-      // Update flag
       found_ftr = true;
-      // Target
+
       min_cost = cost;
-      next_pos = vp.pos_;
+      next_pos = candidate_pos;
       next_yaw = vp.yaw_;
+
+      // Evaluation logger fields.
+      eval_plan_source_ = "closest_frontier";
+      eval_selected_label_ = ftr.label_;
+      eval_base_cost_ = distance + formation_cost + previous_goal_cost;
+      eval_ft_cost_ = 0.0;
+      eval_high_order_cost_ = high_order_cost;
+
+      if (use_hypergraph_coord_ && hypergraph_coordinator_) {
+        eval_num_hyperedges_ = hypergraph_coordinator_->lastNumHyperEdges();
+        eval_trajectory_edge_cost_ = hypergraph_coordinator_->lastTrajectoryCost();
+      }
     }
+  }
+
+  if (!found_ftr) {
+    ROS_WARN("[FindPathClosestFrontier] No feasible frontier under sonar/turn/comm constraints.");
   }
 
   return found_ftr;
 }
 
-bool FameExplorationManager::closestGreedyFrontier(const Vector3d& pos, const Vector3d& yaw,
-    Vector3d& next_pos, double& next_yaw, bool force_different) const {
+bool FameExplorationManager::closestGreedyFrontier(const Vector3d& pos, const Vector3d& vel,
+    const Vector3d& yaw, Vector3d& next_pos, double& next_yaw, bool force_different) {
 
   double min_dist = std::numeric_limits<double>::max();
   bool found_ftr = false;
+
   for (const auto& ftr : frontier_finder_->getFrontiers()) {
-    // Find the viewpoint that will be evaluated by iterating over viewpoints (sorted)
     for (const auto& vp : ftr.viewpoints_) {
-      // Check that the position is valid
-      if (!isPositionReachable(pos, vp.pos_)) {
+      const Vector3d& candidate_pos = vp.pos_;
+
+      if (!isPositionReachable(pos, candidate_pos)) {
+        continue;
+      }
+
+      if (!satisfySonarConstraint(pos, yaw, candidate_pos)) {
+        ++eval_reject_sonar_count_;
+        continue;
+      }
+
+      if (!satisfyTurnRadiusConstraint(pos, vel, yaw, candidate_pos)) {
+        ++eval_reject_turn_radius_count_;
+        continue;
+      }
+
+      if (!satisfyUnderwaterCommConstraint(candidate_pos)) {
+        ++eval_reject_comm_count_;
         continue;
       }
 
       std::vector<Vector3d> path;
-      double distance = ViewNode::searchPath(pos, vp.pos_, path);
+      double distance = ViewNode::searchPath(pos, candidate_pos, path);
+
       if (distance < min_dist) {
-        // Check if we need to force a new goal
         const double kMinDistGoals = 1.0;
-        if (force_different && (vp.pos_ - ed_->next_pos_).norm() < kMinDistGoals) {
+        if (force_different && (candidate_pos - ed_->next_pos_).norm() < kMinDistGoals) {
           continue;
         }
 
-        // Update flag
         found_ftr = true;
-        // Target
         min_dist = distance;
-        next_pos = vp.pos_;
+        next_pos = candidate_pos;
         next_yaw = vp.yaw_;
+
+        eval_plan_source_ = "closest_greedy";
+        eval_selected_label_ = ftr.label_;
+        eval_base_cost_ = distance;
+        eval_ft_cost_ = 0.0;
+        eval_high_order_cost_ = 0.0;
       }
     }
   }
@@ -932,6 +1129,25 @@ bool FameExplorationManager::greedyPlan(const Vector3d& pos, const Vector3d& vel
       continue;
     }
 
+    // 新增的
+    // vp_position 是当前 greedyPlan 正在评估的候选 viewpoint。
+    // 先做硬约束过滤，不满足就不进入排序。
+
+    if (!satisfySonarConstraint(pos, yaw, vp_position)) {
+      ++eval_reject_sonar_count_;
+      continue;
+    }
+
+    if (!satisfyTurnRadiusConstraint(pos, vel, yaw, vp_position)) {
+      ++eval_reject_turn_radius_count_;
+      continue;
+    }
+
+    if (!satisfyUnderwaterCommConstraint(vp_position)) {
+      ++eval_reject_comm_count_;
+      continue;
+    }
+
     // Calculate path from current position to viewpoint
     double path_length;
     if (!ViewNode::validPathExists(pos, vp_position, path_length)) {
@@ -972,7 +1188,6 @@ bool FameExplorationManager::greedyPlan(const Vector3d& pos, const Vector3d& vel
         time_to_dest + vel_change + formation_cost + label_penalty + previous_goal_cost;
     */
 
-    // 新增的
     double ft_cost = 0.0;
     if (use_ft_score_) {
       ft_cost = w_ft_score_ *
@@ -987,16 +1202,6 @@ bool FameExplorationManager::greedyPlan(const Vector3d& pos, const Vector3d& vel
           hypergraph_coordinator_->hypergraphTargetCost(
               ep_->drone_id_, pos, vel, yaw, vp_position, vp_label);
     }
-
-    // double path_reg_cost = 0.0;
-    // double path_cross_cost = 0.0;
-    // double large_turn_cost = 0.0;
-
-    // if (use_path_regularizer_ && path_regularizer_) {
-    //   path_cross_cost = path_regularizer_->computePathCrossPenalty(pos, vp_position);
-    //   large_turn_cost = path_regularizer_->computeLargeTurnPenalty(pos, vp_position, vel, yaw);
-    //   path_reg_cost = w_path_regularizer_ * (path_cross_cost + large_turn_cost);
-    // }
 
     double total_cost =
         time_to_dest
@@ -1459,9 +1664,8 @@ double FameExplorationManager::computeGridPathCost(const Eigen::Vector3d& pos,
   return cost;
 }
 
-bool FameExplorationManager::findTourOfTrails(const Vector3d& cur_pos,
-    const Eigen::Vector3d& cur_yaw, const Vector3d& cur_vel, Eigen::Vector3d& next_pos,
-    double& next_yaw) {
+bool FameExplorationManager::findTourOfTrails(const Vector3d& cur_pos, const Vector3d& cur_vel,
+    const Eigen::Vector3d& cur_yaw, Eigen::Vector3d& next_pos, double& next_yaw) {
   // 1. Get all trails within an area
   list<Frontier> close_by_trails;
   frontier_finder_->getTrailCentroidsAroundPosition(
@@ -1473,10 +1677,25 @@ bool FameExplorationManager::findTourOfTrails(const Vector3d& cur_pos,
     return false;
   } else if (num_trails == 1) {
     // Target pose
-    next_pos = close_by_trails.front().viewpoints_.front().pos_;
-    next_yaw = close_by_trails.front().viewpoints_.front().yaw_;
+    const Viewpoint& v = close_by_trails.front().viewpoints_.front();
 
-    // For visualization
+    if (!satisfySonarConstraint(cur_pos, cur_yaw, v.pos_)) {
+      ++eval_reject_sonar_count_;
+      return false;
+    }
+
+    if (!satisfyTurnRadiusConstraint(cur_pos, cur_vel, cur_yaw, v.pos_)) {
+      ++eval_reject_turn_radius_count_;
+      return false;
+    }
+
+    if (!satisfyUnderwaterCommConstraint(v.pos_)) {
+      ++eval_reject_comm_count_;
+      return false;
+    }
+
+    next_pos = v.pos_;
+    next_yaw = v.yaw_;
     ed_->trails_tour_ = { { cur_pos, cur_yaw[0] }, { next_pos, next_yaw } };
 
     return true;
@@ -1510,77 +1729,64 @@ bool FameExplorationManager::findTourOfTrails(const Vector3d& cur_pos,
   // 新增的
   auto updateCostFrontiers = [&](const list<Frontier>::iterator& it1,
                                 const list<Frontier>::iterator& it2) {
-      const Viewpoint& vui = it1->viewpoints_.front();
-      const Viewpoint& vuj = it2->viewpoints_.front();
-      vector<Vector3d> path_ij;
+    const Viewpoint& vui = it1->viewpoints_.front();
+    const Viewpoint& vuj = it2->viewpoints_.front();
 
-      double base_cost =
-          collector_params_->w_distance * ViewNode::searchPath(vui.pos_, vuj.pos_, path_ij) +
-          collector_params_->w_others * (formationCost(vui.pos_) - formationCost(vuj.pos_));
+    // trail_i -> trail_j 这里暂时只做通信约束。
+    // 不建议第一版强行做 sonar/yaw，因为从 vui 到 vuj 的真实朝向不可靠，
+    // 容易误杀太多 trail tour 边。
+    if (!satisfyUnderwaterCommConstraint(vuj.pos_)) {
+      ++eval_reject_comm_count_;
+      return 1e9;
+    }
 
-      // double high_order_cost = 0.0;
-      // if (use_hypergraph_coord_) {
-      //   high_order_cost = w_high_order_ *
-      //       hypergraph_coordinator_->highOrderTransitionCost(
-      //           ep_->drone_id_, vui.pos_, vuj.pos_, LABEL::TRAIL);
-      // }
+    vector<Vector3d> path_ij;
 
-      double high_order_cost = 0.0;
-      if (use_hypergraph_coord_) {
-        // trail_i -> trail_j
-        // 用 cur_pos -> vui.pos_ -> vuj.pos_ 估计转角和路径交叉。
-        high_order_cost = w_high_order_ *
-            hypergraph_coordinator_->hypergraphTransitionCost(
-                ep_->drone_id_, cur_pos, vui.pos_, vuj.pos_, LABEL::TRAIL);
-      }                              
+    double base_cost =
+        collector_params_->w_distance * ViewNode::searchPath(vui.pos_, vuj.pos_, path_ij) +
+        collector_params_->w_others * (formationCost(vui.pos_) - formationCost(vuj.pos_));
 
-      // double path_reg_cost = 0.0;
-      // if (use_path_regularizer_ && path_regularizer_) {
-      //   // 这里无法知道 tour 中真实前一个节点，先用 cur_pos -> vui -> vuj 估计转角。
-      //   double turn_cost =
-      //       path_regularizer_->computeTransitionTurnPenalty(cur_pos, vui.pos_, vuj.pos_);
+    double high_order_cost = 0.0;
+    if (use_hypergraph_coord_) {
+      high_order_cost = w_high_order_ *
+          hypergraph_coordinator_->hypergraphTransitionCost(
+              ep_->drone_id_, cur_pos, vui.pos_, vuj.pos_, LABEL::TRAIL);
+    }
 
-      //   double cross_cost =
-      //       path_regularizer_->computePathCrossPenalty(vui.pos_, vuj.pos_);
-
-      //   path_reg_cost = w_path_regularizer_ * (cross_cost + turn_cost);
-      // }
-
-      return base_cost + high_order_cost ;   //+ path_reg_cost;
+    return base_cost + high_order_cost;
   };
 
   auto updateCostFromState = [&](const list<Frontier>::iterator& it) {
-      const Viewpoint& v = it->viewpoints_.front();
-      vector<Vector3d> path;
+    const Viewpoint& v = it->viewpoints_.front();
 
-      double base_cost =
-          collector_params_->w_distance * ViewNode::searchPath(cur_pos, v.pos_, path) +
-          collector_params_->w_others * formationCost(v.pos_);
+    // 当前状态 -> 第一个 trail viewpoint。
+    // 这里可以使用真实 cur_pos / cur_vel / cur_yaw 做硬约束判断。
+    if (!satisfySonarConstraint(cur_pos, cur_yaw, v.pos_)) {
+      return 1e9;
+    }
 
-      // double high_order_cost = 0.0;
-      // if (use_hypergraph_coord_) {
-      //   high_order_cost = w_high_order_ *
-      //       hypergraph_coordinator_->highOrderTargetCost(
-      //           ep_->drone_id_, v.pos_, LABEL::TRAIL);
-      // }
+    if (!satisfyTurnRadiusConstraint(cur_pos, cur_vel, cur_yaw, v.pos_)) {
+      return 1e9;
+    }
 
-      double high_order_cost = 0.0;
-      if (use_hypergraph_coord_) {
-        // 当前状态 -> trail viewpoint
-        // 使用 cur_pos/cur_vel/cur_yaw 构造 trajectory coupling hyperedge。
-        high_order_cost = w_high_order_ *
-            hypergraph_coordinator_->hypergraphTargetCost(
-                ep_->drone_id_, cur_pos, cur_vel, cur_yaw, v.pos_, LABEL::TRAIL);
-      }
+    if (!satisfyUnderwaterCommConstraint(v.pos_)) {
+      return 1e9;
+    }
 
-      // double path_reg_cost = 0.0;
-      // if (use_path_regularizer_ && path_regularizer_) {
-      //   double cross_cost = path_regularizer_->computePathCrossPenalty(cur_pos, v.pos_);
-      //   double turn_cost = path_regularizer_->computeLargeTurnPenalty(cur_pos, v.pos_, cur_vel, cur_yaw);
-      //   path_reg_cost = w_path_regularizer_ * (cross_cost + turn_cost);
-      // }
+    vector<Vector3d> path;
 
-      return base_cost + high_order_cost; // + path_reg_cost;
+    double base_cost =
+        collector_params_->w_distance * ViewNode::searchPath(cur_pos, v.pos_, path) +
+        collector_params_->w_others * formationCost(v.pos_);
+
+    double high_order_cost = 0.0;
+    if (use_hypergraph_coord_) {
+      high_order_cost = w_high_order_ *
+          hypergraph_coordinator_->hypergraphTargetCost(
+              ep_->drone_id_, cur_pos, cur_vel, cur_yaw, v.pos_, LABEL::TRAIL);
+    }
+
+    return base_cost + high_order_cost;
   };
 
   auto start_time = ros::Time::now();
@@ -2055,7 +2261,8 @@ void FameExplorationManager::initEvalLogger(ros::NodeHandle& nh) {
       << "target_x,target_y,target_z,target_yaw,"
       << "num_frontier,num_trail,num_unlabeled,"
       << "base_cost,ft_cost,high_order_cost,total_extra_cost,"
-      << "num_hyperedges,trajectory_edge_cost,curvature_cost,current_energy_cost,"
+      << "num_hyperedges,trajectory_edge_cost,"
+      << "reject_turn_radius_count,reject_comm_count,reject_sonar_count,"
       << "S_explorer,S_collector,"
       << "J_competition,J_comm,J_redundant_cleanup,"
       << "duplicate_target_count,comm_risk_count,"
@@ -2103,11 +2310,15 @@ void FameExplorationManager::resetEvalStepDebug() {
   eval_large_turn_cost_ = 0.0;
   eval_path_reg_cost_ = 0.0;
 
-  eval_curvature_cost_ = 0.0;
-  eval_current_energy_cost_ = 0.0;
+  // eval_curvature_cost_ = 0.0;
+  // eval_current_energy_cost_ = 0.0;
 
   eval_num_hyperedges_ = 0;
   eval_trajectory_edge_cost_ = 0.0;
+
+  eval_reject_turn_radius_count_ = 0;
+  eval_reject_comm_count_ = 0;
+  eval_reject_sonar_count_ = 0;
 }
 
 void FameExplorationManager::countFrontierLabels(
@@ -2158,7 +2369,7 @@ void FameExplorationManager::logEvalStep(
   int comm_risk_count = 0;
 
   for (int i = 0; i < static_cast<int>(ed_->swarm_state_.size()); ++i) {
-    if (i == ep_->drone_id_ || i == ep_->drone_id_ - 1) continue;
+    if (i == ep_->drone_id_ - 1) continue;
 
     double d_goal = (ed_->swarm_state_[i].goal_pos_ - next_pos).norm();
     if (d_goal < eval_target_duplicate_radius_) {
@@ -2205,8 +2416,9 @@ void FameExplorationManager::logEvalStep(
       << eval_ft_cost_ + eval_high_order_cost_ << ","
       << eval_num_hyperedges_ << ","
       << eval_trajectory_edge_cost_ << ","
-      << eval_curvature_cost_ << ","
-      << eval_current_energy_cost_ << ","
+      << eval_reject_turn_radius_count_ << ","
+      << eval_reject_comm_count_ << ","
+      << eval_reject_sonar_count_ << ","
       << eval_s_explorer_ << ","
       << eval_s_collector_ << ","
       << j_comp << ","

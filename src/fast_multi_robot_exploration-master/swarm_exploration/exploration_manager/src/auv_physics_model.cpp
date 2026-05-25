@@ -10,43 +10,33 @@ double AUVPhysicsModel::computeCurvature(
     const Eigen::Vector3d& p_prev,
     const Eigen::Vector3d& p_cur,
     const Eigen::Vector3d& p_next) const {
-  Eigen::Vector3d a = p_cur - p_prev;
-  Eigen::Vector3d b = p_next - p_cur;
+  Eigen::Vector3d v1 = p_cur - p_prev;
+  Eigen::Vector3d v2 = p_next - p_cur;
 
-  a.z() = 0.0;
-  b.z() = 0.0;
+  v1.z() = 0.0;
+  v2.z() = 0.0;
 
-  if (a.norm() < eps_ || b.norm() < eps_) {
-    return 0.0;
-  }
+  if (v1.norm() < 1e-6 || v2.norm() < 1e-6) return 0.0;
 
-  Eigen::Vector3d an = a.normalized();
-  Eigen::Vector3d bn = b.normalized();
+  double dot_val =
+      std::max(-1.0, std::min(1.0, v1.normalized().dot(v2.normalized())));
 
-  double dot_val = std::max(-1.0, std::min(1.0, an.dot(bn)));
   double angle = std::acos(dot_val);
+  double arc_len = 0.5 * (v1.norm() + v2.norm());
 
-  // 用两段平均长度近似转弯尺度。
-  double length = 0.5 * (a.norm() + b.norm());
-  if (length < eps_) return 0.0;
+  if (arc_len < 1e-6) return 0.0;
 
-  // 近似曲率：转角 / 路径长度
-  return angle / length;
+  return angle / arc_len;
 }
 
-double AUVPhysicsModel::curvaturePenalty(
+bool AUVPhysicsModel::isTurnFeasible(
     const Eigen::Vector3d& p_prev,
     const Eigen::Vector3d& p_cur,
     const Eigen::Vector3d& p_next) const {
   double curvature = computeCurvature(p_prev, p_cur, p_next);
-  double max_curvature = 1.0 / std::max(min_turn_radius_, eps_);
+  double max_curvature = 1.0 / std::max(1e-6, min_turn_radius_);
 
-  if (curvature <= max_curvature) {
-    return 0.0;
-  }
-
-  double excess = curvature - max_curvature;
-  return excess * excess;
+  return curvature <= max_curvature;
 }
 
 }  // namespace fast_planner

@@ -16,9 +16,9 @@
 #include <exploration_manager/path_regularizer.h>
 #include <exploration_manager/underwater_frontier_evaluator.h>
 
-#include <exploration_manager/auv_physics_model.h>
-#include <exploration_manager/ocean_current_field.h>
-#include <exploration_manager/underwater_comm_model.h>
+// #include <exploration_manager/auv_physics_model.h>
+// #include <exploration_manager/ocean_current_field.h>
+// #include <exploration_manager/underwater_comm_model.h>
 
 namespace fast_planner {
 
@@ -56,9 +56,9 @@ struct HyperEdgeInfo {
   double path_cross = 0.0;           // 候选路径与历史路径交叉
   double large_turn = 0.0;           // 当前方向到候选目标方向的大转角
 
-  double curvature = 0.0;       // AUV 最小转弯半径约束
-  double current_energy = 0.0;  // 洋流能耗
-  double comm_quality_risk = 0.0; // 连续水声通信风险
+  // double curvature = 0.0;       // AUV 最小转弯半径约束
+  // double current_energy = 0.0;  // 洋流能耗
+  // double comm_quality_risk = 0.0; // 连续水声通信风险
 
   // 预留：后面可以把创新点1的 FT-score 也显式作为超边特征
   double frontier_score = 0.0;
@@ -92,17 +92,17 @@ public:
       const Eigen::Vector3d& to,
       const LABEL& label) const;
   
-  void setAUVPhysicsModel(const std::shared_ptr<AUVPhysicsModel>& model) {
-  auv_physics_model_ = model;
-  }
+  // void setAUVPhysicsModel(const std::shared_ptr<AUVPhysicsModel>& model) {
+  // auv_physics_model_ = model;
+  // }
 
-  void setOceanCurrentField(const std::shared_ptr<OceanCurrentField>& field) {
-    ocean_current_field_ = field;
-  }
+  // void setOceanCurrentField(const std::shared_ptr<OceanCurrentField>& field) {
+  //   ocean_current_field_ = field;
+  // }
 
-  void setUnderwaterCommModel(const std::shared_ptr<UnderwaterCommModel>& model) {
-    underwater_comm_model_ = model;
-  }
+  // void setUnderwaterCommModel(const std::shared_ptr<UnderwaterCommModel>& model) {
+  //   underwater_comm_model_ = model;
+  // }
 
   // 让超图模块能访问路径正则器。
   // 目的：把“大转角、路径交叉”纳入 trajectory coupling hyperedge。
@@ -150,8 +150,8 @@ public:
   double lastCommCost() const { return last_comm_cost_; }
   double lastRedundantCleanupCost() const { return last_redundant_cleanup_cost_; }
 
-  double lastCurvatureCost() const { return last_curvature_cost_; }
-  double lastCurrentEnergyCost() const { return last_current_energy_cost_; }
+  // double lastCurvatureCost() const { return last_curvature_cost_; }
+  // double lastCurrentEnergyCost() const { return last_current_energy_cost_; }
 
 private:
   double computeCompetitionCost(
@@ -204,16 +204,16 @@ private:
 
   std::vector<HyperEdgeInfo> last_edges_;
 
-  std::shared_ptr<AUVPhysicsModel> auv_physics_model_;
-  std::shared_ptr<OceanCurrentField> ocean_current_field_;
-  std::shared_ptr<UnderwaterCommModel> underwater_comm_model_;
+  // std::shared_ptr<AUVPhysicsModel> auv_physics_model_;
+  // std::shared_ptr<OceanCurrentField> ocean_current_field_;
+  // std::shared_ptr<UnderwaterCommModel> underwater_comm_model_;
 
-  double w_curvature_ = 1.0;
-  double w_current_energy_ = 1.0;
-  double w_comm_quality_ = 1.0;
+  // double w_curvature_ = 1.0;
+  // double w_current_energy_ = 1.0;
+  // double w_comm_quality_ = 1.0;
 
-  double last_curvature_cost_ = 0.0;
-  double last_current_energy_cost_ = 0.0;
+  // double last_curvature_cost_ = 0.0;
+  // double last_current_energy_cost_ = 0.0;
 
   // 新增超图参数
   double w_path_cross_ = 1.0;
